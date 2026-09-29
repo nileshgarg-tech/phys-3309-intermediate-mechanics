@@ -1,6 +1,5 @@
 # PHYS 3309 — Intermediate Mechanics
-**Textbook**: *Classical Mechanics* (2005) by John R. Taylor  
-**Document**: [`taylor-2005-classical-mechanics.pdf`](file:///d:/UH/PHYS%203309/taylor-2005-classical-mechanics.pdf)
+**Textbook**: *Classical Mechanics* (2005) by John R. Taylor
 
 ---
 
