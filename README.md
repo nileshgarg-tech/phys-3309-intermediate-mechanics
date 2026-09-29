@@ -13,17 +13,17 @@ The textbook is divided into two logical sections:
 
 ## Repository Structure
 
-* [`ch01-04-foundations/`](file:///d:/UH/PHYS%203309/ch01-04-foundations) — Quick review of Newton's laws, drag forces, momentum/rockets, and energy wells.
-* [`ch05-oscillations/`](file:///d:/UH/PHYS%203309/ch05-oscillations) — Damped, driven, resonance, and Fourier series.
-* [`ch06-calculus-of-variations/`](file:///d:/UH/PHYS%203309/ch06-calculus-of-variations) — Fermat's principle, brachistochrone, Euler-Lagrange equations.
-* [`ch07-lagranges-equations/`](file:///d:/UH/PHYS%203309/ch07-lagranges-equations) — Lagrangian mechanics, generalized coordinates, cyclic coordinates, constraints.
-* [`ch08-central-forces/`](file:///d:/UH/PHYS%203309/ch08-central-forces) — Reduced mass, effective potential, Kepler orbits.
-* [`ch09-noninertial-frames/`](file:///d:/UH/PHYS%203309/ch09-noninertial-frames) — Centrifugal force, Coriolis force, Foucault pendulum.
-* [`ch10-rigid-bodies/`](file:///d:/UH/PHYS%203309/ch10-rigid-bodies) — Inertia tensor, principal axes, Euler's equations, tops.
-* [`ch11-coupled-oscillators/`](file:///d:/UH/PHYS%203309/ch11-coupled-oscillators) — Normal modes, matrix eigenvalue methods, normal coordinates.
-* [`assignments/`](file:///d:/UH/PHYS%203309/assignments) — Homework sets and problem writeups.
-* [`resources/`](file:///d:/UH/PHYS%203309/resources) — Course syllabus, formula sheets, reference materials.
-* [`additional-topics/`](file:///d:/UH/PHYS%203309/additional-topics) — Advanced Part 2 topics: Ch 12 (Chaos), Ch 13 (Hamiltonian), Ch 14 (Collisions).
+* [ch01-04-foundations/](ch01-04-foundations/) — 15-module story series reviewing Newton's laws, drag forces, momentum/rockets, and energy.
+* [ch05-oscillations/](ch05-oscillations/) — Damped, driven, resonance, and Fourier series.
+* [ch06-calculus-of-variations/](ch06-calculus-of-variations/) — Fermat's principle, brachistochrone, Euler-Lagrange equations.
+* [ch07-lagranges-equations/](ch07-lagranges-equations/) — Lagrangian mechanics, generalized coordinates, cyclic coordinates, constraints.
+* [ch08-central-forces/](ch08-central-forces/) — Reduced mass, effective potential, Kepler orbits.
+* [ch09-noninertial-frames/](ch09-noninertial-frames/) — Centrifugal force, Coriolis force, Foucault pendulum.
+* [ch10-rigid-bodies/](ch10-rigid-bodies/) — Inertia tensor, principal axes, Euler's equations, tops.
+* [ch11-coupled-oscillators/](ch11-coupled-oscillators/) — Normal modes, matrix eigenvalue methods, normal coordinates.
+* [assignments/](assignments/) — Homework sets and problem writeups.
+* [resources/](resources/) — Course syllabus, formula sheets, reference materials.
+* [additional-topics/](additional-topics/) — Advanced Part 2 topics: Ch 12 (Chaos), Ch 13 (Hamiltonian), Ch 14 (Collisions).
 
 ---
 
@@ -57,7 +57,21 @@ The textbook is divided into two logical sections:
 
 ---
 
-## Back Matter & Reference
-* **Appendix (pp. 739–747)**: Guide to diagonalizing real symmetric matrices (used for inertia tensors and normal modes).
-* **Answers to Odd-Numbered Problems (pp. 749–776)**: Quick verification for problem sets.
-* **Subject Index (pp. 777–786)**: Detailed alphabetical topic search.
+## Primary & Recommended Course References
+
+1. **John R. Taylor** — *Classical Mechanics* (University Science Books, 2005)
+   * The primary course textbook for UH PHYS 3309. Known for unmatched pedagogical clarity and thorough derivations.
+2. **Richard P. Feynman, Robert B. Leighton, Matthew Sands** — *The Feynman Lectures on Physics*, Vol. 1
+   * The premier conceptual reference. Key companion chapters:
+     * **Ch. 8–10**: Kinematics, Newton's laws, and momentum conservation.
+     * **Ch. 11**: Vectors and curvilinear motion.
+     * **Ch. 13–14**: Work, kinetic energy, potential wells, and conservation principles.
+     * **Ch. 18–20**: Center of mass, rotation, and angular momentum.
+     * **Ch. 22**: Complex algebra and oscillatory motion.
+     * **Ch. 41**: Fluid resistance, viscosity, and Stokes drag.
+3. **Daniel Kleppner & Robert Kolenkow** — *An Introduction to Mechanics* (Cambridge University Press)
+   * The gold-standard problem-solving reference; exceptional depth on polar coordinates, drag, variable mass (rockets), and fictitious forces.
+4. **David Morin** — *Introduction to Classical Mechanics: With Problems and Solutions* (Cambridge University Press)
+   * Superb for challenging practice problems, 1D potential wells, and Lagrangian mechanics.
+5. **L.D. Landau & E.M. Lifshitz** — *Mechanics (Course of Theoretical Physics, Vol. 1)*
+   * The classic theoretical benchmark for least action, symmetry principles, and conserved quantities.

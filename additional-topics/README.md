@@ -6,9 +6,9 @@ Chapters 12–16 provide modern, advanced, and computational extensions to class
 
 ## Folders in this Section
 
-* [`ch12-chaos/`](file:///d:/UH/PHYS%203309/additional-topics/ch12-chaos) — **Nonlinear Mechanics & Chaos**: Driven damped pendulum, period doubling, bifurcation diagrams, and state space.
-* [`ch13-hamiltonian/`](file:///d:/UH/PHYS%203309/additional-topics/ch13-hamiltonian) — **Hamiltonian Mechanics**: Generalized coordinates and canonical momenta (`q, p`), phase space paths, and Liouville's theorem.
-* [`ch14-collision-theory/`](file:///d:/UH/PHYS%203309/additional-topics/ch14-collision-theory) — **Collision Theory**: Differential cross sections (`dσ/dΩ`), impact parameter, and Rutherford scattering (CM vs. Lab frames).
+* [ch12-chaos/](ch12-chaos/) — **Nonlinear Mechanics & Chaos**: Driven damped pendulum, period doubling, bifurcation diagrams, and state space.
+* [ch13-hamiltonian/](ch13-hamiltonian/) — **Hamiltonian Mechanics**: Generalized coordinates and canonical momenta (`q, p`), phase space paths, and Liouville's theorem.
+* [ch14-collision-theory/](ch14-collision-theory/) — **Collision Theory**: Differential cross sections (`dσ/dΩ`), impact parameter, and Rutherford scattering (CM vs. Lab frames).
 
 ---
 
