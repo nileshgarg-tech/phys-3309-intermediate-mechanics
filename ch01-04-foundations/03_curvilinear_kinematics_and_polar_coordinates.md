@@ -11,184 +11,202 @@
 ## 1. Plane Polar Coordinates and Moving Unit Vectors
 
 Any point $P$ in the $xy$-plane can be located by:
-* $r$: The radial distance from the origin ($r \ge 0$).
-* $\theta$: The counterclockwise angle made with the positive $x$-axis.
+* $r$: Radial distance from the origin ($r \ge 0$).
+* $\theta$: Counterclockwise angle from the positive $x$-axis.
 
 We define two local orthonormal unit vectors:
-1. **r_hat**: Points radially outward from the origin.
-2. **θ_hat**: Points in the direction of increasing $\theta$ (counterclockwise rotation).
+1. $\hat{\mathbf{r}}$: Points radially outward from the origin.
+2. $\hat{\boldsymbol{\theta}}$: Points in the direction of increasing $\theta$ (counterclockwise rotation).
 
-Projecting onto Cartesian axes:
-```
-r_hat =  cos(θ)*x_hat + sin(θ)*y_hat
-θ_hat = -sin(θ)*x_hat + cos(θ)*y_hat
-```
+Projecting onto the Cartesian basis:
+
+$$
+\hat{\mathbf{r}} = \cos\theta\,\hat{\mathbf{x}} + \sin\theta\,\hat{\mathbf{y}}
+$$
+
+$$
+\hat{\boldsymbol{\theta}} = -\sin\theta\,\hat{\mathbf{x}} + \cos\theta\,\hat{\mathbf{y}}
+$$
 
 ---
 
 ## 2. Time Derivatives of Moving Unit Vectors
 
 Differentiating with respect to time using the chain rule:
-```
-d(r_hat)/dt = -sin(θ)*θ_dot*x_hat + cos(θ)*θ_dot*y_hat = θ_dot * θ_hat
-d(θ_hat)/dt = -cos(θ)*θ_dot*x_hat - sin(θ)*θ_dot*y_hat = -θ_dot * r_hat
-```
+
+$$
+\frac{d\hat{\mathbf{r}}}{dt} = -\sin\theta\,\dot{\theta}\,\hat{\mathbf{x}} + \cos\theta\,\dot{\theta}\,\hat{\mathbf{y}} = \dot{\theta}\,\hat{\boldsymbol{\theta}}
+$$
+
+$$
+\frac{d\hat{\boldsymbol{\theta}}}{dt} = -\cos\theta\,\dot{\theta}\,\hat{\mathbf{x}} - \sin\theta\,\dot{\theta}\,\hat{\mathbf{y}} = -\dot{\theta}\,\hat{\mathbf{r}}
+$$
+
 > **The Golden Kinematic Rules for Polar Unit Vectors**:
-> ```
-> d(r_hat)/dt =  θ_dot * θ_hat
-> d(θ_hat)/dt = -θ_dot * r_hat
-> ```
+> 
+> $$
+> \frac{d\hat{\mathbf{r}}}{dt} = \dot{\theta}\,\hat{\boldsymbol{\theta}}, \qquad \frac{d\hat{\boldsymbol{\theta}}}{dt} = -\dot{\theta}\,\hat{\mathbf{r}}
+> $$
 
 ---
 
 ## 3. Velocity in Polar Coordinates
 
 Position is:
-```
-r = r * r_hat
-```
+
+$$
+\mathbf{r} = r\,\hat{\mathbf{r}}
+$$
+
 Differentiating with the product rule:
-```
-v = dr/dt = (r_dot)*r_hat + r * [d(r_hat)/dt] = (r_dot)*r_hat + (r * θ_dot)*θ_hat
-```
-* **Radial velocity**: `v_r = r_dot`
-* **Azimuthal velocity**: `v_θ = r * θ_dot`
-* **Speed squared**: `v² = (r_dot)² + (r * θ_dot)²`
+
+$$
+\mathbf{v} = \frac{d\mathbf{r}}{dt} = \dot{r}\,\hat{\mathbf{r}} + r\frac{d\hat{\mathbf{r}}}{dt} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\theta}\,\hat{\boldsymbol{\theta}}
+$$
+
+* **Radial velocity**: $v_r = \dot{r}$
+* **Azimuthal velocity**: $v_\theta = r\dot{\theta}$
+* **Speed squared**:
+
+$$
+v^2 = \dot{r}^2 + r^2\dot{\theta}^2
+$$
 
 ---
 
 ## 4. Acceleration in Polar Coordinates (Step-by-Step)
 
 Differentiating velocity with respect to time:
-```
-a = dv/dt = d/dt [ (r_dot)*r_hat + (r * θ_dot)*θ_hat ]
-```
-Applying the product rule:
-```
-d/dt [(r_dot)*r_hat] = (r_ddot)*r_hat + (r_dot)*(θ_dot)*θ_hat
-d/dt [(r*θ_dot)*θ_hat] = (r_dot*θ_dot + r*θ_ddot)*θ_hat - r*(θ_dot)²*r_hat
-```
+
+$$
+\mathbf{a} = \frac{d\mathbf{v}}{dt} = \frac{d}{dt}\left( \dot{r}\,\hat{\mathbf{r}} + r\dot{\theta}\,\hat{\boldsymbol{\theta}} \right)
+$$
+
+Applying the product rule to each term:
+
+$$
+\frac{d}{dt}(\dot{r}\,\hat{\mathbf{r}}) = \ddot{r}\,\hat{\mathbf{r}} + \dot{r}\dot{\theta}\,\hat{\boldsymbol{\theta}}
+$$
+
+$$
+\frac{d}{dt}(r\dot{\theta}\,\hat{\boldsymbol{\theta}}) = (\dot{r}\dot{\theta} + r\ddot{\theta})\,\hat{\boldsymbol{\theta}} - r\dot{\theta}^2\,\hat{\mathbf{r}}
+$$
+
 Collecting terms:
-```
-a = [ r_ddot - r*(θ_dot)² ] * r_hat + [ r*θ_ddot + 2*(r_dot)*(θ_dot) ] * θ_hat
-```
+
+$$
+\mathbf{a} = \left( \ddot{r} - r\dot{\theta}^2 \right)\hat{\mathbf{r}} + \left( r\ddot{\theta} + 2\dot{r}\dot{\theta} \right)\hat{\boldsymbol{\theta}}
+$$
 
 ### Physical Meaning of Acceleration Components:
-* **`-r*(θ_dot)²` (Centripetal Acceleration)**: Inward acceleration maintaining curved path.
-* **`r*θ_ddot` (Tangential Acceleration)**: Angular acceleration changing rotation speed.
-* **`2*(r_dot)*(θ_dot)` (Coriolis Acceleration)**: Cross-coupling between radial expansion and coordinate rotation.
+* $-r\dot{\theta}^2$ (Centripetal Acceleration): Inward radial acceleration maintaining curved path.
+* $r\ddot{\theta}$ (Tangential Acceleration): Caused by angular acceleration speeding up rotation.
+* $2\dot{r}\dot{\theta}$ (Coriolis Acceleration): Cross-coupling between radial motion and coordinate rotation.
 
 ---
 
 ## 5. Summary Cheat Sheet for Module 03
 
-| Vector | Polar Representation | Key Derivatives / Notes |
+| Vector | Polar Representation | Key Derivatives |
 |---|---|---|
-| **Unit Vectors** | `r_hat = cos(θ)x + sin(θ)y`, `θ_hat = -sin(θ)x + cos(θ)y` | `d(r_hat)/dt = θ_dot θ_hat`, `d(θ_hat)/dt = -θ_dot r_hat` |
-| **Position** | `r = r * r_hat` | Magnitude $r$, orientation $\theta$ |
-| **Velocity** | `v = (r_dot)*r_hat + (r*θ_dot)*θ_hat` | `v² = (r_dot)² + (r*θ_dot)²` |
-| **Acceleration** | `a = [r_ddot - r*θ_dot²]*r_hat + [r*θ_ddot + 2*r_dot*θ_dot]*θ_hat` | Centripetal `-r*θ_dot²`, Coriolis `2*r_dot*θ_dot` |
-| **Central Force Form** | `F_θ = (m/r)*d/dt(r²*θ_dot)` | When `F_θ = 0`, angular momentum `l = m*r²*θ_dot = const` |
-
+| **Unit Vectors** | $\hat{\mathbf{r}} = \cos\theta\hat{\mathbf{x}} + \sin\theta\hat{\mathbf{y}}$ | $\frac{d\hat{\mathbf{r}}}{dt} = \dot{\theta}\hat{\boldsymbol{\theta}}, \quad \frac{d\hat{\boldsymbol{\theta}}}{dt} = -\dot{\theta}\hat{\mathbf{r}}$ |
+| **Position** | $\mathbf{r} = r\,\hat{\mathbf{r}}$ | Magnitude $r$, orientation $\theta$ |
+| **Velocity** | $\mathbf{v} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\theta}\,\hat{\boldsymbol{\theta}}$ | $v^2 = \dot{r}^2 + r^2\dot{\theta}^2$ |
+| **Acceleration** | $\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\hat{\mathbf{r}} + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\hat{\boldsymbol{\theta}}$ | Centripetal $-r\dot{\theta}^2$, Coriolis $2\dot{r}\dot{\theta}$ |
+| **Central Force Form** | $F_\theta = \frac{m}{r}\frac{d}{dt}(r^2\dot{\theta})$ | When $F_\theta = 0$, $l = mr^2\dot{\theta} = \text{const}$ |
 
 ---
 
 ## 6. Worked Examples & Practice Problems
 
 ### Worked Example 3.1: Kinematics on an Archimedean Spiral
-**Problem**: A particle moves outward along an Archimedean spiral such that its polar coordinates as functions of time are:
-```
-r(t) = b * t
-θ(t) = ω * t
-```
-where `b` and `ω` are positive constants.
-(a) Find the velocity vector `v(t)` in polar coordinates and compute the particle's speed `|v(t)|`.
-(b) Find the acceleration vector `a(t)` and identify each of the four physical acceleration components.
+**Problem**: A particle moves outward along an Archimedean spiral:
+
+$$
+r(t) = bt, \qquad \theta(t) = \omega t
+$$
+
+Find the velocity and acceleration vectors, and identify each component.
 
 **Solution**:
 1. **Derivatives**:
-   `r_dot = b`, `r_ddot = 0`
-   `θ_dot = ω`, `θ_ddot = 0`
+   $\dot{r} = b, \quad \ddot{r} = 0$
+   $\dot{\theta} = \omega, \quad \ddot{\theta} = 0$
 
 2. **Velocity**:
-   ```
-   v = (r_dot)*r_hat + (r * θ_dot)*θ_hat = b * r_hat + (b*t * ω) * θ_hat
-   ```
-   The speed is:
-   ```
-   |v| = sqrt( (r_dot)² + (r*θ_dot)² ) = sqrt( b² + b²*ω²*t² ) = b * sqrt(1 + ω²*t²)
-   ```
-   At `t = 0`, the speed is purely radial: `|v| = b`. As `t -> ∞`, the tangential speed dominates.
+
+$$
+\mathbf{v}(t) = b\,\hat{\mathbf{r}} + b\omega t\,\hat{\boldsymbol{\theta}}
+$$
+
+$$
+|\mathbf{v}| = \sqrt{b^2 + b^2\omega^2 t^2} = b\sqrt{1 + \omega^2 t^2}
+$$
 
 3. **Acceleration**:
-   Recall the general polar acceleration formula:
-   ```
-   a = [ r_ddot - r*(θ_dot)² ] * r_hat + [ r*θ_ddot + 2*r_dot*θ_dot ] * θ_hat
-   ```
-   Substitute our values:
-   * Radial component: `a_r = 0 - (b*t)*(ω)² = -b*ω²*t` (Pure centripetal acceleration!)
-   * Azimuthal component: `a_θ = (b*t)*(0) + 2*(b)*(ω) = 2*b*ω` (Pure Coriolis acceleration!)
-   ```
-   a(t) = (-b*ω²*t) * r_hat + (2*b*ω) * θ_hat
-   ```
-**Physical Insight**: Even though the particle's angular acceleration is zero (`θ_ddot = 0`), there is a constant non-zero tangential acceleration `2*b*ω`. This is the Coriolis term: as the particle moves radially outward at speed `b`, the coordinate axis rotates beneath it at rate `ω`, requiring a tangential force to increase its tangential speed!
+
+$$
+a_r = \ddot{r} - r\dot{\theta}^2 = 0 - (bt)\omega^2 = -b\omega^2 t \quad \text{(Centripetal)}
+$$
+
+$$
+a_\theta = r\ddot{\theta} + 2\dot{r}\dot{\theta} = 0 + 2(b)(\omega) = 2b\omega \quad \text{(Coriolis)}
+$$
+
+$$
+\mathbf{a}(t) = (-b\omega^2 t)\,\hat{\mathbf{r}} + (2b\omega)\,\hat{\boldsymbol{\theta}}
+$$
 
 ---
 
-### Worked Example 3.2: The Conical Pendulum in Polar Coordinates
-**Problem**: A bob of mass `m` hangs from a light string of length `L` and moves in a horizontal circle at constant height. The string makes a constant angle `α` with the vertical. 
-Use polar coordinates in the horizontal plane to determine the orbital speed `v` and period `τ`.
+### Worked Example 3.2: The Conical Pendulum
+**Problem**: A bob of mass $m$ hangs on a string of length $L$ making constant angle $\alpha$ with the vertical, revolving in a horizontal circle of radius $R = L\sin\alpha$. Find orbital speed and period.
 
 **Solution**:
-In the horizontal plane, the radius of the circular orbit is `R = L * sin(α)`.
-Because the path is circular with constant radius, `r = R = const`, so `r_dot = 0` and `r_ddot = 0`.
-The forces acting on the bob are:
-* Gravity downward: `F_g = m*g`
-* Tension `T`: vertical component `T*cos(α)`, inward horizontal radial component `T*sin(α)`.
+Here $r = R = \text{const}$, so $\dot{r} = 0, \ddot{r} = 0$.
+Vertical equilibrium:
 
-Vertical equilibrium (`a_z = 0`):
-```
-T * cos(α) = m * g  ===>  T = m*g / cos(α)
-```
-Horizontal radial Newton's Second Law (`F_r = m * a_r`):
-```
--T * sin(α) = m * [ r_ddot - r*(θ_dot)² ] = -m * R * (θ_dot)²
-```
-Substitute `T = m*g / cos(α)` and `R = L*sin(α)`:
-```
-(m*g / cos(α)) * sin(α) = m * (L*sin(α)) * (θ_dot)²
-g * tan(α) = L * sin(α) * (θ_dot)²  ===>  θ_dot² = g / (L * cos(α))
-```
-The angular speed is `ω = θ_dot = sqrt( g / (L * cos(α)) )`.
-The orbital period is:
-```
-τ = 2*π / ω = 2*π * sqrt( (L * cos(α)) / g )
-```
+$$
+T\cos\alpha = mg \implies T = \frac{mg}{\cos\alpha}
+$$
+
+Horizontal radial Newton's Second Law ($F_r = m a_r$):
+
+$$
+-T\sin\alpha = -mR\dot{\theta}^2
+$$
+
+$$
+\left(\frac{mg}{\cos\alpha}\right)\sin\alpha = m(L\sin\alpha)\dot{\theta}^2 \implies \dot{\theta}^2 = \frac{g}{L\cos\alpha}
+$$
+
+Orbital period:
+
+$$
+\tau = \frac{2\pi}{\dot{\theta}} = 2\pi\sqrt{\frac{L\cos\alpha}{g}}
+$$
 
 ---
 
 ### Practice Problem 3.1 (To Solve)
-**Statement**: A bead slides along a smooth horizontal rod that rotates in a horizontal plane with constant angular velocity `ω` about a vertical pivot at one end. 
-(a) Set up the radial equation of motion for the bead.
-(b) Solve for `r(t)` given initial conditions `r(0) = r_0` and `r_dot(0) = 0`.
-* **Hint**: The rod is frictionless, so `F_r = 0`. Hence `r_ddot - r*ω² = 0`. The general solution is a sum of exponentials or hyperbolic cosine.
-* **Answer**: `r_ddot - ω²*r = 0 ===> r(t) = r_0 * cosh(ω*t)`.
+**Statement**: A bead slides along a frictionless rod rotating horizontally at constant angular speed $\omega$.
+Show that $r(t) = r_0\cosh(\omega t)$ given $r(0) = r_0$ and $\dot{r}(0) = 0$.
+* **Hint**: $F_r = 0 \implies \ddot{r} - \omega^2 r = 0$.
+* **Answer**: $\ddot{r} - \omega^2 r = 0 \implies r(t) = r_0\cosh(\omega t)$.
 
 ---
 
 ### Practice Problem 3.2 (To Solve)
-**Statement**: A particle moves in a plane with position given by `r(t) = r_0 * e^(k*t)` and `θ(t) = c*t`.
-Find the angle `ψ` between the velocity vector `v` and the radial unit vector `r_hat`. Show that this angle is constant in time.
-* **Hint**: `v_r = r_dot = k*r`, `v_θ = r*θ_dot = c*r`. Then `tan(ψ) = v_θ / v_r`.
-* **Answer**: `tan(ψ) = (c*r) / (k*r) = c / k = const  ===>  ψ = arctan(c / k)`. (This defines an equiangular logarithmic spiral).
+**Statement**: A particle moves in the plane with $r(t) = r_0 e^{kt}$ and $\theta(t) = ct$.
+Show that the angle $\psi$ between the velocity vector and the radial direction is constant.
+* **Hint**: $\tan\psi = v_\theta / v_r = (r\dot{\theta}) / \dot{r}$.
+* **Answer**: $\tan\psi = (c r) / (k r) = c / k \implies \psi = \arctan(c / k) = \text{const}$.
 
 ---
 
 ## 7. Exact Primary References
 * **Taylor, John R.**, *Classical Mechanics*, Chapter 1:
-  * Sections 1.6–1.7 (pp. 23–35): 2D Polar Coordinates, Kinematics, Centripetal & Coriolis terms.
-  * Problems 1.35, 1.40, 1.47 (pp. 40–42): Polar velocity and acceleration derivations.
+  * Sections 1.6–1.7 (pp. 23–35): 2D Polar Coordinates, Kinematics.
+  * Problems 1.35, 1.40, 1.47 (pp. 40–42).
 * **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
-  * Chapter 1: "Vectors and Kinematics" (Sections 1.8–1.9, Examples 1.10–1.12).
-* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
-  * Chapter 11: "Vectors" (Section 11.6 on circular and polar kinematics).
+  * Chapter 1: "Vectors and Kinematics" (Sections 1.8–1.9).

@@ -14,20 +14,25 @@ Ernst Mach and later Robert Woodhouse provided the operational definition that r
 
 Imagine two isolated particles, Particle 1 and Particle 2, floating in deep space with zero external forces acting on them. We allow them to interact—perhaps by a compressed spring between them, or an elastic collision.
 
-Experimentally, we measure their instantaneous accelerations `a_1` and `a_2`. We discover two universal facts:
+Experimentally, we measure their instantaneous accelerations $\mathbf{a}_1$ and $\mathbf{a}_2$. We discover two universal facts:
 1. Their accelerations are always directed in opposite directions:
-   ```
-   a_1 is anti-parallel to a_2
-   ```
+
+$$
+\mathbf{a}_1 \parallel -\mathbf{a}_2
+$$
+
 2. The ratio of their acceleration magnitudes is strictly constant:
-   ```
-   |a_1| / |a_2| = constant
-   ```
+
+$$
+\frac{|\mathbf{a}_1|}{|\mathbf{a}_2|} = \text{constant}
+$$
 
 We define this constant as the ratio of their **inertial masses**:
-```
-m_2 / m_1 = |a_1| / |a_2|
-```
+
+$$
+\frac{m_2}{m_1} = \frac{|\mathbf{a}_1|}{|\mathbf{a}_2|}
+$$
+
 **Mass is an intrinsic, scalar property of matter that quantifies its inertial reluctance to change velocity.**
 
 ---
@@ -35,49 +40,63 @@ m_2 / m_1 = |a_1| / |a_2|
 ## 2. Momentum and Newton's Second Law
 
 Linear momentum is defined as:
-```
-p = m * v = m * (dr/dt)
-```
+
+$$
+\mathbf{p} = m\mathbf{v} = m\frac{d\mathbf{r}}{dt}
+$$
+
 Newton's Second Law is fundamentally a statement about momentum:
 > **The time rate of change of momentum of a body is proportional to and in the direction of the net external impressed force:**
-> ```
-> F_net = dp/dt
-> ```
+
+$$
+\mathbf{F}_{\text{net}} = \frac{d\mathbf{p}}{dt}
+$$
 
 For a body with constant mass $m$:
-```
-F_net = d(m*v)/dt = m * (dv/dt) = m * (d²r/dt²) = m * a
-```
+
+$$
+\mathbf{F}_{\text{net}} = \frac{d(m\mathbf{v})}{dt} = m\frac{d\mathbf{v}}{dt} = m\frac{d^2\mathbf{r}}{dt^2} = m\mathbf{a}
+$$
 
 ### Second-Order Differential Equation
 Because acceleration is the second time derivative of position, Newton's second law is a system of second-order differential equations:
-```
-m * (d²r/dt²) = F(r, dr/dt, t)
-```
-To solve for the trajectory $r(t)$ uniquely, mathematics requires **two initial boundary conditions**:
-1. Initial position: `r(0) = r_0`
-2. Initial velocity: `v(0) = v_0`
+
+$$
+m\frac{d^2\mathbf{r}}{dt^2} = \mathbf{F}\left(\mathbf{r}, \frac{d\mathbf{r}}{dt}, t\right)
+$$
+
+To solve for the trajectory $\mathbf{r}(t)$ uniquely, mathematics requires **two initial boundary conditions**:
+1. Initial position: $\mathbf{r}(0) = \mathbf{r}_0$
+2. Initial velocity: $\mathbf{v}(0) = \mathbf{v}_0$
 
 ---
 
 ## 3. Newton's Third Law & Conservation of Momentum
 
 Newton's Third Law states:
-```
-F_12 = - F_21
-```
+
+$$
+\mathbf{F}_{12} = -\mathbf{F}_{21}
+$$
+
 Let us define the **Total Linear Momentum** of a two-particle isolated system:
-```
-P_total = p_1 + p_2
-```
+
+$$
+\mathbf{P}_{\text{total}} = \mathbf{p}_1 + \mathbf{p}_2
+$$
+
 Taking the time derivative:
-```
-dP_total / dt = dp_1/dt + dp_2/dt = F_12 + F_21 = 0
-```
+
+$$
+\frac{d\mathbf{P}_{\text{total}}}{dt} = \frac{d\mathbf{p}_1}{dt} + \frac{d\mathbf{p}_2}{dt} = \mathbf{F}_{12} + \mathbf{F}_{21} = \mathbf{0}
+$$
+
 Therefore:
-```
-P_total = constant
-```
+
+$$
+\mathbf{P}_{\text{total}} = \text{constant}
+$$
+
 > **The Principle of Conservation of Linear Momentum**:
 > **If the net external force on a system of particles is zero, the total linear momentum of the system remains strictly constant for all time.**
 > (In Chapter 7, Noether's Theorem will reveal that linear momentum is conserved because space is homogeneous under spatial translations).
@@ -88,90 +107,96 @@ P_total = constant
 
 | Concept | Formula | Core Takeaway |
 |---|---|---|
-| **Operational Mass** | `m_2 / m_1 = |a_1| / |a_2|` | Defined by mutually interacting acceleration ratios |
-| **Linear Momentum** | `p = m * v` | Vector quantity of motion |
-| **Newton's 2nd Law** | `F = dp/dt = m*d²r/dt²` | 2nd-order ODE; requires `r_0` and `v_0` to solve |
-| **Newton's 3rd Law** | `F_12 = -F_21` | Mutual forces are equal and opposite |
-| **Momentum Conservation**| `dP/dt = F_ext = 0` | Direct consequence of the 3rd Law |
-
+| **Operational Mass** | $\frac{m_2}{m_1} = \frac{\vert\mathbf{a}_1\vert}{\vert\mathbf{a}_2\vert}$ | Defined by mutually interacting acceleration ratios |
+| **Linear Momentum** | $\mathbf{p} = m\mathbf{v}$ | Vector quantity of motion |
+| **Newton's 2nd Law** | $\mathbf{F} = \frac{d\mathbf{p}}{dt} = m\ddot{\mathbf{r}}$ | 2nd-order ODE; requires $\mathbf{r}_0$ and $\mathbf{v}_0$ to solve |
+| **Newton's 3rd Law** | $\mathbf{F}_{12} = -\mathbf{F}_{21}$ | Mutual forces are equal and opposite |
+| **Momentum Conservation**| $\frac{d\mathbf{P}}{dt} = \mathbf{F}_{\text{ext}} = \mathbf{0}$ | Direct consequence of the 3rd Law |
 
 ---
 
 ## 5. Worked Examples & Practice Problems
 
 ### Worked Example 2.1: Operational Mass Ratio on an Air Track
-**Problem**: Two gliders of unknown masses `m_1` and `m_2` rest on a frictionless horizontal air track. A compressed spring is placed between them and released. High-speed photogates measure their accelerations during the release: glider 1 accelerates at `a_1 = -4.5 m/s²`, while glider 2 accelerates at `a_2 = +1.5 m/s²`. 
-(a) What is the mass ratio `m_2 / m_1`?
-(b) If glider 1 is a standard calibrated mass of `m_1 = 0.200 kg`, what is the exact mass `m_2`?
+**Problem**: Two gliders of unknown masses $m_1$ and $m_2$ rest on a frictionless horizontal air track. A compressed spring is placed between them and released. Photogates measure their accelerations: glider 1 accelerates at $a_1 = -4.5\text{ m/s}^2$, while glider 2 accelerates at $a_2 = +1.5\text{ m/s}^2$. 
+(a) What is the mass ratio $m_2 / m_1$?
+(b) If glider 1 is calibrated at $m_1 = 0.200\text{ kg}$, what is $m_2$?
 
 **Solution**:
-By Mach's operational definition of inertial mass and Newton's Third Law:
-The force exerted by the spring on glider 1 is `F_12` and on glider 2 is `F_21`.
-Since the spring is massless, `F_12 = -F_21`.
-Applying Newton's Second Law:
-```
-m_1 * a_1 = - m_2 * a_2
-```
-(a) Taking the magnitudes:
-```
-m_2 / m_1 = |a_1| / |a_2| = 4.5 / 1.5 = 3.0
-```
+By Newton's Third Law and Mach's definition:
+
+$$
+m_1 a_1 = -m_2 a_2
+$$
+
+(a) Taking magnitudes:
+
+$$
+\frac{m_2}{m_1} = \frac{|a_1|}{|a_2|} = \frac{4.5}{1.5} = 3.0
+$$
+
 Glider 2 is precisely three times as massive as glider 1.
-(b) Since `m_1 = 0.200 kg`:
-```
-m_2 = 3.0 * m_1 = 3.0 * 0.200 kg = 0.600 kg
-```
-**Physical Insight**: Notice that we did not need to know the spring constant `k`, the duration of contact, or the force in Newtons. Mass is purely the reciprocal ratio of mutual accelerations.
+(b) Since $m_1 = 0.200\text{ kg}$:
+
+$$
+m_2 = 3.0 \times 0.200\text{ kg} = 0.600\text{ kg}
+$$
 
 ---
 
 ### Worked Example 2.2: Integrating a Time-Dependent Force
-**Problem**: A particle of mass `m` is at rest at the origin (`x = 0, v = 0`) at time `t = 0`. It is subjected to a time-dependent force `F(t) = F_0 * sin(ω*t)`. 
-Find the velocity `v(t)` and position `x(t)` for all future time.
+**Problem**: A particle of mass $m$ is at rest at the origin ($x = 0, v = 0$) at time $t = 0$. It is subjected to a force $F(t) = F_0\sin(\omega t)$. 
+Find the velocity $v(t)$ and position $x(t)$ for all future time.
 
 **Solution**:
-Newton's Second Law is:
-```
-m * (dv/dt) = F_0 * sin(ω*t)
-```
-Separate variables and integrate with initial condition `v(0) = 0`:
-```
-v(t) = (F_0 / m) * ∫_0^t sin(ω*t') dt' = (F_0 / (m*ω)) * [ -cos(ω*t') ]_0^t
-v(t) = (F_0 / (m*ω)) * ( 1 - cos(ω*t) )
-```
-Notice that since `1 - cos(ω*t) ≥ 0`, the velocity is **always positive or zero**—the particle never moves backward!
-Now integrate velocity to find position `x(t)` with `x(0) = 0`:
-```
-x(t) = ∫_0^t v(t') dt' = (F_0 / (m*ω)) * ∫_0^t (1 - cos(ω*t')) dt'
-x(t) = (F_0 / (m*ω)) * [ t - (1/ω)*sin(ω*t) ]
-```
-The motion consists of a constant average drift velocity `v_avg = F_0 / (m*ω)` plus an oscillatory ripple!
+Newton's Second Law:
+
+$$
+m\frac{dv}{dt} = F_0\sin(\omega t)
+$$
+
+Integrating with $v(0) = 0$:
+
+$$
+v(t) = \frac{F_0}{m}\int_0^t \sin(\omega t')\,dt' = \frac{F_0}{m\omega}\Big[ -\cos(\omega t') \Big]_0^t = \frac{F_0}{m\omega}(1 - \cos(\omega t))
+$$
+
+Notice that since $1 - \cos(\omega t) \ge 0$, the velocity is **always positive or zero**—the particle never reverses direction.
+Now integrate velocity to find position with $x(0) = 0$:
+
+$$
+x(t) = \int_0^t v(t')\,dt' = \frac{F_0}{m\omega}\int_0^t (1 - \cos(\omega t'))\,dt' = \frac{F_0}{m\omega}\left[ t - \frac{1}{\omega}\sin(\omega t) \right]
+$$
 
 ---
 
 ### Practice Problem 2.1 (To Solve)
-**Statement**: A block of mass `m` slides on a flat surface. It experiences an initial velocity `v_0` at `t = 0` and a velocity-dependent retarding force `F = -k * v²` (where `k` is a positive constant). 
-(a) Find the velocity `v(t)` as a function of time.
-(b) Does the block come to rest in a finite time? Explain physically.
-* **Hint**: Separate variables: `m * dv/dt = -k * v²  ===>  ∫ v^(-2) dv = -(k/m) ∫ dt`.
-* **Answer**: `v(t) = v_0 / (1 + (k*v_0 / m)*t)`. As `t -> ∞`, `v(t) -> 0`, but it technically never reaches zero in finite time because as speed drops, the retarding force decreases quadratically!
+**Statement**: A block of mass $m$ slides on a flat surface with initial velocity $v_0$ at $t = 0$ against a quadratic retarding force $F = -k v^2$. 
+Find the velocity $v(t)$ as a function of time, and determine if it stops in finite time.
+* **Hint**: Separate variables: $m\frac{dv}{dt} = -kv^2 \implies \int v^{-2} dv = -\frac{k}{m}\int dt$.
+* **Answer**: $v(t) = \frac{v_0}{1 + \frac{kv_0}{m}t}$. As $t \to \infty$, $v(t) \to 0$, but it technically never reaches zero in finite time.
 
 ---
 
 ### Practice Problem 2.2 (To Solve)
-**Statement**: Three interacting particles with masses `m_1, m_2, m_3` exert mutual gravitational forces on each other: `F_ij = -G*m_i*m_j*(r_i - r_j) / |r_i - r_j|³`.
-Prove explicitly that the sum of all internal forces `Σ_i Σ_{j≠i} F_ij` equals zero, confirming that total linear momentum is strictly conserved.
-* **Hint**: Expand the sum for `i, j ∈ {1, 2, 3}` and pair `F_12 + F_21`, `F_13 + F_31`, and `F_23 + F_32`.
-* **Answer**: Each pair has `(r_i - r_j) = -(r_j - r_i)` and `|r_i - r_j| = |r_j - r_i|`, so each pair sums identically to the zero vector.
+**Statement**: Three interacting particles with masses $m_1, m_2, m_3$ exert mutual gravitational forces on each other: 
+
+$$
+\mathbf{F}_{ij} = -\frac{Gm_i m_j}{|\mathbf{r}_i - \mathbf{r}_j|^3}(\mathbf{r}_i - \mathbf{r}_j)
+$$
+
+Prove explicitly that the sum of all internal forces $\sum_i \sum_{j \ne i} \mathbf{F}_{ij}$ vanishes.
+* **Hint**: Expand the sum for $i, j \in \{1, 2, 3\}$ and group action-reaction pairs $\mathbf{F}_{12} + \mathbf{F}_{21}$.
+* **Answer**: Because $(\mathbf{r}_i - \mathbf{r}_j) = -(\mathbf{r}_j - \mathbf{r}_i)$, each pair cancels to zero identically.
 
 ---
 
 ## 6. Exact Primary References
 * **Taylor, John R.**, *Classical Mechanics*, Chapter 1:
   * Sections 1.3–1.5 (pp. 11–23): Mass, Force, Newton's 2nd and 3rd Laws, Momentum Conservation.
-  * Problems 1.12, 1.18, 1.22 (pp. 37–39): Forces, equations of motion, momentum conservation.
+  * Problems 1.12, 1.18, 1.22 (pp. 37–39).
 * **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
-  * Chapter 9: "Newton's Laws of Dynamics" (Sections 9.1–9.4 on force and acceleration).
-  * Chapter 11: "Vectors" (Section 11.4 on the 3rd law and momentum).
+  * Chapter 9: "Newton's Laws of Dynamics" (Sections 9.1–9.4).
+  * Chapter 11: "Vectors" (Section 11.4).
 * **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
   * Chapter 2: "Newton's Laws" (Sections 2.1–2.4).
