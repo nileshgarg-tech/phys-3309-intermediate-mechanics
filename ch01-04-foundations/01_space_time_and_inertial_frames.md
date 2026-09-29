@@ -111,3 +111,91 @@ a' = dv'/dt = a
 | **Newton's 1st Law** | If `F_net = 0` then `v = const` | Defines inertial reference frames |
 | **Galilean Boost** | `r' = r - V*t`, `t' = t` | Coordinate mapping between moving frames |
 | **Galilean Invariance** | `a' = a` and `F' = F` | Laws of mechanics are identical in all inertial frames |
+
+
+---
+
+## 6. Worked Examples & Practice Problems
+
+### Worked Example 1.1: The Accelerating Railcar & The Fictitious Incline
+**Problem**: A pendulum of mass `m` hangs from the ceiling of a railroad car that is accelerating horizontally down a straight track with constant acceleration `a`. An observer inside the car and an observer on the ground analyze the equilibrium angle `θ` that the string makes with the vertical. Show that both observers deduce the exact same formula for `θ`, and explain how their reasoning differs fundamentally.
+
+**Solution**:
+1. **Ground Observer (Inertial Frame S)**:
+   The ground observer sees the bob accelerating horizontally at `a` alongside the train.
+   The real forces acting on the bob are:
+   * Gravity downward: `F_g = -m*g * y_hat`
+   * String tension along the string at angle `θ`: `T = -T*sin(θ)*x_hat + T*cos(θ)*y_hat`
+   Applying Newton's Second Law `F_net = m*a`:
+   * Vertical equilibrium (`a_y = 0`): `T * cos(θ) - m*g = 0  ===>  T * cos(θ) = m*g`
+   * Horizontal acceleration (`a_x = a`): `T * sin(θ) = m*a`
+   Dividing the horizontal equation by the vertical equation:
+   ```
+   tan(θ) = (m*a) / (m*g) = a / g   ===>   θ = arctan(a / g)
+   ```
+
+2. **Train Observer (Non-Inertial Frame S')**:
+   To the observer in the train, the bob hangs stationary at rest (`a' = 0`).
+   However, Newton's 1st law fails unless the observer invents an inertial fictitious force pointing opposite to the frame's acceleration:
+   ```
+   F_inertial = -m * a * x_hat
+   ```
+   In the train frame, statics requires:
+   `T * sin(θ) - m*a = 0  ===>  T * sin(θ) = m*a`
+   `T * cos(θ) - m*g = 0  ===>  T * cos(θ) = m*g`
+   Dividing again yields:
+   ```
+   tan(θ) = a / g
+   ```
+**Physical Insight**: Both observers measure the exact same physical tilt `θ = arctan(a/g)`. The inertial observer explains it as the horizontal component of tension supplying the required acceleration. The accelerating observer explains it as tension balancing gravity and the fictitious inertial force.
+
+---
+
+### Worked Example 1.2: Galilean Velocity Transformation
+**Problem**: A river flows due east with speed `V = 3 m/s` relative to the bank. A swimmer moves through the water at a constant swimming speed `v' = 5 m/s` relative to the water. 
+(a) In what direction must the swimmer point their body to cross the river perpendicularly (due north)?
+(b) What is their resulting crossing speed measured by an observer on the bank?
+
+**Solution**:
+Let frame `S` be the riverbank and frame `S'` be the flowing river.
+The Galilean velocity relation states: `v = v' + V`.
+Here `V = 3 * x_hat` (east). We desire the net velocity `v` relative to the bank to point due north: `v = v_y * y_hat` (with `v_x = 0`).
+The swimmer's velocity relative to the water is `v' = -v'*sin(φ)*x_hat + v'*cos(φ)*y_hat`, where `φ` is the angle pointed upstream (west of north).
+Equating horizontal components:
+```
+v_x = -v' * sin(φ) + V = 0  ===>  sin(φ) = V / v' = 3 / 5 = 0.6
+φ = arcsin(0.6) ≈ 36.87° west of north
+```
+The resulting crossing speed is:
+```
+v_y = v' * cos(φ) = 5 * cos(36.87°) = 5 * 0.8 = 4 m/s
+```
+
+---
+
+### Practice Problem 1.1 (To Solve)
+**Statement**: A stone is dropped from rest from the top of an elevator of height `h = 3 m`. At the exact instant the stone is released, the elevator begins accelerating upward with a constant acceleration `a = 2 m/s²`. 
+Find the time `t` required for the stone to hit the elevator floor, and compare it to the time if the elevator were at rest.
+* **Hint**: Work in the elevator's frame where the effective downward acceleration is `g_eff = g + a`.
+* **Answer**: `t = sqrt(2*h / (g + a)) = sqrt(6 / 11.8) ≈ 0.713 s` (compared to `t_rest = sqrt(2*h/g) ≈ 0.782 s`).
+
+---
+
+### Practice Problem 1.2 (To Solve)
+**Statement**: In an inertial frame `S`, an object moves along a trajectory given by `r(t) = (A*cos(ω*t), A*sin(ω*t), v_0*t)`. 
+(a) Show that the speed of the object is constant.
+(b) Find the acceleration vector and show that it always points perpendicular to the velocity vector.
+* **Hint**: Differentiate component-wise and compute the dot product `v · a`.
+* **Answer**: `v(t) = (-A*ω*sin(ω*t), A*ω*cos(ω*t), v_0) ===> |v| = sqrt(A²*ω² + v_0²) = const`. Acceleration `a(t) = -A*ω²*(cos(ω*t), sin(ω*t), 0)`. Notice `v · a = A²*ω³*sin(ω*t)*cos(ω*t) - A²*ω³*cos(ω*t)*sin(ω*t) + 0 = 0`.
+
+---
+
+## 7. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 1:
+  * Sections 1.1–1.2 (pp. 3–11): Space, Time, and Reference Frames.
+  * Problems 1.4, 1.7 (pp. 36–37): Inertial reference frames and Galilean invariance.
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 8: "Motion" (Sections 8.1–8.4).
+  * Chapter 10: "Conservation of Momentum" (Section 10.1 on the concept of inertia).
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 1: "Vectors and Kinematics" (Sections 1.1–1.7).

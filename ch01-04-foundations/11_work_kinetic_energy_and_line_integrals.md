@@ -100,3 +100,94 @@ Notice:
 | **Work-Energy Theorem** | `W_net = ΔT` | Net work directly dictates speed change |
 | **Instantaneous Power** | `P = dW/dt = F · v` | Rate of energy transfer |
 | **Perpendicular Forces** | If `F ⊥ v`, then `P = 0` | Cannot change speed (e.g. magnetic fields) |
+
+
+---
+
+## 6. Worked Examples & Practice Problems
+
+### Worked Example 11.1: Path-Dependent Work (Non-Conservative Force)
+**Problem**: A particle in the $xy$-plane is acted upon by a 2D force field:
+```
+F(x, y) = y * x_hat + 2*x * y_hat
+```
+Calculate the work done by this force in moving the particle from the origin `(0, 0)` to the point `(1, 1)` along two different paths:
+(a) Path 1: A straight line `y = x`.
+(b) Path 2: A parabola `y = x²`.
+Is this force conservative?
+
+**Solution**:
+The work integral is:
+```
+W = ∫ F · dr = ∫ (F_x dx + F_y dy) = ∫ (y dx + 2*x dy)
+```
+
+(a) **Path 1 (Straight line `y = x`, so `dy = dx`)**:
+Substitute `y = x` and `dy = dx` as `x` goes from 0 to 1:
+```
+W_1 = ∫_0^1 [ (x) dx + 2*x (dx) ] = ∫_0^1 3*x dx = [ (3/2)*x² ]_0^1 = 3 / 2 = 1.5 Joules
+```
+
+(b) **Path 2 (Parabola `y = x²`, so `dy = 2*x dx`)**:
+Substitute `y = x²` and `dy = 2*x dx` as `x` goes from 0 to 1:
+```
+W_2 = ∫_0^1 [ (x²) dx + 2*x (2*x dx) ] = ∫_0^1 (x² + 4*x²) dx = ∫_0^1 5*x² dx
+    = [ (5/3)*x³ ]_0^1 = 5 / 3 ≈ 1.67 Joules
+```
+**Conclusion**:
+Because `W_1 ≠ W_2` (1.5 J vs 1.67 J), **the work depends explicitly on the path taken!**
+Therefore, the force is **non-conservative**. 
+*(In Module 12 we confirm this via the curl: `(∇ x F)_z = ∂F_y/∂x - ∂F_x/∂y = 2 - 1 = 1 ≠ 0`)*.
+
+---
+
+### Worked Example 11.2: Accelerating Under Constant Power
+**Problem**: An electric vehicle of mass `m` accelerates from rest along a straight horizontal track. The motor delivers a constant mechanical power output `P`. 
+Assuming no friction or drag, find the vehicle's speed `v(t)` and distance `x(t)` as functions of time.
+
+**Solution**:
+Power is the time rate of change of kinetic energy:
+```
+P = dT / dt = d/dt [ (1/2) * m * v² ]
+```
+Since power `P` is constant, integrate with respect to time starting from rest (`v(0) = 0`):
+```
+(1/2) * m * v(t)² = P * t  ===>  v(t)² = (2 * P * t) / m
+```
+Taking the square root:
+```
+v(t) = sqrt( (2 * P / m) ) * t^(1/2)
+```
+Now integrate velocity `v = dx/dt` to find distance `x(t)` with `x(0) = 0`:
+```
+x(t) = ∫_0^t v(t') dt' = sqrt(2*P / m) * ∫_0^t (t')^(1/2) dt'
+     = sqrt(2*P / m) * (2/3) * t^(3/2) = (2/3) * sqrt( (2 * P / m) ) * t^(3/2)
+```
+**Physical Insight**: Unlike constant force acceleration (where `v ∝ t` and `x ∝ t²`), constant power gives `v ∝ t^(1/2)` and `x ∝ t^(3/2)`. The acceleration is infinite at `t = 0` and decreases over time as speed builds up.
+
+---
+
+### Practice Problem 11.1 (To Solve)
+**Statement**: A particle of mass `m` moves in 3D under the linear restoring force `F = -k * r = -k*(x*x_hat + y*y_hat + z*z_hat)`.
+Calculate the work done along a helical path given by `r(t) = (R*cos(t), R*sin(t), c*t)` as `t` goes from `0` to `2*π`.
+* **Hint**: `dr = (-R*sin(t), R*cos(t), c) dt`. Compute `F · dr = -k * (x dx + y dy + z dz) = -k * d( (x² + y² + z²)/2 )`.
+* **Answer**: `W = -k/2 * [ (R² + c²*(2π)²) - (R² + 0) ] = -2 * π² * k * c²`. (Work depends only on the endpoints!).
+
+---
+
+### Practice Problem 11.2 (To Solve)
+**Statement**: A block of mass `m = 2.0 kg` is pressed against a non-linear spring with restoring force `F(x) = -k*x - β*x³`, where `k = 400 N/m` and `β = 1000 N/m³`. 
+The spring is compressed by `x_0 = 0.10 m` and released. Find the launch speed `v` of the block as it leaves the spring at `x = 0`.
+* **Hint**: Use the Work-Energy Theorem: `(1/2)*m*v² = W_spring = ∫_{-x_0}^0 (-k*x - β*x³) dx`.
+* **Answer**: `W = (1/2)*k*x_0² + (1/4)*β*x_0⁴ = (0.5)*(400)*(0.01) + (0.25)*(1000)*(0.0001) = 2.0 + 0.025 = 2.025 J`. Launch speed `v = sqrt(2 * 2.025 / 2.0) ≈ 1.423 m/s`.
+
+---
+
+## 7. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 4:
+  * Section 4.1 (pp. 114–119): Kinetic Energy and Work, Line Integrals, 3D Work-Energy Theorem.
+  * Problems 4.2, 4.5, 4.9 (pp. 164–165): Line integral work calculations along various geometric paths.
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 13: "Work and Potential Energy (A)" (Sections 13.1–13.3).
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 5: "Work and Energy" (Sections 5.1–5.3).

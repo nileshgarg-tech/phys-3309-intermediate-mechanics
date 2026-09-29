@@ -98,3 +98,94 @@ This is the First Law of Thermodynamics, born directly from the multiparticle me
 | **Multiparticle Potential**| `U = Σ U_ext + Σ_{j<k} U_jk` | Pairwise internal interaction sum |
 | **Rigid Body Limit** | `|r_j - r_k| = const ===> U_int = const` | Rigid bodies ignore internal potentials |
 | **First Law of Thermo** | `W_nc = ΔE_thermal` | Dissipation is conversion to microscopic kinetic energy |
+
+
+---
+
+## 6. Worked Examples & Practice Problems
+
+### Worked Example 15.1: Vibrations of a Diatomic Molecule
+**Problem**: A diatomic molecule (such as Carbon Monoxide, CO) consists of two atoms of masses `m_1 = 12 amu` and `m_2 = 16 amu` bonded by an effective spring of stiffness `k = 1900 N/m`. (`1 amu ≈ 1.66 x 10^-27 kg`).
+(a) Find the reduced mass `μ` of the molecule.
+(b) Find the natural vibrational frequency `f` (in Hertz) of the molecule.
+
+**Solution**:
+(a) Reduced mass:
+```
+μ = (m_1 * m_2) / (m_1 + m_2) = (12 * 16) / (12 + 16) = 192 / 28 ≈ 6.857 amu
+μ = 6.857 * (1.66 x 10^-27 kg) ≈ 1.138 x 10^-26 kg
+```
+Notice that the reduced mass `μ` is smaller than either individual atomic mass!
+
+(b) Vibrational frequency:
+By the two-body decoupling theorem, the internal relative motion is identical to a single particle of mass `μ` attached to a fixed wall by spring `k`:
+```
+ω = sqrt( k / μ ) = sqrt( 1900 / (1.138 x 10^-26) ) = sqrt( 1.67 x 10^29 ) ≈ 6.43 x 10^14 rad/s
+```
+Frequency in Hertz:
+```
+f = ω / (2*π) ≈ (6.43 x 10^14) / 6.283 ≈ 1.02 x 10^14 Hz
+```
+This frequency lies in the **infrared spectrum** ($\lambda = c/f pprox 2.9\,\mu	ext{m}$), exactly matching experimental infrared absorption spectroscopy!
+
+---
+
+### Worked Example 15.2: Inelastic Collision & Thermal Dissipation
+**Problem**: A block of mass `m_1 = 2.0 kg` moving at `v_1 = 6.0 m/s` collides head-on with a stationary block of mass `m_2 = 4.0 kg`. The blocks stick together upon impact.
+(a) Find their final common velocity `V_f`.
+(b) Calculate the mechanical energy lost during the collision.
+(c) Where did this lost mechanical energy go?
+
+**Solution**:
+(a) Conservation of linear momentum:
+```
+m_1 * v_1 + m_2 * (0) = (m_1 + m_2) * V_f
+V_f = (m_1 * v_1) / (m_1 + m_2) = (2.0 * 6.0) / (2.0 + 4.0) = 12.0 / 6.0 = 2.0 m/s
+```
+
+(b) Mechanical Energy calculation:
+* Initial kinetic energy:
+  ```
+  T_initial = (1/2) * m_1 * v_1² = (0.5) * (2.0) * (6.0)² = 36.0 Joules
+  ```
+* Final kinetic energy:
+  ```
+  T_final = (1/2) * (m_1 + m_2) * V_f² = (0.5) * (6.0) * (2.0)² = 12.0 Joules
+  ```
+* Lost mechanical energy:
+  ```
+  ΔE_mech = T_final - T_initial = 12.0 - 36.0 = - 24.0 Joules
+  ```
+Exactly **24 Joules (66.7%) of mechanical kinetic energy was lost!**
+
+(c) **Thermal Dissipation**:
+By the First Law of Thermodynamics, the total energy of the universe is conserved:
+`ΔE_thermal = -ΔE_mech = +24.0 J`.
+The mechanical bulk kinetic energy was transferred into random thermal vibration of the lattice atoms, slightly warming the combined block!
+
+---
+
+### Practice Problem 15.1 (To Solve)
+**Statement**: Three equal point stars of mass `m` are located at the vertices of an equilateral triangle of side length `L`.
+Find the total gravitational potential energy `U_total` of the three-star system.
+* **Hint**: Use `U_total = Σ_{j < k} U_jk = U_12 + U_13 + U_23`.
+* **Answer**: All 3 pairs have separation `L`. `U_total = - (G*m² / L) - (G*m² / L) - (G*m² / L) = - 3 * (G*m² / L)`.
+
+---
+
+### Practice Problem 15.2 (To Solve)
+**Statement**: Two carts of masses `m_1` and `m_2` are connected by a spring of stiffness `k` and placed on a frictionless horizontal air track. Cart 1 is given an initial velocity `v_0` towards cart 2 which is at rest.
+Find the maximum compression `x_max` of the spring during the subsequent motion.
+* **Hint**: At maximum compression, both carts move with the same Center of Mass velocity `V_cm = m_1*v_0 / (m_1 + m_2)`. The kinetic energy of relative motion `(1/2)*μ*v_rel²` is completely converted into spring potential energy `(1/2)*k*x_max²`.
+* **Answer**: `x_max = v_0 * sqrt(μ / k) = v_0 * sqrt( (m_1 * m_2) / (k * (m_1 + m_2)) )`.
+
+---
+
+## 7. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 4:
+  * Sections 4.9–4.10 (pp. 152–163): Energy of Interaction of Two Particles, Multiparticle Systems, Rigid Body Potential Energy.
+  * Problems 4.48, 4.52, 4.55 (pp. 172–174): Two-body reduced mass energy and thermal dissipation.
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 14: "Work and Potential Energy (Conclusion)" (Section 14.6 on thermal energy conservation).
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 5: "Work and Energy" (Sections 5.10–5.11).

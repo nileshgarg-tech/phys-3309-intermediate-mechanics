@@ -108,3 +108,97 @@ Let us compute the ratio for three familiar objects in air:
 | **Linear Drag** | `f_lin = b * v` | Viscous shearing of laminar fluid layers | Microscopic objects, low speeds, thick liquids ($R \ll 1$) |
 | **Quadratic Drag**| `f_quad = c * v²` | Pushing fluid mass aside; turbulent trailing wake | Macroscopic projectiles, sports balls, vehicles ($R \gg 1000$) |
 | **Ratio** | `f_quad / f_lin ≈ 1600 * D * v` | Compares inertial to viscous forces | Crossover occurs at `D * v ≈ 6 x 10^-4 m²/s` |
+
+
+---
+
+## 6. Worked Examples & Practice Problems
+
+### Worked Example 4.1: Reynolds Number of a Falling Raindrop vs. Baseball
+**Problem**: In air at standard temperature and pressure:
+* Air density: `ρ = 1.2 kg/m³`
+* Viscosity: `η = 1.8 x 10^-5 N·s/m²`
+* Linear drag coefficient: `β ≈ 1.6 x 10^-4 N·s/m²`
+* Quadratic drag coefficient: `γ ≈ 0.25 N·s²/m⁴`
+
+Calculate the ratio of quadratic to linear drag force `f_quad / f_lin` for:
+(a) A regulation baseball (`D = 0.074 m`) thrown at `v = 40 m/s` (90 mph).
+(b) A tiny mist droplet (`D = 10 μm = 10^-5 m`) settling at `v = 1 mm/s = 10^-3 m/s`.
+
+**Solution**:
+Recall the force ratio formula:
+```
+f_quad / f_lin = (c * v²) / (b * v) = (γ * D² * v²) / (β * D * v) = (γ / β) * D * v
+(γ / β) ≈ 0.25 / (1.6 x 10^-4) ≈ 1,560 s/m²
+```
+
+(a) **For the baseball**:
+```
+f_quad / f_lin ≈ 1,560 * (0.074 m) * (40 m/s) ≈ 4,618
+```
+**Quadratic drag is 4,600 times larger than linear drag!** 
+Linear drag contributes less than 0.02% to the total resistive force. Modeling baseballs with linear drag produces nonsensical physical results.
+
+(b) **For the mist droplet**:
+```
+f_quad / f_lin ≈ 1,560 * (10^-5 m) * (10^-3 m/s) ≈ 1.56 x 10^-5
+```
+**Linear drag is 64,000 times larger than quadratic drag!**
+Here, the turbulent wake is non-existent, and Stokes' linear viscous friction completely governs the settling velocity.
+
+---
+
+### Worked Example 4.2: Horizontal Coasting with Pure Quadratic Drag
+**Problem**: A racing cyclist and bicycle have a combined mass `m = 75 kg`. At high speeds (`v > 10 m/s`), drag is dominated by quadratic air resistance with `c = 0.20 N·s²/m²`. 
+The cyclist stops pedaling while coasting on a level road at initial speed `v_0 = 15 m/s`. 
+Neglecting road rolling friction, how far does the cyclist travel before slowing down to `v = 5 m/s`?
+
+**Solution**:
+Newton's Second Law for horizontal motion with pure quadratic drag is:
+```
+m * (dv/dt) = - c * v²
+```
+We want distance `x`, so use the chain rule `dv/dt = (dv/dx)*(dx/dt) = v * (dv/dx)`:
+```
+m * v * (dv/dx) = - c * v²  ===>  m * (dv/dx) = - c * v
+```
+Separate variables:
+```
+∫_{v_0}^v (1 / v') dv' = - (c / m) ∫_0^x dx'
+ln(v / v_0) = - (c / m) * x
+```
+Solving for distance `x`:
+```
+x = (m / c) * ln(v_0 / v)
+```
+Substitute numerical values (`m = 75 kg`, `c = 0.20 N·s²/m²`, `v_0 = 15 m/s`, `v = 5 m/s`):
+```
+x = (75 / 0.20) * ln(15 / 5) = 375 * ln(3) ≈ 375 * 1.0986 ≈ 412 meters
+```
+
+---
+
+### Practice Problem 4.1 (To Solve)
+**Statement**: A steel sphere of density `ρ_steel = 7800 kg/m³` is dropped in air. 
+Find the critical diameter `D_crit` at which the linear and quadratic drag forces are exactly equal when the sphere moves at `v = 1 m/s`.
+* **Hint**: Set `f_lin = f_quad ===> β * D = γ * D² * v`.
+* **Answer**: `D_crit = β / (γ * v) ≈ (1.6 x 10^-4) / (0.25 * 1.0) ≈ 6.4 x 10^-4 m = 0.64 mm`.
+
+---
+
+### Practice Problem 4.2 (To Solve)
+**Statement**: For an object subjected to both linear and quadratic drag moving in 1D: `m * dv/dt = -b*v - c*v²`.
+Show that the time required for speed to decrease from `v_0` to `v` is given by:
+`t = (m / b) * ln[ (v_0 / v) * (b + c*v) / (b + c*v_0) ]`.
+* **Hint**: Use partial fractions: `1 / (v * (b + c*v)) = (1/b) * [ 1/v - c / (b + c*v) ]`.
+* **Answer**: Integrate `∫ dv / [v*(b + c*v)] = -(1/m) ∫ dt`. The partial fractions integrate directly to the logarithmic expression above.
+
+---
+
+## 7. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 2:
+  * Section 2.1 (pp. 43–48): Air Resistance, Linear vs. Quadratic Drag, Reynolds Number.
+  * Problems 2.1, 2.4, 2.6 (pp. 73–74): Quantitative drag comparisons.
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 41: "The Flow of Wet Water" (Section 41.1 on viscosity and Reynolds number).
+* **Purcell, Edward M.**, *Life at Low Reynolds Number*, Am. J. Phys. 45, 3–11 (1977).

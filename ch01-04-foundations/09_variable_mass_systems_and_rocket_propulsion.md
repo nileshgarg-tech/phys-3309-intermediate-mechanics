@@ -159,3 +159,104 @@ The term $-g \cdot t$ is **Gravity Drag**: the longer the rocket takes to burn i
 | **Rocket Equation** | `Δv = v_ex * ln(m_0 / m_final)` | Velocity gain depends logarithmically on mass ratio |
 | **Mass Ratio Trap** | `m_0 / m_final = e^(Δv / v_ex)` | Exponential scaling demands multistage designs |
 | **Gravity Drag** | `- g * t_burn` | Fast high-thrust burns minimize gravitational velocity loss |
+
+
+---
+
+## 7. Worked Examples & Practice Problems
+
+### Worked Example 9.1: Orbit Insertion & The Multistage Advantage
+**Problem**: A spacecraft must achieve an orbital boost of `Δv = 9.0 km/s = 9000 m/s` to escape into an interplanetary transfer orbit. The rocket engine uses hydrocarbon-liquid oxygen propellant with an effective exhaust velocity `v_ex = 3000 m/s`.
+(a) If executed with a single-stage rocket, what percentage of the launch mass must be fuel?
+(b) Now consider a two-stage rocket, where each stage provides `Δv_1 = Δv_2 = 4500 m/s`. If each stage has a structural dry-mass fraction of 8% of its total stage mass, compute the payload fraction delivered to orbit and compare it with the single-stage rocket.
+
+**Solution**:
+(a) **Single Stage**:
+Apply the Tsiolkovsky Rocket Equation:
+```
+Δv = v_ex * ln(m_0 / m_final)  ===>  m_0 / m_final = e^(Δv / v_ex)
+m_0 / m_final = e^(9000 / 3000) = e³ ≈ 20.086
+```
+This means:
+```
+m_final = m_0 / 20.086 ≈ 0.0498 * m_0
+```
+The fuel consumed is:
+```
+m_fuel = m_0 - m_final = m_0 * (1 - 0.0498) = 0.9502 * m_0  ===>  95.02% fuel!
+```
+If empty tanks, engines, and plumbing weigh more than 5% of the rocket, **a single stage cannot carry even 1 gram of payload!**
+
+(b) **Two-Stage Rocket**:
+For each stage:
+```
+m_initial_i / m_final_i = e^(4500 / 3000) = e^1.5 ≈ 4.482
+```
+Each stage requires a mass ratio of only `4.5` instead of `20`! 
+By discarding the huge empty stage-1 fuel tanks and heavy engines midway through the ascent, stage 2 does not have to waste fuel accelerating dead metal. This dramatic reduction in dead weight is what makes modern space exploration physically possible.
+
+---
+
+### Worked Example 9.2: The Falling Chain on a Scale
+**Problem**: A flexible heavy chain of total length `L` and total mass `M` is held vertically by its upper end so that its lower end just touches the pan of a weighing scale. At `t = 0`, the upper end is released from rest.
+Find the reading on the scale as a function of the distance `y` that the top end has fallen. What does the scale read right as the last link hits the pan?
+
+**Solution**:
+Let linear mass density be `λ = M / L`.
+At time `t`, the top has fallen a distance `y`.
+The velocity of the falling links just before hitting the table is:
+```
+v = sqrt(2 * g * y)
+```
+The scale reading `F_scale` consists of two distinct physical parts:
+1. **Static weight of the chain already resting on the table**:
+   A length `y` is on the table, so its weight is:
+   ```
+   W_resting = (λ * y) * g
+   ```
+2. **Dynamic impact force of incoming chain links losing momentum**:
+   In time `dt`, a small mass `dm = λ * dy = λ * (v dt)` strikes the table and comes to an instantaneous stop.
+   The rate of change of momentum delivered to the scale is:
+   ```
+   F_impact = dp/dt = v * (dm/dt) = v * (λ * v) = λ * v²
+   ```
+   Substitute `v² = 2*g*y`:
+   ```
+   F_impact = λ * (2*g*y) = 2 * (λ * y) * g
+   ```
+The total force recorded by the scale is:
+```
+F_scale = W_resting + F_impact = (λ * y * g) + 2 * (λ * y * g) = 3 * λ * g * y
+```
+At the exact instant the final link strikes the table (`y = L`):
+```
+F_scale = 3 * λ * g * L = 3 * M * g
+```
+**Physical Insight**: The scale temporarily registers **three times the total weight of the chain**! Two-thirds of the force is dynamic impact momentum absorption, and one-third is static gravity.
+
+---
+
+### Practice Problem 9.1 (To Solve)
+**Statement**: A freight flatcar of initial mass `M_0` rolls frictionlessly along a horizontal track with speed `v_0`. Rain begins falling vertically into the open bed at a constant rate of `σ` kg/s.
+Find the velocity of the flatcar `v(t)` as a function of time.
+* **Hint**: The rain has zero horizontal velocity before entering the car. Horizontal momentum of the system is strictly conserved: `P_x = (M_0 + σ*t) * v(t) = M_0 * v_0`.
+* **Answer**: `v(t) = v_0 * M_0 / (M_0 + σ*t)`.
+
+---
+
+### Practice Problem 9.2 (To Solve)
+**Statement**: A rocket launches vertically upward from rest in a uniform gravitational field `g`. The burn rate `k = -dm/dt` is constant, and the exhaust speed is `v_ex`.
+Find the formula for the height `y(t)` achieved at engine burnout time `t_b`.
+* **Hint**: Integrate velocity `v(t) = -v_ex * ln(1 - k*t/m_0) - g*t` using `∫ ln(u) du = u*ln(u) - u`.
+* **Answer**: `y(t_b) = v_ex * t_b - (1/2)*g*t_b² - (v_ex * m_final / k) * ln(m_0 / m_final)`.
+
+---
+
+## 8. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 3:
+  * Section 3.2 (pp. 85–87): Rockets, Variable Mass Systems.
+  * Problems 3.12, 3.14, 3.19 (pp. 100–102): Rocket launches with gravity and variable drag.
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 3: "Forces and Equations of Motion" (Section 3.5: Variable Mass Systems, Examples 3.12–3.14 on falling chains and freight cars).
+* **Morin, David**, *Introduction to Classical Mechanics*, Chapter 3:
+  * Section 3.5 (pp. 79–86): Complete rigorous treatment of rocket kinematics and falling ropes.

@@ -120,3 +120,107 @@ Notice that $t_{\text{top}} < v_0 / g$. **Air drag shortens the time required to
 | **Drop Distance** | `y(t) = (v_ter²/g) * ln(cosh(t/τ))` | Approaches `v_ter * t` as $t \to \infty$ |
 | **Upward Launch** | `v(t) = v_ter * tan(arctan(v_0/v_ter) - t/τ)` | Reaches peak faster than vacuum |
 | **2D Trajectory** | Coupled nonlinear ODEs | Must be solved numerically (Euler/RK4) |
+
+
+---
+
+## 5. Worked Examples & Practice Problems
+
+### Worked Example 6.1: Free-Fall of a Skydiver under Quadratic Drag
+**Problem**: An 80 kg skydiver jumps from an airplane. In a spread-eagle belly-to-earth posture, quadratic drag is dominant with `c ≈ 0.25 N·s²/m²`.
+(a) What is the skydiver's terminal speed `v_ter`?
+(b) What is the characteristic time `τ`?
+(c) How fast is the skydiver falling after `t = 5.0 s`?
+(d) How far has the skydiver fallen after `t = 5.0 s`?
+
+**Solution**:
+(a) Terminal velocity:
+```
+v_ter = sqrt(m * g / c) = sqrt( (80 * 9.8) / 0.25 ) = sqrt( 784 / 0.25 ) = sqrt(3136) = 56.0 m/s  (approx 125 mph)
+```
+(b) Characteristic time:
+```
+τ = v_ter / g = 56.0 / 9.8 ≈ 5.71 seconds
+```
+(c) Speed after 5.0 seconds:
+```
+v(t) = v_ter * tanh(t / τ)
+t / τ = 5.0 / 5.71 ≈ 0.875
+tanh(0.875) ≈ 0.704
+v(5) = 56.0 * 0.704 ≈ 39.4 m/s  (approx 88 mph, about 70% of terminal speed)
+```
+(d) Distance fallen after 5.0 seconds:
+```
+y(t) = (v_ter² / g) * ln(cosh(t / τ))
+v_ter² / g = 3136 / 9.8 = 320 meters
+cosh(0.875) ≈ 1.408
+ln(1.408) ≈ 0.342
+y(5) = 320 * 0.342 ≈ 109.4 meters
+```
+*(In a vacuum, the skydiver would have fallen `(1/2)*g*t² = (0.5)*(9.8)*(25) = 122.5 m` and reached speed `49 m/s`)*.
+
+---
+
+### Worked Example 6.2: Maximum Height of an Upward Launch with Quadratic Drag
+**Problem**: A baseball is popped straight up into the air with initial speed `v_0 = 35 m/s`. Its terminal speed when dropped from a high tower is measured to be `v_ter = 35 m/s`. 
+Find the maximum height `y_max` reached by the ball, and compare it to the vacuum height `y_vac = v_0² / (2*g)`.
+
+**Solution**:
+For upward vertical motion under gravity and quadratic drag:
+```
+m * v * (dv/dy) = -m*g - c*v² = -m*g * [ 1 + (v / v_ter)² ]
+```
+Divide by `m`:
+```
+v * (dv/dy) = -g * [ 1 + (v / v_ter)² ]
+```
+Separate variables:
+```
+∫_{v_0}^0 [ v / (1 + (v / v_ter)²) ] dv = -g ∫_0^y_max dy
+```
+Let `u = 1 + (v / v_ter)²`, then `du = (2 / v_ter²) * v dv`:
+```
+(1/2) * v_ter² * ∫_{1 + (v_0/v_ter)²}^1 (du / u) = -g * y_max
+-(1/2) * v_ter² * ln( 1 + (v_0 / v_ter)² ) = -g * y_max
+```
+Solving for `y_max`:
+```
+y_max = (v_ter² / (2*g)) * ln( 1 + (v_0 / v_ter)² )
+```
+Substitute `v_0 = 35 m/s`, `v_ter = 35 m/s`, `g = 9.8 m/s²`:
+```
+y_max = (35² / (2 * 9.8)) * ln( 1 + (35 / 35)² )
+      = (1225 / 19.6) * ln(2) ≈ 62.5 * 0.6931 ≈ 43.3 meters
+```
+In a vacuum:
+```
+y_vac = v_0² / (2*g) = 1225 / 19.6 = 62.5 meters
+```
+**Physical Insight**: Quadratic air resistance reduces the maximum height from 62.5 m to 43.3 m—a 31% reduction!
+
+---
+
+### Practice Problem 6.1 (To Solve)
+**Statement**: An object is launched straight downward with an initial speed `v_0` that is *greater* than its terminal speed (`v_0 > v_ter`).
+Set up the differential equation and solve for `v(t)`. Show that the speed decreases asymptotically toward `v_ter`.
+* **Hint**: The drag force is upward and exceeds gravity: `m * dv/dt = m*g - c*v² = -g * [(v/v_ter)² - 1]`. Use `∫ du / (u² - 1) = -arctanh(1/u) = -arccoth(u)`.
+* **Answer**: `v(t) = v_ter * coth( t/τ + arccoth(v_0 / v_ter) )`. As `t -> ∞`, `coth -> 1`, so `v(t) -> v_ter`.
+
+---
+
+### Practice Problem 6.2 (To Solve)
+**Statement**: For a projectile launched vertically upward with initial speed `v_0` in quadratic drag:
+Show that the time `t_top` required to reach the peak is strictly less than the vacuum time `t_vac = v_0 / g`.
+* **Hint**: Recall `t_top = (v_ter / g) * arctan(v_0 / v_ter)`. Use the inequality `arctan(z) < z` for all `z > 0`.
+* **Answer**: Letting `z = v_0 / v_ter`, `t_top = (v_ter / g) * arctan(z) < (v_ter / g) * z = v_0 / g = t_vac`.
+
+---
+
+## 6. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 2:
+  * Section 2.4 (pp. 60–73): Quadratic Air Resistance, Vertical Drop, Upward Launch.
+  * Problems 2.20, 2.24, 2.28 (pp. 76–78): Analytical hyperbolic solutions for quadratic drag.
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 2: "Newton's Laws" (Section 2.5 on terminal velocity).
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 9: "Newton's Laws of Dynamics" (Section 9.6 on numerical solutions of nonlinear drag).

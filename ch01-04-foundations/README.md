@@ -5,6 +5,12 @@ Each module connects physical intuition (inspired by Richard Feynman's *Lectures
 
 ---
 
+## Comprehensive Master Problem Set
+
+* **[Master Problem Set: Chapters 1–4](PROBLEM_SET.md)** — 10 high-yield, exam-caliber problems spanning the entire foundations curriculum with complete, step-by-step analytical solutions and physical takeaways.
+
+---
+
 ## The 15-Module Story Roadmap
 
 ### Part I: Space, Time & Newton's Laws (Chapter 1)

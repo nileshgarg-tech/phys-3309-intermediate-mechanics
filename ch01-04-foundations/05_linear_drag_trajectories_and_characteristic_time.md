@@ -158,3 +158,86 @@ Taylor highlights this sanity check: any valid drag theory must smoothly reprodu
 | **Horizontal Velocity** | `v_x(t) = v_x0 * e^(-t/τ)` | Exponential decay |
 | **Maximum Range** | `x_max = v_x0 * τ` | Absolute horizontal wall |
 | **Zero-Drag Limit** | Expand `ln(1 - u)` | Recovers vacuum parabola `y = (v_y0/v_x0)x - (g/2v_x0²)x²` |
+
+
+---
+
+## 6. Worked Examples & Practice Problems
+
+### Worked Example 5.1: The Linear Stopping Distance
+**Problem**: A motorboat of mass `m = 500 kg` is traveling at speed `v_0 = 20 m/s` when its engine is suddenly cut off. The water exerts a viscous linear drag force with coefficient `b = 50 N·s/m`.
+(a) What is the characteristic time `τ` of the boat?
+(b) How long does it take for the boat's speed to drop to `1 m/s`?
+(c) What is the maximum distance the boat can travel after the engine is cut?
+
+**Solution**:
+(a) Characteristic time:
+```
+τ = m / b = 500 kg / (50 N·s/m) = 10.0 seconds
+```
+(b) Speed decays exponentially: `v(t) = v_0 * e^(-t / τ)`.
+Setting `v(t) = 1 m/s`:
+```
+1 = 20 * e^(-t / 10)  ===>  e^(t / 10) = 20
+t = 10 * ln(20) ≈ 10 * 2.9957 ≈ 29.96 seconds
+```
+(c) The position as a function of time is `x(t) = v_0 * τ * (1 - e^(-t / τ))`.
+As `t -> ∞`, `e^(-t/τ) -> 0`:
+```
+x_max = v_0 * τ = (20 m/s) * (10.0 s) = 200 meters
+```
+The boat will never coast farther than 200 meters regardless of how long it drifts!
+
+---
+
+### Worked Example 5.2: Terminal Speed of a Heavy Mist Droplet
+**Problem**: A spherical water droplet of diameter `D = 0.10 mm = 10^-4 m` falls vertically through air.
+Its mass is `m = ρ_water * (π/6) * D³ = (1000 kg/m³) * (π/6) * (10^-4)³ ≈ 5.24 x 10^-10 kg`.
+The linear drag coefficient is `b = 3 * π * η * D ≈ 3 * π * (1.8 x 10^-5) * (10^-4) ≈ 1.70 x 10^-8 N·s/m`.
+(a) Calculate its terminal velocity `v_ter`.
+(b) Calculate the time required to reach 99% of its terminal velocity.
+
+**Solution**:
+(a) Terminal velocity:
+```
+v_ter = (m * g) / b = (5.24 x 10^-10 kg * 9.8 m/s²) / (1.70 x 10^-8 N·s/m) ≈ 0.302 m/s (approx 30 cm/s)
+```
+(b) Speed starting from rest: `v_y(t) = v_ter * (1 - e^(-t / τ))`.
+Characteristic time:
+```
+τ = m / b = (5.24 x 10^-10) / (1.70 x 10^-8) ≈ 0.0308 seconds
+```
+We require `v_y(t) = 0.99 * v_ter`:
+```
+1 - e^(-t / τ) = 0.99  ===>  e^(-t / τ) = 0.01  ===>  t = τ * ln(100)
+t = 0.0308 * 4.605 ≈ 0.142 seconds
+```
+The droplet reaches 99% of its terminal speed in less than 0.15 seconds and falls less than 3 cm before reaching terminal velocity!
+
+---
+
+### Practice Problem 5.1 (To Solve)
+**Statement**: A projectile is launched horizontally with initial speed `v_0` from a cliff of height `h` in a medium with linear drag.
+Find the horizontal distance `x` traveled by the projectile by the time it has lost half its initial horizontal speed (`v_x = v_0 / 2`).
+* **Hint**: `v_x(t) = v_0 * e^(-t/τ) = v_0 / 2  ===>  e^(-t/τ) = 1/2`. Then substitute into `x(t) = v_0 * τ * (1 - e^(-t/τ))`.
+* **Answer**: `x = (1/2) * v_0 * τ = (m * v_0) / (2 * b) = (1/2) * x_max`.
+
+---
+
+### Practice Problem 5.2 (To Solve)
+**Statement**: A ball is thrown vertically upward with initial speed `v_0` under linear air drag with terminal speed `v_ter`.
+Prove that the maximum height reached is:
+`y_max = v_ter * τ * [ (v_0 / v_ter) - ln(1 + v_0 / v_ter) ]`.
+* **Hint**: Use `m * v * (dv/dy) = -m*g - b*v = -b*(v + v_ter)` and integrate from `v = v_0` to `v = 0`.
+* **Answer**: `∫_{v_0}^0 [ v / (v + v_ter) ] dv = -(b/m) y_max = - (1/τ) y_max`. Evaluating the integral directly gives the formula.
+
+---
+
+## 7. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 2:
+  * Sections 2.2–2.3 (pp. 48–60): Linear Air Resistance, Horizontal and Vertical Motion, Trajectory Analysis.
+  * Problems 2.7, 2.11, 2.15, 2.18 (pp. 74–76): Detailed linear drag problem sets.
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 2: "Newton's Laws" (Section 2.5 on drag forces).
+* **Morin, David**, *Introduction to Classical Mechanics*, Chapter 3:
+  * Example 3.4 (pp. 68–71): Detailed derivation of linear drag asymptotic expansions.

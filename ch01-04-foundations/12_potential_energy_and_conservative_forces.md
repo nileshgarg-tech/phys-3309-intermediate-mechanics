@@ -127,3 +127,107 @@ If a force passes this curl test everywhere in a simply-connected space, **it is
 | **Potential Function**| `U(r) = - ∫ F · dr` | Stored internal energy |
 | **Force from Potential** | `F = - ∇U` | Force pushes downhill along steepest descent |
 | **Differential Test** | `∇ x F = 0` (Curl = 0) | Necessary and sufficient condition for conservation |
+
+
+---
+
+## 6. Worked Examples & Practice Problems
+
+### Worked Example 12.1: The Curl Test & Constructing the Potential Function
+**Problem**: Consider the 3D force field:
+```
+F(x, y, z) = (2*x*y + z³)*x_hat + (x²)*y_hat + (3*x*z²)*z_hat
+```
+(a) Determine whether this force field is conservative by computing its curl `∇ x F`.
+(b) If it is conservative, find the scalar potential energy function `U(x, y, z)` choosing `U(0, 0, 0) = 0`.
+
+**Solution**:
+(a) **Curl Calculation**:
+```
+∇ x F = |  x_hat        y_hat        z_hat  |
+        |  ∂/∂x         ∂/∂y         ∂/∂z   |
+        |  2*x*y + z³   x²           3*x*z² |
+```
+Component by component:
+* `(∇ x F)_x = ∂(3*x*z²)/∂y - ∂(x²)/∂z = 0 - 0 = 0`
+* `(∇ x F)_y = ∂(2*x*y + z³)/∂z - ∂(3*x*z²)/∂x = 3*z² - 3*z² = 0`
+* `(∇ x F)_z = ∂(x²)/∂x - ∂(2*x*y + z³)/∂y = 2*x - 2*x = 0`
+Since `∇ x F = 0` identically everywhere, **the force is conservative**!
+
+(b) **Finding Potential Energy `U(x, y, z)`**:
+We require `F = -∇U`, which means:
+1. `∂U/∂x = - (2*x*y + z³)`
+2. `∂U/∂y = - (x²)`
+3. `∂U/∂z = - (3*x*z²)`
+
+Integrate equation (2) with respect to `y`:
+```
+U(x, y, z) = - x²*y + g(x, z)
+```
+Differentiate with respect to `z` and set equal to equation (3):
+```
+∂U/∂z = ∂g/∂z = - 3*x*z²   ===>   g(x, z) = - x*z³ + h(x)
+U(x, y, z) = - x²*y - x*z³ + h(x)
+```
+Now differentiate with respect to `x` and set equal to equation (1):
+```
+∂U/∂x = - 2*x*y - z³ + dh/dx = - (2*x*y + z³)   ===>   dh/dx = 0  ===>  h(x) = C (constant)
+```
+Using the reference point `U(0, 0, 0) = 0`, we find `C = 0`.
+Therefore:
+```
+U(x, y, z) = - x²*y - x*z³
+```
+
+---
+
+### Worked Example 12.2: Gravitational Potential Energy from Line Integration
+**Problem**: The gravitational force exerted by a mass `M` at the origin on a mass `m` is:
+```
+F(r) = - (G * M * m / r²) * r_hat
+```
+Show that this force is conservative by finding its potential energy `U(r)` referenced to zero at spatial infinity (`r_0 -> ∞`).
+
+**Solution**:
+The force is purely radial, and the path element is `dr = dr*r_hat + r*dθ*θ_hat + r*sin(θ)*dφ*φ_hat`.
+Thus `F · dr = F_r dr = -(G*M*m / r²) dr`.
+By definition of potential energy:
+```
+U(r) = - ∫_{r_0}^r F · dr' = - ∫_∞^r [ - (G * M * m / (r')²) ] dr'
+     = G * M * m * ∫_∞^r (r')^(-2) dr' = G * M * m * [ - 1 / r' ]_∞^r
+```
+Evaluating the limits:
+```
+U(r) = G * M * m * [ - 1 / r - (- 1 / ∞) ] = - (G * M * m) / r
+```
+Check gradient:
+```
+F = - dU/dr * r_hat = - d/dr [ -G*M*m/r ] * r_hat = - (G*M*m / r²) * r_hat
+```
+Matches Newton's universal gravitational law exactly!
+
+---
+
+### Practice Problem 12.1 (To Solve)
+**Statement**: Test whether the force `F = (y²)*x_hat + (2*x*y + z)*y_hat + (y)*z_hat` is conservative.
+If conservative, find the potential energy `U(x, y, z)` with `U(0, 0, 0) = 0`.
+* **Hint**: Compute all 3 components of `∇ x F`. If zero, integrate `∂U/∂x, ∂U/∂y, ∂U/∂z`.
+* **Answer**: `(∇ x F)_x = 1 - 1 = 0`, `(∇ x F)_y = 0 - 0 = 0`, `(∇ x F)_z = 2y - 2y = 0`. The force is conservative! Potential energy: `U(x, y, z) = -x*y² - y*z`.
+
+---
+
+### Practice Problem 12.2 (To Solve)
+**Statement**: Prove that any spherically symmetric central force `F(r) = f(r) * r_hat` is conservative for any arbitrary continuous function `f(r)`.
+* **Hint**: Show that the work around any closed path `∮ f(r) * r_hat · dr = ∮ f(r) dr` is the integral of an exact differential `df(r)/dr`, or use spherical curl: `(∇ x F)_φ = (1/r)*(∂(r*F_θ)/∂r - ∂F_r/∂θ) = 0`.
+* **Answer**: Since `r_hat · dr = dr`, the line integral is `∫ f(r) dr`, which depends only on the scalar distance `r` at endpoints, independent of angular coordinates or path.
+
+---
+
+## 7. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 4:
+  * Sections 4.2–4.5 (pp. 119–135): Conservative Forces, Potential Energy, Gradient Operator, Curl Test.
+  * Problems 4.12, 4.18, 4.23 (pp. 165–168): Detailed curl proofs and potential derivations.
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 14: "Work and Potential Energy (Conclusion)" (Sections 14.1–14.4 on conservative fields and curl).
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 5: "Work and Energy" (Sections 5.4–5.7).

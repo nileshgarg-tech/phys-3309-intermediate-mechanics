@@ -161,3 +161,123 @@ L_total = ( R x M * V_cm ) + Σ_i ( r'_i x m_i * v'_i )
 | **Central Forces** | `Γ = 0 ===> l = const` | Produces planar motion & Kepler's 2nd Law |
 | **Internal Torques** | `Σ (r_i x F_ij) = 0` | Cancel out if forces lie along connecting lines |
 | **Orbital + Spin Split** | `L = (R x P_cm) + L_relative`| Total rotation decomposes into orbit + spin |
+
+
+---
+
+## 7. Worked Examples & Practice Problems
+
+### Worked Example 10.1: Angular Momentum of a Conical Pendulum
+**Problem**: A bob of mass `m` hangs from a fixed pivot by a string of length `L`. It moves in a horizontal circle of radius `R = L*sin(α)` at constant angular speed `ω`.
+(a) Find the angular momentum vector `l` of the bob calculated about the **suspension pivot point O**.
+(b) Compute the torque `Γ` about point O, and verify that `dl/dt = Γ`.
+
+**Solution**:
+1. **Coordinates**:
+   Let the pivot point be the origin `O`. The position of the bob is:
+   ```
+   r(t) = R*cos(ω*t)*x_hat + R*sin(ω*t)*y_hat - h*z_hat
+   ```
+   where `h = L*cos(α)`.
+   The velocity of the bob is:
+   ```
+   v(t) = -R*ω*sin(ω*t)*x_hat + R*ω*cos(ω*t)*y_hat + 0*z_hat
+   ```
+
+2. **Angular Momentum `l = r x (m*v)`**:
+   ```
+   l = m * |  x_hat           y_hat          z_hat  |
+           |  R*cos(ω*t)      R*sin(ω*t)     -h     |
+           | -R*ω*sin(ω*t)    R*ω*cos(ω*t)    0     |
+     = m * [ (h*R*ω*cos(ω*t))*x_hat + (h*R*ω*sin(ω*t))*y_hat + (R²*ω)*z_hat ]
+   ```
+   Notice that `l` has a **constant vertical component** `l_z = m * R² * ω`, but its horizontal components rotate continuously in a circle!
+
+3. **Rate of Change `dl/dt`**:
+   ```
+   dl/dt = m * h * R * ω² * [ -sin(ω*t)*x_hat + cos(ω*t)*y_hat ]
+   ```
+
+4. **Torque `Γ = r x F`**:
+   The net force on the bob is the horizontal centripetal force:
+   ```
+   F = -m * R * ω² * [ cos(ω*t)*x_hat + sin(ω*t)*y_hat ]
+   ```
+   Compute torque about pivot `O`:
+   ```
+   Γ = r x F = (r_perp + r_z) x F = (-h * z_hat) x F
+     = (-h * z_hat) x [ -m * R * ω² * (cos(ω*t)*x_hat + sin(ω*t)*y_hat) ]
+     = m * h * R * ω² * [ -sin(ω*t)*x_hat + cos(ω*t)*y_hat ]
+   ```
+   Look at that: **`dl/dt = Γ` matches perfectly!**
+**Physical Insight**: The angular momentum vector is tilted relative to the vertical axis and sweeps out a cone in space (precesses) at frequency `ω`, driven by the gravitational torque acting about the pivot point!
+
+---
+
+### Worked Example 10.2: Orbital and Spin Angular Momentum of a Dumbbell
+**Problem**: Two equal masses `m` are attached to the ends of a rigid massless rod of length `2b`. The center of the rod moves along the $x$-axis with speed `V`, while the rod spins in the $xy$-plane at constant angular rate `ω` about its center.
+Find the total angular momentum `L` about the origin.
+
+**Solution**:
+Apply the Two-Component Angular Momentum Theorem:
+```
+L_total = L_orbital(CM) + L_spin(about CM)
+```
+1. **Orbital Component**:
+   Total mass: `M = 2*m`.
+   Center of Mass position: `R = (V*t)*x_hat + 0*y_hat + 0*z_hat`.
+   Center of Mass velocity: `V_cm = V * x_hat`.
+   ```
+   L_orbital = R x (M * V_cm) = (V*t * x_hat) x (2*m * V * x_hat) = 0
+   ```
+   *(Since CM position and velocity are collinear, orbital angular momentum about the origin is zero!)*
+
+2. **Spin Component**:
+   Relative to the Center of Mass, the two masses are at:
+   `r'_1 = b*cos(ω*t)*x_hat + b*sin(ω*t)*y_hat`
+   `r'_2 = -r'_1`
+   Their relative velocities are:
+   `v'_1 = -b*ω*sin(ω*t)*x_hat + b*ω*cos(ω*t)*y_hat`
+   `v'_2 = -v'_1`
+   Compute spin angular momentum:
+   ```
+   l'_1 = r'_1 x (m * v'_1) = m * b² * ω * z_hat
+   l'_2 = (-r'_1) x [m * (-v'_1)] = m * b² * ω * z_hat
+   ```
+   Summing over both particles:
+   ```
+   L_spin = l'_1 + l'_2 = 2 * m * b² * ω * z_hat
+   ```
+Therefore:
+```
+L_total = 2 * m * b² * ω * z_hat
+```
+
+---
+
+### Practice Problem 10.1 (To Solve)
+**Statement**: A planet of mass `m` moves in an elliptical Keplerian orbit around a sun of mass `M`. At perihelion (closest approach), its distance is `r_p` and its speed is `v_p`. At aphelion (farthest distance), its distance is `r_a`.
+Find the speed `v_a` at aphelion in terms of `v_p, r_p, r_a`.
+* **Hint**: At both perihelion and aphelion, velocity is purely perpendicular to the position vector (`r ⊥ v`). Angular momentum is conserved: `m * r_p * v_p = m * r_a * v_a`.
+* **Answer**: `v_a = v_p * (r_p / r_a)`.
+
+---
+
+### Practice Problem 10.2 (To Solve)
+**Statement**: A particle of mass `m` slides on a frictionless horizontal table attached to a light string passing through a small hole in the center. The particle initially orbits in a circle of radius `r_1` with speed `v_1`. The string is slowly pulled downward through the hole until the radius decreases to `r_2 = r_1 / 2`.
+(a) What is the new orbital speed `v_2`?
+(b) How does the kinetic energy change? What supplied the work?
+* **Hint**: The tension force is purely radial, exerting zero torque about the hole. Hence angular momentum is conserved: `m * r_1 * v_1 = m * r_2 * v_2`.
+* **Answer**: (a) `v_2 = v_1 * (r_1 / r_2) = 2 * v_1`. (b) `T_2 = (1/2)*m*v_2² = 4 * T_1`. The kinetic energy quadrupled; the work was performed by the person pulling the tension string inward against the centrifugal force!
+
+---
+
+## 8. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 3:
+  * Sections 3.4–3.5 (pp. 90–99): Angular Momentum, Central Forces, Orbital and Spin Decomposition.
+  * Problems 3.21, 3.27, 3.33, 3.37 (pp. 102–104): Angular momentum theorems and torque proofs.
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 18: "Principles of Conservation" (Sections 18.3–18.4 on angular momentum).
+  * Chapter 20: "Rotation in Space" (Sections 20.1–20.3 on torque and precession).
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 6: "Angular Momentum" (Sections 6.1–6.5).

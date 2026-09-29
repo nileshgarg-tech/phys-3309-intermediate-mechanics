@@ -93,3 +93,85 @@ P_total = constant
 | **Newton's 2nd Law** | `F = dp/dt = m*d²r/dt²` | 2nd-order ODE; requires `r_0` and `v_0` to solve |
 | **Newton's 3rd Law** | `F_12 = -F_21` | Mutual forces are equal and opposite |
 | **Momentum Conservation**| `dP/dt = F_ext = 0` | Direct consequence of the 3rd Law |
+
+
+---
+
+## 5. Worked Examples & Practice Problems
+
+### Worked Example 2.1: Operational Mass Ratio on an Air Track
+**Problem**: Two gliders of unknown masses `m_1` and `m_2` rest on a frictionless horizontal air track. A compressed spring is placed between them and released. High-speed photogates measure their accelerations during the release: glider 1 accelerates at `a_1 = -4.5 m/s²`, while glider 2 accelerates at `a_2 = +1.5 m/s²`. 
+(a) What is the mass ratio `m_2 / m_1`?
+(b) If glider 1 is a standard calibrated mass of `m_1 = 0.200 kg`, what is the exact mass `m_2`?
+
+**Solution**:
+By Mach's operational definition of inertial mass and Newton's Third Law:
+The force exerted by the spring on glider 1 is `F_12` and on glider 2 is `F_21`.
+Since the spring is massless, `F_12 = -F_21`.
+Applying Newton's Second Law:
+```
+m_1 * a_1 = - m_2 * a_2
+```
+(a) Taking the magnitudes:
+```
+m_2 / m_1 = |a_1| / |a_2| = 4.5 / 1.5 = 3.0
+```
+Glider 2 is precisely three times as massive as glider 1.
+(b) Since `m_1 = 0.200 kg`:
+```
+m_2 = 3.0 * m_1 = 3.0 * 0.200 kg = 0.600 kg
+```
+**Physical Insight**: Notice that we did not need to know the spring constant `k`, the duration of contact, or the force in Newtons. Mass is purely the reciprocal ratio of mutual accelerations.
+
+---
+
+### Worked Example 2.2: Integrating a Time-Dependent Force
+**Problem**: A particle of mass `m` is at rest at the origin (`x = 0, v = 0`) at time `t = 0`. It is subjected to a time-dependent force `F(t) = F_0 * sin(ω*t)`. 
+Find the velocity `v(t)` and position `x(t)` for all future time.
+
+**Solution**:
+Newton's Second Law is:
+```
+m * (dv/dt) = F_0 * sin(ω*t)
+```
+Separate variables and integrate with initial condition `v(0) = 0`:
+```
+v(t) = (F_0 / m) * ∫_0^t sin(ω*t') dt' = (F_0 / (m*ω)) * [ -cos(ω*t') ]_0^t
+v(t) = (F_0 / (m*ω)) * ( 1 - cos(ω*t) )
+```
+Notice that since `1 - cos(ω*t) ≥ 0`, the velocity is **always positive or zero**—the particle never moves backward!
+Now integrate velocity to find position `x(t)` with `x(0) = 0`:
+```
+x(t) = ∫_0^t v(t') dt' = (F_0 / (m*ω)) * ∫_0^t (1 - cos(ω*t')) dt'
+x(t) = (F_0 / (m*ω)) * [ t - (1/ω)*sin(ω*t) ]
+```
+The motion consists of a constant average drift velocity `v_avg = F_0 / (m*ω)` plus an oscillatory ripple!
+
+---
+
+### Practice Problem 2.1 (To Solve)
+**Statement**: A block of mass `m` slides on a flat surface. It experiences an initial velocity `v_0` at `t = 0` and a velocity-dependent retarding force `F = -k * v²` (where `k` is a positive constant). 
+(a) Find the velocity `v(t)` as a function of time.
+(b) Does the block come to rest in a finite time? Explain physically.
+* **Hint**: Separate variables: `m * dv/dt = -k * v²  ===>  ∫ v^(-2) dv = -(k/m) ∫ dt`.
+* **Answer**: `v(t) = v_0 / (1 + (k*v_0 / m)*t)`. As `t -> ∞`, `v(t) -> 0`, but it technically never reaches zero in finite time because as speed drops, the retarding force decreases quadratically!
+
+---
+
+### Practice Problem 2.2 (To Solve)
+**Statement**: Three interacting particles with masses `m_1, m_2, m_3` exert mutual gravitational forces on each other: `F_ij = -G*m_i*m_j*(r_i - r_j) / |r_i - r_j|³`.
+Prove explicitly that the sum of all internal forces `Σ_i Σ_{j≠i} F_ij` equals zero, confirming that total linear momentum is strictly conserved.
+* **Hint**: Expand the sum for `i, j ∈ {1, 2, 3}` and pair `F_12 + F_21`, `F_13 + F_31`, and `F_23 + F_32`.
+* **Answer**: Each pair has `(r_i - r_j) = -(r_j - r_i)` and `|r_i - r_j| = |r_j - r_i|`, so each pair sums identically to the zero vector.
+
+---
+
+## 6. Exact Primary References
+* **Taylor, John R.**, *Classical Mechanics*, Chapter 1:
+  * Sections 1.3–1.5 (pp. 11–23): Mass, Force, Newton's 2nd and 3rd Laws, Momentum Conservation.
+  * Problems 1.12, 1.18, 1.22 (pp. 37–39): Forces, equations of motion, momentum conservation.
+* **Feynman, Richard P.**, *The Feynman Lectures on Physics*, Vol. 1:
+  * Chapter 9: "Newton's Laws of Dynamics" (Sections 9.1–9.4 on force and acceleration).
+  * Chapter 11: "Vectors" (Section 11.4 on the 3rd law and momentum).
+* **Kleppner, Daniel & Kolenkow, Robert**, *An Introduction to Mechanics* (2nd ed.):
+  * Chapter 2: "Newton's Laws" (Sections 2.1–2.4).
