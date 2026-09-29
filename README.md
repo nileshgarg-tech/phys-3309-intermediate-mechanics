@@ -11,6 +11,21 @@ The textbook is divided into two logical sections:
 
 ---
 
+## Repository Structure
+
+* [`ch01-04-foundations/`](file:///d:/UH/PHYS%203309/ch01-04-foundations) — Quick review of Newton's laws, drag forces, momentum/rockets, and energy wells.
+* [`ch05-oscillations/`](file:///d:/UH/PHYS%203309/ch05-oscillations) — Damped, driven, resonance, and Fourier series.
+* [`ch06-calculus-of-variations/`](file:///d:/UH/PHYS%203309/ch06-calculus-of-variations) — Fermat's principle, brachistochrone, Euler-Lagrange equations.
+* [`ch07-lagranges-equations/`](file:///d:/UH/PHYS%203309/ch07-lagranges-equations) — Lagrangian mechanics, generalized coordinates, cyclic coordinates, constraints.
+* [`ch08-central-forces/`](file:///d:/UH/PHYS%203309/ch08-central-forces) — Reduced mass, effective potential, Kepler orbits.
+* [`ch09-noninertial-frames/`](file:///d:/UH/PHYS%203309/ch09-noninertial-frames) — Centrifugal force, Coriolis force, Foucault pendulum.
+* [`ch10-rigid-bodies/`](file:///d:/UH/PHYS%203309/ch10-rigid-bodies) — Inertia tensor, principal axes, Euler's equations, tops.
+* [`ch11-coupled-oscillators/`](file:///d:/UH/PHYS%203309/ch11-coupled-oscillators) — Normal modes, matrix eigenvalue methods, normal coordinates.
+* [`assignments/`](file:///d:/UH/PHYS%203309/assignments) — Homework sets and problem writeups.
+* [`resources/`](file:///d:/UH/PHYS%203309/resources) — Course syllabus, formula sheets, reference materials.
+
+---
+
 ## Part 1: Essentials (Core Junior Mechanics)
 
 | Chapter | Title | Pages | Summary in Plain Terms |

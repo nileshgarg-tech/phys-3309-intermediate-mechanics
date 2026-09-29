@@ -1,0 +1,11 @@
+# Resources & Reference Materials
+
+Course materials, formula sheets, syllabus, and mathematical reference guides.
+
+---
+
+## What Goes Here
+
+* Course Syllabus & Pacing Schedule
+* Math Reference Sheets (Vector calculus identities, coordinate transforms, differential equations)
+* Python scripts or Jupyter notebooks for numerical simulations
