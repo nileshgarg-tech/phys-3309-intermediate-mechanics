@@ -23,6 +23,7 @@ The textbook is divided into two logical sections:
 * [`ch11-coupled-oscillators/`](file:///d:/UH/PHYS%203309/ch11-coupled-oscillators) — Normal modes, matrix eigenvalue methods, normal coordinates.
 * [`assignments/`](file:///d:/UH/PHYS%203309/assignments) — Homework sets and problem writeups.
 * [`resources/`](file:///d:/UH/PHYS%203309/resources) — Course syllabus, formula sheets, reference materials.
+* [`additional-topics/`](file:///d:/UH/PHYS%203309/additional-topics) — Advanced Part 2 topics: Ch 12 (Chaos), Ch 13 (Hamiltonian), Ch 14 (Collisions).
 
 ---
 
