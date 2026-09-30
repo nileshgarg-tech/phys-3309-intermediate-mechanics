@@ -7,7 +7,8 @@ Each module connects physical intuition (inspired by Richard Feynman's *Lectures
 
 ## Comprehensive Master Problem Set
 
-* **[Master Problem Set: Chapters 1–4](PROBLEM_SET.md)** — 10 high-yield, exam-caliber problems spanning the entire foundations curriculum with complete, step-by-step analytical solutions and physical takeaways.
+* **[Master Problem Set: Chapters 1–4](PROBLEM_SET.md)** — 10 high-yield, exam-caliber practice problems spanning the entire foundations curriculum.
+* **[Master Problem Set Solutions](PROBLEM_SET_SOLUTIONS.md)** — Complete step-by-step analytical derivations, calculations, and Feynman-inspired physical takeaways for all 10 problems.
 
 ---
 
