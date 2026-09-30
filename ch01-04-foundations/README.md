@@ -12,6 +12,13 @@ Each module connects physical intuition (inspired by Richard Feynman's *Lectures
 
 ---
 
+## Dedicated Visual Guides & Conceptual Deep Dives
+
+* 📊 **[Visual Guide: Inertial Reference Frames & Fictitious Forces](visualizations/01_inertial_frames_visual_guide.md)** — Side-by-side SVG vector diagrams (coffee cup in train, carousel Coriolis deflection), operational test criteria, and video demonstrations (PSSC 1960 *Frames of Reference*, Walter Lewin).
+* 📖 **[Deep Dive: Newton's Second Law as a Differential Equation](explanations/02_newtons_second_law_differential_equations.md)** — Full physical breakdown of force dependencies $\mathbf{F}(\mathbf{r}, \dot{\mathbf{r}}, t)$, why force cannot depend on $\ddot{\mathbf{r}}$, 3D coupled component ODEs, and the necessity of two initial conditions.
+
+---
+
 ## The 15-Module Story Roadmap
 
 ### Part I: Space, Time & Newton's Laws (Chapter 1)
