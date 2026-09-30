@@ -35,11 +35,11 @@ We introduce two local orthonormal unit vectors:
 Projecting onto the Cartesian basis ($\hat{\mathbf{x}}, \hat{\mathbf{y}}$):
 
 $$
-\hat{\mathbf{r}} = \cos\phi\,\hat{\mathbf{x}} + \sin\phi\,\hat{\mathbf{y}}
+\hat{\mathbf{r}} = \cos\phi \hat{\mathbf{x}} + \sin\phi \hat{\mathbf{y}}
 $$
 
 $$
-\hat{\boldsymbol{\phi}} = -\sin\phi\,\hat{\mathbf{x}} + \cos\phi\,\hat{\mathbf{y}}
+\hat{\boldsymbol{\phi}} = -\sin\phi \hat{\mathbf{x}} + \cos\phi \hat{\mathbf{y}}
 $$
 
 Unlike the constant Cartesian unit vectors ($\dot{\hat{\mathbf{x}}} = \mathbf{0}, \dot{\hat{\mathbf{y}}} = \mathbf{0}$), the polar unit vectors **change their spatial directions as the particle moves**!
@@ -51,17 +51,17 @@ Unlike the constant Cartesian unit vectors ($\dot{\hat{\mathbf{x}}} = \mathbf{0}
 Differentiating with respect to time using the chain rule:
 
 $$
-\frac{d\hat{\mathbf{r}}}{dt} = \frac{d}{dt}(\cos\phi\,\hat{\mathbf{x}} + \sin\phi\,\hat{\mathbf{y}}) = -\sin\phi\,\dot{\phi}\,\hat{\mathbf{x}} + \cos\phi\,\dot{\phi}\,\hat{\mathbf{y}} = \dot{\phi}\,\hat{\boldsymbol{\phi}}
+\frac{d\hat{\mathbf{r}}}{dt} = \frac{d}{dt}(\cos\phi \hat{\mathbf{x}} + \sin\phi \hat{\mathbf{y}}) = -\sin\phi \dot{\phi} \hat{\mathbf{x}} + \cos\phi \dot{\phi} \hat{\mathbf{y}} = \dot{\phi} \hat{\boldsymbol{\phi}}
 $$
 
 $$
-\frac{d\hat{\boldsymbol{\phi}}}{dt} = \frac{d}{dt}(-\sin\phi\,\hat{\mathbf{x}} + \cos\phi\,\hat{\mathbf{y}}) = -\cos\phi\,\dot{\phi}\,\hat{\mathbf{x}} - \sin\phi\,\dot{\phi}\,\hat{\mathbf{y}} = -\dot{\phi}\,\hat{\mathbf{r}}
+\frac{d\hat{\boldsymbol{\phi}}}{dt} = \frac{d}{dt}(-\sin\phi \hat{\mathbf{x}} + \cos\phi \hat{\mathbf{y}}) = -\cos\phi \dot{\phi} \hat{\mathbf{x}} - \sin\phi \dot{\phi} \hat{\mathbf{y}} = -\dot{\phi} \hat{\mathbf{r}}
 $$
 
 > **Taylor's Fundamental Derivative Rules for Polar Unit Vectors** (Taylor eq. 1.42 & 1.46):
 > 
 > $$
-> \frac{d\hat{\mathbf{r}}}{dt} = \dot{\phi}\,\hat{\boldsymbol{\phi}}, \qquad \frac{d\hat{\boldsymbol{\phi}}}{dt} = -\dot{\phi}\,\hat{\mathbf{r}}
+> \frac{d\hat{\mathbf{r}}}{dt} = \dot{\phi} \hat{\boldsymbol{\phi}} \qquad \text{and} \qquad \frac{d\hat{\boldsymbol{\phi}}}{dt} = -\dot{\phi} \hat{\mathbf{r}}
 > $$
 
 ---
@@ -71,13 +71,13 @@ $$
 In polar coordinates, the position vector from the origin to particle $P$ is remarkably compact:
 
 $$
-\mathbf{r} = r\,\hat{\mathbf{r}}
+\mathbf{r} = r \hat{\mathbf{r}}
 $$
 
 Differentiating with the product rule:
 
 $$
-\mathbf{v} = \dot{\mathbf{r}} = \frac{d}{dt}(r\,\hat{\mathbf{r}}) = \dot{r}\,\hat{\mathbf{r}} + r\frac{d\hat{\mathbf{r}}}{dt} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\phi}\,\hat{\boldsymbol{\phi}}
+\mathbf{v} = \dot{\mathbf{r}} = \frac{d}{dt}(r \hat{\mathbf{r}}) = \dot{r} \hat{\mathbf{r}} + r\frac{d\hat{\mathbf{r}}}{dt} = \dot{r} \hat{\mathbf{r}} + r\dot{\phi} \hat{\boldsymbol{\phi}}
 $$
 
 Reading off the polar components of velocity (Taylor eq. 1.43–1.44):
@@ -96,17 +96,17 @@ $$
 Differentiating velocity with respect to time:
 
 $$
-\mathbf{a} = \dot{\mathbf{v}} = \frac{d}{dt}\left( \dot{r}\,\hat{\mathbf{r}} + r\dot{\phi}\,\hat{\boldsymbol{\phi}} \right)
+\mathbf{a} = \dot{\mathbf{v}} = \frac{d}{dt}\left( \dot{r} \hat{\mathbf{r}} + r\dot{\phi} \hat{\boldsymbol{\phi}} \right)
 $$
 
 Applying the product rule term by term:
 
 $$
-\frac{d}{dt}(\dot{r}\,\hat{\mathbf{r}}) = \ddot{r}\,\hat{\mathbf{r}} + \dot{r}\frac{d\hat{\mathbf{r}}}{dt} = \ddot{r}\,\hat{\mathbf{r}} + \dot{r}\dot{\phi}\,\hat{\boldsymbol{\phi}}
+\frac{d}{dt}(\dot{r} \hat{\mathbf{r}}) = \ddot{r} \hat{\mathbf{r}} + \dot{r}\frac{d\hat{\mathbf{r}}}{dt} = \ddot{r} \hat{\mathbf{r}} + \dot{r}\dot{\phi} \hat{\boldsymbol{\phi}}
 $$
 
 $$
-\frac{d}{dt}(r\dot{\phi}\,\hat{\boldsymbol{\phi}}) = \dot{r}\dot{\phi}\,\hat{\boldsymbol{\phi}} + r\ddot{\phi}\,\hat{\boldsymbol{\phi}} + r\dot{\phi}\frac{d\hat{\boldsymbol{\phi}}}{dt} = \dot{r}\dot{\phi}\,\hat{\boldsymbol{\phi}} + r\ddot{\phi}\,\hat{\boldsymbol{\phi}} - r\dot{\phi}^2\,\hat{\mathbf{r}}
+\frac{d}{dt}(r\dot{\phi} \hat{\boldsymbol{\phi}}) = \dot{r}\dot{\phi} \hat{\boldsymbol{\phi}} + r\ddot{\phi} \hat{\boldsymbol{\phi}} + r\dot{\phi}\frac{d\hat{\boldsymbol{\phi}}}{dt} = \dot{r}\dot{\phi} \hat{\boldsymbol{\phi}} + r\ddot{\phi} \hat{\boldsymbol{\phi}} - r\dot{\phi}^2 \hat{\mathbf{r}}
 $$
 
 Collecting terms along $\hat{\mathbf{r}}$ and $\hat{\boldsymbol{\phi}}$ (Taylor eq. 1.47):
@@ -147,8 +147,8 @@ This reveals that if there is zero tangential force ($F_\phi = 0$, as in any cen
 | **Coordinates** | $(r, \phi)$ | $x = r\cos\phi, \quad y = r\sin\phi$ | Radius and azimuthal angle |
 | **Unit Vectors** | $\hat{\mathbf{r}}, \hat{\boldsymbol{\phi}}$ | $\hat{\mathbf{r}} = \cos\phi\hat{\mathbf{x}} + \sin\phi\hat{\mathbf{y}}$ | Local moving basis vectors |
 | **Unit Derivatives** | $\dot{\hat{\mathbf{r}}}, \dot{\hat{\boldsymbol{\phi}}}$ | $\frac{d\hat{\mathbf{r}}}{dt} = \dot{\phi}\hat{\boldsymbol{\phi}}, \quad \frac{d\hat{\boldsymbol{\phi}}}{dt} = -\dot{\phi}\hat{\mathbf{r}}$ | Rotate as particle moves |
-| **Position** | $\mathbf{r}$ | $\mathbf{r} = r\,\hat{\mathbf{r}}$ | Radial vector |
-| **Velocity** | $\mathbf{v}$ | $\mathbf{v} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\phi}\,\hat{\boldsymbol{\phi}}$ | $v_r = \dot{r}, \quad v_\phi = r\dot{\phi} = r\omega$ |
+| **Position** | $\mathbf{r}$ | $\mathbf{r} = r \hat{\mathbf{r}}$ | Radial vector |
+| **Velocity** | $\mathbf{v}$ | $\mathbf{v} = \dot{r} \hat{\mathbf{r}} + r\dot{\phi} \hat{\boldsymbol{\phi}}$ | $v_r = \dot{r}, \quad v_\phi = r\dot{\phi} = r\omega$ |
 | **Speed Squared** | $v^2$ | $v^2 = \dot{r}^2 + r^2\dot{\phi}^2$ | Metric in polar coordinates |
 | **Acceleration** | $\mathbf{a}$ | $\mathbf{a} = (\ddot{r} - r\dot{\phi}^2)\hat{\mathbf{r}} + (r\ddot{\phi} + 2\dot{r}\dot{\phi})\hat{\boldsymbol{\phi}}$ | Centripetal $-r\dot{\phi}^2$, Coriolis $2\dot{r}\dot{\phi}$ |
 | **Azimuthal Law** | $F_\phi$ | $F_\phi = \frac{m}{r}\frac{d}{dt}(r^2\dot{\phi})$ | Conservation of $\ell = mr^2\dot{\phi}$ when $F_\phi = 0$ |
@@ -174,7 +174,7 @@ Find the velocity and acceleration vectors, and identify each component in Taylo
 2. **Velocity**:
 
 $$
-\mathbf{v}(t) = \dot{r}\,\hat{\mathbf{r}} + r\dot{\phi}\,\hat{\boldsymbol{\phi}} = b\,\hat{\mathbf{r}} + b\omega t\,\hat{\boldsymbol{\phi}}
+\mathbf{v}(t) = \dot{r} \hat{\mathbf{r}} + r\dot{\phi} \hat{\boldsymbol{\phi}} = b \hat{\mathbf{r}} + b\omega t \hat{\boldsymbol{\phi}}
 $$
 
 $$
@@ -192,7 +192,7 @@ a_\phi = r\ddot{\phi} + 2\dot{r}\dot{\phi} = 0 + 2(b)(\omega) = 2b\omega \quad \
 $$
 
 $$
-\mathbf{a}(t) = (-b\omega^2 t)\,\hat{\mathbf{r}} + (2b\omega)\,\hat{\boldsymbol{\phi}}
+\mathbf{a}(t) = (-b\omega^2 t)\hat{\mathbf{r}} + (2b\omega)\hat{\boldsymbol{\phi}}
 $$
 
 ---
