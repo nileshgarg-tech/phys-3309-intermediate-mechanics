@@ -74,20 +74,41 @@ Suppose person A at the center of a counterclockwise-rotating turntable throws a
 
 ![Rotating Carousel & Coriolis Deflection](assets/rotating_carousel_coriolis.svg)
 
-### Frame-by-Frame Comparison:
+### Frame-by-Frame Timeline:
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    actor Ground as Inertial Observer (Ground S)
-    actor Disc as Rotating Observer (Turntable S')
-    Note over Ground,Disc: Ball released at t = 0 toward Target B
-    Ground->>Ground: Observes ball traveling along straight line at constant velocity v
-    Disc->>Disc: Target B rotates counterclockwise by angle Δθ = ω Δt
-    Ground->>Ground: Ball arrives at initial target location, but B has moved!
-    Disc->>Disc: Observes ball curving continuously rightward away from B
-    Note over Disc: Rotating observer invents Coriolis force F_cor = -2m(ω × v')
+flowchart TD
+    subgraph T0 ["1. Release at t = 0"]
+        Aim["🎯 Thrower A aims directly at Target B on the rim and releases the ball"]
+    end
+
+    subgraph T1 ["2. Mid-Flight at t = t_flight / 2"]
+        direction LR
+        S_Mid["🟢 <b>Ground Frame S (Inertial)</b><br/>• Zero horizontal force: F_net = 0<br/>• Ball travels strictly straight: a = 0<br/>• Target B rotates counterclockwise"]
+        Sprime_Mid["🔴 <b>Turntable Frame S' (Rotating)</b><br/>• Coordinate axes are turning<br/>• Ball appears to drift to the right<br/>• Observer sees curved trajectory"]
+    end
+
+    subgraph T2 ["3. Arrival at t = t_flight"]
+        direction LR
+        S_Arr["🟢 <b>Ground Frame Conclusion</b><br/>• Ball reaches original aim position<br/>• Target B rotated out of the way!<br/>• <b>Newton 1 holds</b> with zero fictitious force"]
+        Sprime_Arr["🔴 <b>Turntable Frame Conclusion</b><br/>• Ball misses target wide to the right<br/>• Observer invents <b>Coriolis Force</b>:<br/>F_cor = -2m(ω × v') to restore F = ma'"]
+    end
+
+    T0 --> T1
+    T1 --> T2
+
+    style T0 fill:#0f172a,stroke:#6366f1,stroke-width:1.5px,color:#f8fafc
+    style S_Mid fill:#064e3b,stroke:#059669,stroke-width:1.5px,color:#ecfdf5
+    style Sprime_Mid fill:#7f1d1d,stroke:#dc2626,stroke-width:1.5px,color:#fef2f2
+    style S_Arr fill:#064e3b,stroke:#059669,stroke-width:1.5px,color:#ecfdf5
+    style Sprime_Arr fill:#7f1d1d,stroke:#dc2626,stroke-width:1.5px,color:#fef2f2
 ```
+
+| Time Milestone | Ground Observer (Inertial Frame $S$) | Turntable Observer (Rotating Frame $S'$) |
+|---|---|---|
+| **$t = 0$ (Release)** | Ball released toward initial target position $B_0$. | Ball released toward target $B$ (appears directly ahead). |
+| **$t = t_{\text{flight}}/2$ (Mid-Flight)** | Ball travels along a **straight line** ($\mathbf{a} = \mathbf{0}$). Rim target $B$ rotates CCW by $\Delta\theta = \frac{1}{2}\omega t$. | Ball appears to curve continuously to the right away from line of sight. |
+| **$t = t_{\text{flight}}$ (Arrival)** | Ball passes through $B_0$. Target $B$ has rotated away. $\sum \mathbf{F} = \mathbf{0}$ correctly predicted the path. | Ball misses target $B$ wide right. Observer must invoke Coriolis force $\mathbf{F}_{\text{cor}} = -2m(\mathbf{\omega} \times \mathbf{v}')$ to explain the curve. |
 
 ### The Non-Inertial Equation of Motion for Rotating Frames
 In Chapter 9, Taylor derives the exact transformation for a coordinate system rotating at constant $\mathbf{\omega}$:
