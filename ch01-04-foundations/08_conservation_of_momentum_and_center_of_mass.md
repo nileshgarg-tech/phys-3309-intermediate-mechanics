@@ -52,7 +52,11 @@ $$
 \sum_{\alpha=1}^N \sum_{\beta \neq \alpha} \mathbf{F}_{\alpha\beta}
 $$
 
-This sum contains terms like $(\mathbf{F}_{12} + \mathbf{F}_{21}) + (\mathbf{F}_{13} + \mathbf{F}_{31}) + \dots$.
+This sum contains terms grouped into action-reaction pairs:
+
+$$
+(\mathbf{F}_{12} + \mathbf{F}_{21}) + (\mathbf{F}_{13} + \mathbf{F}_{31}) + \dots
+$$
 By Newton's Third Law of Motion:
 
 $$

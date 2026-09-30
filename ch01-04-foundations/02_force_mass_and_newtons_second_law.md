@@ -184,15 +184,18 @@ Find the velocity $v(t)$ as a function of time, and determine if it stops in fin
 ---
 
 ### Practice Problem 2.2 (To Solve)
-**Statement**: Three interacting particles with masses $m_1, m_2, m_3$ exert mutual gravitational forces on each other: 
+**Statement**: Following Taylor (Sec. 1.5, pp. 21–23), three interacting particles with masses $m_1, m_2, m_3$ exert mutual gravitational forces on each other: 
 
 $$
-\mathbf{F}_{ij} = -\frac{Gm_i m_j}{|\mathbf{r}_i - \mathbf{r}_j|^3}(\mathbf{r}_i - \mathbf{r}_j)
+\mathbf{F}_{\alpha\beta} = -\frac{G m_\alpha m_\beta}{|\mathbf{r}_\alpha - \mathbf{r}_\beta|^3}(\mathbf{r}_\alpha - \mathbf{r}_\beta)
 $$
 
-Prove explicitly that the sum of all internal forces $\sum_i \sum_{j \ne i} \mathbf{F}_{ij}$ vanishes.
-* **Hint**: Expand the sum for $i, j \in \{1, 2, 3\}$ and group action-reaction pairs $\mathbf{F}_{12} + \mathbf{F}_{21}$.
-* **Answer**: Because $(\mathbf{r}_i - \mathbf{r}_j) = -(\mathbf{r}_j - \mathbf{r}_i)$, each pair cancels to zero identically.
+Prove explicitly that the sum of all internal forces $\sum_\alpha \sum_{\beta \ne \alpha} \mathbf{F}_{\alpha\beta}$ vanishes.
+* **Hint**: Expand the sum for $\alpha, \beta \in \{1, 2, 3\}$ and group the action-reaction pairs:
+  $$
+  (\mathbf{F}_{12} + \mathbf{F}_{21}) + (\mathbf{F}_{13} + \mathbf{F}_{31}) + (\mathbf{F}_{23} + \mathbf{F}_{32})
+  $$
+* **Answer**: Because $(\mathbf{r}_\alpha - \mathbf{r}_\beta) = -(\mathbf{r}_\beta - \mathbf{r}_\alpha)$, Newton's Third Law gives $\mathbf{F}_{\alpha\beta} = -\mathbf{F}_{\beta\alpha}$, so every action-reaction pair cancels to zero identically.
 
 ---
 
