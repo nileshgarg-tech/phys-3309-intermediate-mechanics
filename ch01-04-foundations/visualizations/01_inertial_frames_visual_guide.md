@@ -59,7 +59,7 @@ Imagine a train passenger observing a coffee cup on a frictionless table as the 
 | **Real Forces on Cup** | Normal force $\mathbf{N} = mg\,\hat{\mathbf{y}}$, Gravity $\mathbf{W} = -mg\,\hat{\mathbf{y}}$. $\mathbf{F}_{\text{real},x} = 0$. | Normal force $\mathbf{N} = mg\,\hat{\mathbf{y}}$, Gravity $\mathbf{W} = -mg\,\hat{\mathbf{y}}$. $\mathbf{F}_{\text{real},x} = 0$. |
 | **Observed Motion** | The cup remains completely stationary in space ($\mathbf{a}_{\text{cup}} = \mathbf{0}$). The table slides out from beneath it. | The cup accelerates backward toward the caboose ($\mathbf{a}' = -a\,\hat{\mathbf{x}}$). |
 | **Newton's 1st Law Status** | **HOLDS**: Zero net force yields zero acceleration. | **FAILS**: The cup accelerates spontaneously without any applied physical force! |
-| **Equation of Motion** | $\sum \mathbf{F}_{\text{real}} = m\mathbf{a} \implies \mathbf{0} = m(\mathbf{0})$ | $m\mathbf{a}' = \sum \mathbf{F}_{\text{real}} + \mathbf{F}_{\text{inertial}} \implies m(-a\hat{\mathbf{x}}) = \mathbf{0} + (-ma\hat{\mathbf{x}})$ |
+| **Equation of Motion** | $\sum \mathbf{F} = m\mathbf{a} \implies \mathbf{0} = m(\mathbf{0})$ | $m\mathbf{a}' = \sum \mathbf{F} + \mathbf{F}_{\text{inertial}} \implies m(-a\hat{\mathbf{x}}) = \mathbf{0} - ma\hat{\mathbf{x}}$ |
 
 > [!NOTE]
 > The fictitious force $\mathbf{F}_{\text{inertial}} = -m\mathbf{A}$ always points **opposite** to the acceleration of the reference frame and is proportional to the object's mass $m$. Because it scales with mass, all unsupported objects in the car accelerate backward at the identical rate $a$, indistinguishable from a gravitational field! (Einstein's Equivalence Principle).
@@ -175,7 +175,7 @@ Widely recognized by physicists (including Feynman) as the finest visual exposit
 |---|---|---|
 | **Acceleration of Frame ($\mathbf{A}_{\text{frame}}$)** | $\mathbf{A}_{\text{frame}} = \mathbf{0}$ (at rest or constant velocity) | $\mathbf{A}_{\text{frame}} \neq \mathbf{0}$ (linear acceleration or rotation $\mathbf{\omega} \neq \mathbf{0}$) |
 | **Newton's 1st Law** | **Always holds** ($\mathbf{F}_{\text{net}} = \mathbf{0} \implies \mathbf{a} = \mathbf{0}$) | **Violated** (isolated bodies accelerate spontaneously) |
-| **Newton's 2nd Law** | $\sum \mathbf{F}_{\text{real}} = m\mathbf{a}$ | $\sum \mathbf{F}_{\text{real}} + \mathbf{F}_{\text{inertial}} = m\mathbf{a}'$ |
+| **Newton's 2nd Law** | $\sum \mathbf{F} = m\mathbf{a}$ | $\sum \mathbf{F} + \mathbf{F}_{\text{inertial}} = m\mathbf{a}'$ |
 | **Origin of Forces** | Physical interactions (gravity, EM, contact) with identifiable source objects | Kinematic artifacts of the observer's own acceleration |
 | **Newton's 3rd Law** | Every force has an equal and opposite reaction force | Fictitious forces have **no third-law partner** (no agent pushes back on the frame) |
 | **Examples** | Deep space far from masses; Earth's surface (for non-rotational problems) | Accelerating elevator, turning car, rotating carousel, orbiting space station |
