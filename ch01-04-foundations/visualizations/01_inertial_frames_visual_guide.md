@@ -11,7 +11,11 @@
 ## 1. The Core Misconception: Why $F = 0 \implies a = 0$ is NOT Newton's First Law
 
 Every introductory mechanics student initially asks:
-> *"Why did Newton state his First Law ($\mathbf{F}_{\text{net}} = \mathbf{0} \implies \mathbf{v} = \text{const}$) as an independent axiom if it is just a trivial special case of the Second Law ($\mathbf{F} = m\mathbf{a}$ with $\mathbf{F} = \mathbf{0}$)?"*
+> *"Why did Newton state the First Law as an independent axiom if it is just a special case of the Second Law?"*
+
+$$
+\text{If } \mathbf{F} = m\mathbf{a}, \quad \text{then } \mathbf{F} = \mathbf{0} \implies \mathbf{a} = \mathbf{0} \quad (\mathbf{v} = \text{constant}). \quad \text{Why did Newton need Law 1?}
+$$
 
 As Richard Feynman and John R. Taylor emphasize, **this is completely wrong**. 
 
