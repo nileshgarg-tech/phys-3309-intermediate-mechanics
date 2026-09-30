@@ -244,22 +244,22 @@ The scale reading $F_{\text{scale}}$ consists of two distinct physical parts:
 1. **Static weight of the chain already resting on the table**:  
    A length $y$ is on the table, so its weight is:
 
-   $$
-   W_{\text{resting}} = (\lambda y) g
-   $$
+$$
+W_{\text{resting}} = (\lambda y) g
+$$
 
 2. **Dynamic impact force of incoming chain links losing momentum**:  
    In time $dt$, a small mass $dm = \lambda \, dy = \lambda (v\,dt)$ strikes the table and comes to an instantaneous stop. The rate of momentum transferred to the scale is:
 
-   $$
-   F_{\text{impact}} = \frac{dp}{dt} = v \frac{dm}{dt} = v (\lambda v) = \lambda v^2
-   $$
+$$
+F_{\text{impact}} = \frac{dp}{dt} = v \frac{dm}{dt} = v (\lambda v) = \lambda v^2
+$$
 
    Substitute $v^2 = 2gy$:
 
-   $$
-   F_{\text{impact}} = \lambda (2gy) = 2(\lambda y) g
-   $$
+$$
+F_{\text{impact}} = \lambda (2gy) = 2(\lambda y) g
+$$
 
 The total force recorded by the scale is the sum of static weight and dynamic impact:
 

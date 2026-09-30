@@ -147,40 +147,40 @@ As $r \to 0$, $U_{\text{cf}} \to +\infty$ scaling as $1/r^2$.
 1. **At the Top of the Loop (Height $2R$)**:  
    By energy conservation between release at height $h$ and the top of the loop:
 
-   $$
-   m g h = m g (2R) + \frac{1}{2} m v_{\text{top}}^2 \implies v_{\text{top}}^2 = 2 g (h - 2R)
-   $$
+$$
+m g h = m g (2R) + \frac{1}{2} m v_{\text{top}}^2 \implies v_{\text{top}}^2 = 2 g (h - 2R)
+$$
 
    At the top, both gravity and the normal track force $N$ point downward:
 
-   $$
-   m g + N = m \frac{v_{\text{top}}^2}{R} \implies N = m \frac{v_{\text{top}}^2}{R} - m g
-   $$
+$$
+m g + N = m \frac{v_{\text{top}}^2}{R} \implies N = m \frac{v_{\text{top}}^2}{R} - m g
+$$
 
    To maintain contact without falling, the normal force must be non-negative ($N \ge 0$):
 
-   $$
-   m \frac{v_{\text{top}}^2}{R} \ge m g \implies v_{\text{top}}^2 \ge g R
-   $$
+$$
+m \frac{v_{\text{top}}^2}{R} \ge m g \implies v_{\text{top}}^2 \ge g R
+$$
 
    Substitute $v_{\text{top}}^2$:
 
-   $$
-   2 g (h_{\text{min}} - 2R) = g R \implies 2h_{\text{min}} - 4R = R \implies h_{\text{min}} = \frac{5}{2} R = 2.5 R
-   $$
+$$
+2 g (h_{\text{min}} - 2R) = g R \implies 2h_{\text{min}} - 4R = R \implies h_{\text{min}} = \frac{5}{2} R = 2.5 R
+$$
 
 2. **At the Bottom of the Loop (Height $0$, with $h = 3R$)**:  
    Energy conservation:
 
-   $$
-   m g (3R) = \frac{1}{2} m v_{\text{bot}}^2 \implies v_{\text{bot}}^2 = 6 g R
-   $$
+$$
+m g (3R) = \frac{1}{2} m v_{\text{bot}}^2 \implies v_{\text{bot}}^2 = 6 g R
+$$
 
    At the bottom, normal force points upward, gravity downward:
 
-   $$
-   N - m g = m \frac{v_{\text{bot}}^2}{R} \implies N = m g + m \frac{6 g R}{R} = 7 m g
-   $$
+$$
+N - m g = m \frac{v_{\text{bot}}^2}{R} \implies N = m g + m \frac{6 g R}{R} = 7 m g
+$$
 
 **Physical Insight**: The track must push upward with a force of **$7$ times the car's weight** at the bottom of the loop!
 

@@ -171,21 +171,21 @@ $$
 (b) Mechanical Energy calculation:
 * Initial kinetic energy:
 
-  $$
-  T_{\text{initial}} = \frac{1}{2} m_1 v_1^2 = (0.5)(2.0)(6.0)^2 = 36.0\text{ Joules}
-  $$
+$$
+T_{\text{initial}} = \frac{1}{2} m_1 v_1^2 = (0.5)(2.0)(6.0)^2 = 36.0\text{ Joules}
+$$
 
 * Final kinetic energy:
 
-  $$
-  T_{\text{final}} = \frac{1}{2} (m_1 + m_2) V_f^2 = (0.5)(6.0)(2.0)^2 = 12.0\text{ Joules}
-  $$
+$$
+T_{\text{final}} = \frac{1}{2} (m_1 + m_2) V_f^2 = (0.5)(6.0)(2.0)^2 = 12.0\text{ Joules}
+$$
 
 * Lost mechanical energy:
 
-  $$
-  \Delta E_{\text{mech}} = T_{\text{final}} - T_{\text{initial}} = 12.0 - 36.0 = -24.0\text{ Joules}
-  $$
+$$
+\Delta E_{\text{mech}} = T_{\text{final}} - T_{\text{initial}} = 12.0 - 36.0 = -24.0\text{ Joules}
+$$
 
 Exactly **$24\text{ Joules}$ ($66.7\%$) of mechanical kinetic energy was lost!**
 

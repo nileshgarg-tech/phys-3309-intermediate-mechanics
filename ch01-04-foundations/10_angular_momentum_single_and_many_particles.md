@@ -93,15 +93,15 @@ $$
 2. **Kepler's Second Law (Equal Areas in Equal Times)**:  
    The area swept out by the position vector in time $dt$ is a triangle of area:
 
-   $$
-   dA = \frac{1}{2} |\mathbf{r} \times d\mathbf{r}| = \frac{1}{2} |\mathbf{r} \times (\mathbf{v}\,dt)| = \frac{|\mathbf{l}|}{2m}\,dt
-   $$
+$$
+dA = \frac{1}{2} |\mathbf{r} \times d\mathbf{r}| = \frac{1}{2} |\mathbf{r} \times (\mathbf{v}\,dt)| = \frac{|\mathbf{l}|}{2m}\,dt
+$$
 
    Dividing by $dt$:
 
-   $$
-   \frac{dA}{dt} = \frac{|\mathbf{l}|}{2m} = \text{constant}
-   $$
+$$
+\frac{dA}{dt} = \frac{|\mathbf{l}|}{2m} = \text{constant}
+$$
 
    A planet sweeps out equal orbital areas in equal intervals of time.
 
@@ -213,51 +213,51 @@ $$
 1. **Coordinates**:  
    Let the pivot point be the origin $O$. The position of the bob is:
 
-   $$
-   \mathbf{r}(t) = R\cos(\omega t)\,\hat{\mathbf{x}} + R\sin(\omega t)\,\hat{\mathbf{y}} - h\,\hat{\mathbf{z}}
-   $$
+$$
+\mathbf{r}(t) = R\cos(\omega t)\,\hat{\mathbf{x}} + R\sin(\omega t)\,\hat{\mathbf{y}} - h\,\hat{\mathbf{z}}
+$$
 
    where $h = L\cos\alpha$.  
    The velocity of the bob is:
 
-   $$
-   \mathbf{v}(t) = -R\omega\sin(\omega t)\,\hat{\mathbf{x}} + R\omega\cos(\omega t)\,\hat{\mathbf{y}}
-   $$
+$$
+\mathbf{v}(t) = -R\omega\sin(\omega t)\,\hat{\mathbf{x}} + R\omega\cos(\omega t)\,\hat{\mathbf{y}}
+$$
 
 2. **Angular Momentum $\mathbf{l} = \mathbf{r} \times (m\mathbf{v})$**:
 
-   $$
-   \mathbf{l} = m \begin{vmatrix}
-   \hat{\mathbf{x}} & \hat{\mathbf{y}} & \hat{\mathbf{z}} \\
-   R\cos(\omega t) & R\sin(\omega t) & -h \\
-   -R\omega\sin(\omega t) & R\omega\cos(\omega t) & 0
-   \end{vmatrix}
-   $$
+$$
+\mathbf{l} = m \begin{vmatrix}
+\hat{\mathbf{x}} & \hat{\mathbf{y}} & \hat{\mathbf{z}} \\
+R\cos(\omega t) & R\sin(\omega t) & -h \\
+-R\omega\sin(\omega t) & R\omega\cos(\omega t) & 0
+\end{vmatrix}
+$$
 
-   $$
-   \mathbf{l} = m \left[ h R \omega \cos(\omega t)\,\hat{\mathbf{x}} + h R \omega \sin(\omega t)\,\hat{\mathbf{y}} + R^2 \omega\,\hat{\mathbf{z}} \right]
-   $$
+$$
+\mathbf{l} = m \left[ h R \omega \cos(\omega t)\,\hat{\mathbf{x}} + h R \omega \sin(\omega t)\,\hat{\mathbf{y}} + R^2 \omega\,\hat{\mathbf{z}} \right]
+$$
 
    Notice that $\mathbf{l}$ has a **constant vertical component** $l_z = m R^2 \omega$, but its horizontal components rotate continuously in a circle!
 
 3. **Rate of Change $\frac{d\mathbf{l}}{dt}$**:
 
-   $$
-   \frac{d\mathbf{l}}{dt} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
-   $$
+$$
+\frac{d\mathbf{l}}{dt} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
+$$
 
 4. **Torque $\mathbf{\Gamma} = \mathbf{r} \times \mathbf{F}$**:  
    The net force on the bob is the horizontal centripetal force:
 
-   $$
-   \mathbf{F} = -m R \omega^2 \left[ \cos(\omega t)\,\hat{\mathbf{x}} + \sin(\omega t)\,\hat{\mathbf{y}} \right]
-   $$
+$$
+\mathbf{F} = -m R \omega^2 \left[ \cos(\omega t)\,\hat{\mathbf{x}} + \sin(\omega t)\,\hat{\mathbf{y}} \right]
+$$
 
    Compute torque about pivot $O$:
 
-   $$
-   \mathbf{\Gamma} = \mathbf{r} \times \mathbf{F} = (-h\,\hat{\mathbf{z}}) \times \mathbf{F} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
-   $$
+$$
+\mathbf{\Gamma} = \mathbf{r} \times \mathbf{F} = (-h\,\hat{\mathbf{z}}) \times \mathbf{F} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
+$$
 
    **$\frac{d\mathbf{l}}{dt} = \mathbf{\Gamma}$ matches perfectly!**  
 **Physical Insight**: The angular momentum vector is tilted relative to the vertical axis and sweeps out a cone in space (precesses) at frequency $\omega$, driven by the torque acting about the pivot point!
@@ -280,40 +280,40 @@ $$
    Center of Mass position: $\mathbf{R} = (Vt)\,\hat{\mathbf{x}}$.  
    Center of Mass velocity: $\mathbf{V}_{\text{cm}} = V\,\hat{\mathbf{x}}$.
 
-   $$
-   \mathbf{L}_{\text{orbital}} = \mathbf{R} \times (M\mathbf{V}_{\text{cm}}) = (Vt\,\hat{\mathbf{x}}) \times (2mV\,\hat{\mathbf{x}}) = \mathbf{0}
-   $$
+$$
+\mathbf{L}_{\text{orbital}} = \mathbf{R} \times (M\mathbf{V}_{\text{cm}}) = (Vt\,\hat{\mathbf{x}}) \times (2mV\,\hat{\mathbf{x}}) = \mathbf{0}
+$$
 
    *(Since CM position and velocity are collinear, orbital angular momentum about the origin is zero!)*
 
 2. **Spin Component**:  
    Relative to the Center of Mass, the two masses are at:
 
-   $$
-   \mathbf{r}'_1 = b\cos(\omega t)\,\hat{\mathbf{x}} + b\sin(\omega t)\,\hat{\mathbf{y}}, \quad \mathbf{r}'_2 = -\mathbf{r}'_1
-   $$
+$$
+\mathbf{r}'_1 = b\cos(\omega t)\,\hat{\mathbf{x}} + b\sin(\omega t)\,\hat{\mathbf{y}}, \quad \mathbf{r}'_2 = -\mathbf{r}'_1
+$$
 
    Their relative velocities are:
 
-   $$
-   \mathbf{v}'_1 = -b\omega\sin(\omega t)\,\hat{\mathbf{x}} + b\omega\cos(\omega t)\,\hat{\mathbf{y}}, \quad \mathbf{v}'_2 = -\mathbf{v}'_1
-   $$
+$$
+\mathbf{v}'_1 = -b\omega\sin(\omega t)\,\hat{\mathbf{x}} + b\omega\cos(\omega t)\,\hat{\mathbf{y}}, \quad \mathbf{v}'_2 = -\mathbf{v}'_1
+$$
 
    Compute spin angular momentum:
 
-   $$
-   \mathbf{l}'_1 = \mathbf{r}'_1 \times (m\mathbf{v}'_1) = m b^2 \omega\,\hat{\mathbf{z}}
-   $$
+$$
+\mathbf{l}'_1 = \mathbf{r}'_1 \times (m\mathbf{v}'_1) = m b^2 \omega\,\hat{\mathbf{z}}
+$$
 
-   $$
-   \mathbf{l}'_2 = (-\mathbf{r}'_1) \times [m(-\mathbf{v}'_1)] = m b^2 \omega\,\hat{\mathbf{z}}
-   $$
+$$
+\mathbf{l}'_2 = (-\mathbf{r}'_1) \times [m(-\mathbf{v}'_1)] = m b^2 \omega\,\hat{\mathbf{z}}
+$$
 
    Summing over both particles:
 
-   $$
-   \mathbf{L}_{\text{spin}} = \mathbf{l}'_1 + \mathbf{l}'_2 = 2 m b^2 \omega\,\hat{\mathbf{z}}
-   $$
+$$
+\mathbf{L}_{\text{spin}} = \mathbf{l}'_1 + \mathbf{l}'_2 = 2 m b^2 \omega\,\hat{\mathbf{z}}
+$$
 
 Therefore:
 

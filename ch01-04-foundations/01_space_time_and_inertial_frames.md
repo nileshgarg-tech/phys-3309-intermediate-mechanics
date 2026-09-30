@@ -150,38 +150,49 @@ $$
    The real forces acting on the bob are:
    * Gravity downward: $\mathbf{F}_g = -mg\,\hat{\mathbf{y}}$
    * String tension along the string at angle $\theta$: $\mathbf{T} = -T\sin\theta\,\hat{\mathbf{x}} + T\cos\theta\,\hat{\mathbf{y}}$
-   
+
    Applying Newton's Second Law $\mathbf{F}_{\text{net}} = m\mathbf{a}$:
    * Vertical equilibrium ($a_y = 0$):
-     $$
-     T\cos\theta - mg = 0 \implies T\cos\theta = mg
-     $$
+
+$$
+T\cos\theta - mg = 0 \implies T\cos\theta = mg
+$$
+
    * Horizontal acceleration ($a_x = a$):
-     $$
-     T\sin\theta = ma
-     $$
+
+$$
+T\sin\theta = ma
+$$
+
    Dividing the horizontal equation by the vertical equation:
-   $$
-   \tan\theta = \frac{ma}{mg} = \frac{a}{g} \implies \theta = \arctan\left(\frac{a}{g}\right)
-   $$
+
+$$
+\tan\theta = \frac{ma}{mg} = \frac{a}{g} \implies \theta = \arctan\left(\frac{a}{g}\right)
+$$
 
 2. **Train Observer (Non-Inertial Frame $S'$)**:
    To the observer in the train, the bob hangs stationary at rest ($\mathbf{a}' = \mathbf{0}$).
    However, Newton's 1st law fails unless the observer introduces an inertial fictitious force:
-   $$
-   \mathbf{F}_{\text{inertial}} = -ma\,\hat{\mathbf{x}}
-   $$
+
+$$
+\mathbf{F}_{\text{inertial}} = -ma\,\hat{\mathbf{x}}
+$$
+
    In the train frame, statics requires:
-   $$
-   T\sin\theta - ma = 0 \implies T\sin\theta = ma
-   $$
-   $$
-   T\cos\theta - mg = 0 \implies T\cos\theta = mg
-   $$
+
+$$
+T\sin\theta - ma = 0 \implies T\sin\theta = ma
+$$
+
+$$
+T\cos\theta - mg = 0 \implies T\cos\theta = mg
+$$
+
    Dividing again yields:
-   $$
-   \tan\theta = \frac{a}{g}
-   $$
+
+$$
+\tan\theta = \frac{a}{g}
+$$
 
 **Physical Insight**: Both observers measure the exact same physical tilt $\theta = \arctan(a/g)$. The inertial observer explains it as the horizontal component of tension supplying the required acceleration. The accelerating observer explains it as tension balancing gravity and the fictitious inertial force.
 
@@ -199,13 +210,17 @@ Here $\mathbf{V} = 3\,\hat{\mathbf{x}}$ (east). We desire the net velocity $\mat
 The swimmer's velocity relative to the water is $\mathbf{v}' = -v'\sin\phi\,\hat{\mathbf{x}} + v'\cos\phi\,\hat{\mathbf{y}}$, where $\phi$ is the angle pointed upstream (west of north).
 
 Equating horizontal components:
+
 $$
 v_x = -v'\sin\phi + V = 0 \implies \sin\phi = \frac{V}{v'} = \frac{3}{5} = 0.6
 $$
+
 $$
 \phi = \arcsin(0.6) \approx 36.87^\circ \text{ west of north}
 $$
+
 The resulting crossing speed is:
+
 $$
 v_y = v'\cos\phi = 5\cos(36.87^\circ) = 5(0.8) = 4\text{ m/s}
 $$

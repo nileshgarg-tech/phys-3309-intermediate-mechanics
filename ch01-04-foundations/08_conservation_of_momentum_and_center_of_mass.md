@@ -157,9 +157,9 @@ The man walks steadily from the left end of the raft to the right end and stops.
 1. **System Identification**:  
    Consider the closed system (Man + Raft). Because the ice surface is frictionless, **there is zero net external horizontal force on the system**:
 
-   $$
-   F_{\text{net},x}^{\text{ext}} = 0 \implies X_{\text{cm}} = \text{constant}
-   $$
+$$
+F_{\text{net},x}^{\text{ext}} = 0 \implies X_{\text{cm}} = \text{constant}
+$$
 
    The Center of Mass of the entire system cannot move relative to the ice.
 
@@ -170,9 +170,9 @@ The man walks steadily from the left end of the raft to the right end and stops.
 
    The initial center of mass of the system is:
 
-   $$
-   X_{\text{cm}} = \frac{m x_{m1} + M x_{r1}}{m + M} = \frac{M (L/2)}{m + M}
-   $$
+$$
+X_{\text{cm}} = \frac{m x_{m1} + M x_{r1}}{m + M} = \frac{M (L/2)}{m + M}
+$$
 
 3. **Final Positions**:  
    Let the raft shift to the left by a distance $d$ (so its left edge is at $-d$).
@@ -181,25 +181,25 @@ The man walks steadily from the left end of the raft to the right end and stops.
 
    The final Center of Mass is:
 
-   $$
-   X_{\text{cm}} = \frac{m (L - d) + M (L/2 - d)}{m + M}
-   $$
+$$
+X_{\text{cm}} = \frac{m (L - d) + M (L/2 - d)}{m + M}
+$$
 
 4. **Equating Initial and Final CM**:
 
-   $$
-   M \left(\frac{L}{2}\right) = m (L - d) + M \left(\frac{L}{2} - d\right)
-   $$
+$$
+M \left(\frac{L}{2}\right) = m (L - d) + M \left(\frac{L}{2} - d\right)
+$$
 
-   $$
-   0 = m L - (m + M) d \implies d = \left(\frac{m}{m + M}\right) L
-   $$
+$$
+0 = m L - (m + M) d \implies d = \left(\frac{m}{m + M}\right) L
+$$
 
    Substitute the numerical values ($m = 80\text{ kg}$, $M = 120\text{ kg}$, $L = 6.0\text{ m}$):
 
-   $$
-   d = \left(\frac{80}{80 + 120}\right) \times 6.0 = \frac{80}{200} \times 6.0 = 2.40\text{ meters}
-   $$
+$$
+d = \left(\frac{80}{80 + 120}\right) \times 6.0 = \frac{80}{200} \times 6.0 = 2.40\text{ meters}
+$$
 
 (a) The raft moves **$2.40\text{ meters}$ to the left**.  
 (b) The man's displacement relative to the ice is:
