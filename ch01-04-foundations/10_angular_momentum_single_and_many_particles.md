@@ -11,55 +11,55 @@
 ## 1. Defining Angular Momentum for a Single Particle
 
 Linear momentum ($\mathbf{p} = m \mathbf{v}$) measures motion along a straight line.  
-**Angular momentum** ($\mathbf{l}$) measures rotational motion about a designated reference origin $O$.
-
-For a particle of mass $m$ with position vector $\mathbf{r}$ and linear momentum $\mathbf{p}$:
+**Angular momentum** ($\boldsymbol{\ell}$) measures rotational motion about a designated reference origin $O$ (Taylor, Eq. 3.21):
 
 $$
-\mathbf{l} = \mathbf{r} \times \mathbf{p} = \mathbf{r} \times (m\mathbf{v})
+\boldsymbol{\ell} = \mathbf{r} \times \mathbf{p} = \mathbf{r} \times (m\mathbf{v})
 $$
 
 Angular momentum is an **axial vector** perpendicular to both the position vector and the velocity vector.  
-Its magnitude is:
+Its magnitude $\ell = |\boldsymbol{\ell}|$ is:
 
 $$
-|\mathbf{l}| = r p \sin\theta = r_\perp p = r p_\perp
+\ell = r p \sin\theta = r_\perp p = r p_\perp
 $$
+
+where $\theta$ is the angle between $\mathbf{r}$ and $\mathbf{p}$, $r_\perp = r\sin\theta$ is the lever arm (or impact parameter), and $p_\perp = p\sin\theta$ is the transverse momentum.
 
 ---
 
 ## 2. Torque and the Fundamental Rotational Law
 
 What causes angular momentum to change?  
-Let us differentiate $\mathbf{l}$ with respect to time:
+Following Taylor (Sec. 3.4), let us differentiate $\boldsymbol{\ell}$ with respect to time:
 
 $$
-\frac{d\mathbf{l}}{dt} = \frac{d}{dt}(\mathbf{r} \times \mathbf{p}) = \left(\frac{d\mathbf{r}}{dt} \times \mathbf{p}\right) + \left(\mathbf{r} \times \frac{d\mathbf{p}}{dt}\right)
+\dot{\boldsymbol{\ell}} = \frac{d}{dt}(\mathbf{r} \times \mathbf{p}) = (\dot{\mathbf{r}} \times \mathbf{p}) + (\mathbf{r} \times \dot{\mathbf{p}})
 $$
 
 Examine the first term:
 
 $$
-\frac{d\mathbf{r}}{dt} \times \mathbf{p} = \mathbf{v} \times (m\mathbf{v}) = m (\mathbf{v} \times \mathbf{v}) = \mathbf{0}
+\dot{\mathbf{r}} \times \mathbf{p} = \mathbf{v} \times (m\mathbf{v}) = m (\mathbf{v} \times \mathbf{v}) = \mathbf{0}
 $$
 
 *(The cross product of any vector with itself is identically zero!)*  
-Now examine the second term: by Newton's Second Law, $\frac{d\mathbf{p}}{dt} = \mathbf{F}_{\text{net}}$. Therefore:
+Now examine the second term: by Newton's Second Law, $\dot{\mathbf{p}} = \mathbf{F}$. Therefore:
 
 $$
-\frac{d\mathbf{l}}{dt} = \mathbf{r} \times \mathbf{F}_{\text{net}}
+\dot{\boldsymbol{\ell}} = \mathbf{r} \times \mathbf{F}
 $$
 
-We define the **Torque** (or moment of force) $\mathbf{\Gamma}$:
+Following Taylor (Eq. 3.23), we define the **Torque** (or moment of force) $\boldsymbol{\Gamma}$:
 
 $$
-\mathbf{\Gamma} = \mathbf{r} \times \mathbf{F}
+\boldsymbol{\Gamma} = \mathbf{r} \times \mathbf{F}
 $$
 
-> **The Rotational Form of Newton's Second Law**:
+> **The Rotational Form of Newton's Second Law (Taylor, Eq. 3.24)**:
 > 
 > $$
-> \mathbf{\Gamma}_{\text{net}} = \frac{d\mathbf{l}}{dt}
+> \dot{\boldsymbol{\ell}} = \boldsymbol{\Gamma}
 > $$
 > 
 > Torque is the instantaneous time rate of change of angular momentum.
@@ -79,28 +79,28 @@ Examples include Newtonian gravity ($\mathbf{F} = -\frac{GMm}{r^2}\hat{\mathbf{r
 Compute the torque exerted by a central force:
 
 $$
-\mathbf{\Gamma} = \mathbf{r} \times \mathbf{F} = \mathbf{r} \times [f(r)\,\hat{\mathbf{r}}] = f(r)\,[r (\hat{\mathbf{r}} \times \hat{\mathbf{r}})] = \mathbf{0}
+\boldsymbol{\Gamma} = \mathbf{r} \times \mathbf{F} = \mathbf{r} \times [f(r)\,\hat{\mathbf{r}}] = f(r)\,[r (\hat{\mathbf{r}} \times \hat{\mathbf{r}})] = \mathbf{0}
 $$
 
-Because $\mathbf{\Gamma} = \mathbf{0}$:
+Because $\boldsymbol{\Gamma} = \mathbf{0}$:
 
 $$
-\frac{d\mathbf{l}}{dt} = \mathbf{0} \implies \mathbf{l} = \mathbf{r} \times (m\mathbf{v}) = \text{constant vector!}
+\dot{\boldsymbol{\ell}} = \mathbf{0} \implies \boldsymbol{\ell} = \mathbf{r} \times (m\mathbf{v}) = \text{constant vector!}
 $$
 
 ### Consequences of Angular Momentum Conservation:
-1. **Planar Motion**: Since $\mathbf{l}$ is a fixed vector in space, and $\mathbf{r}(t) \cdot \mathbf{l} = 0$ at all times, the particle's entire trajectory is permanently confined to a 2D plane perpendicular to $\mathbf{l}$.
-2. **Kepler's Second Law (Equal Areas in Equal Times)**:  
+1. **Planar Motion**: Since $\boldsymbol{\ell}$ is a fixed vector in space, and $\mathbf{r}(t) \cdot \boldsymbol{\ell} = 0$ at all times, the particle's entire trajectory is permanently confined to a 2D plane perpendicular to $\boldsymbol{\ell}$.
+2. **Kepler's Second Law (Equal Areas in Equal Times, Taylor Eq. 3.26)**:  
    The area swept out by the position vector in time $dt$ is a triangle of area:
 
 $$
-dA = \frac{1}{2} |\mathbf{r} \times d\mathbf{r}| = \frac{1}{2} |\mathbf{r} \times (\mathbf{v}\,dt)| = \frac{|\mathbf{l}|}{2m}\,dt
+dA = \frac{1}{2} |\mathbf{r} \times d\mathbf{r}| = \frac{1}{2} |\mathbf{r} \times (\mathbf{v}\,dt)| = \frac{\ell}{2m}\,dt
 $$
 
    Dividing by $dt$:
 
 $$
-\frac{dA}{dt} = \frac{|\mathbf{l}|}{2m} = \text{constant}
+\frac{dA}{dt} = \frac{\ell}{2m} = \text{constant}
 $$
 
    A planet sweeps out equal orbital areas in equal intervals of time.
@@ -109,83 +109,90 @@ $$
 
 ## 4. Total Angular Momentum of a Multiparticle System
 
-For a collection of $N$ particles:
+Following Taylor (Sec. 3.5), for a collection of $N$ particles indexed by $\alpha = 1, \dots, N$, the **Total Angular Momentum** $\mathbf{L}$ is defined as:
 
 $$
-\mathbf{L}_{\text{total}} = \sum_{i=1}^N \mathbf{l}_i = \sum_{i=1}^N (\mathbf{r}_i \times \mathbf{p}_i)
+\mathbf{L} = \sum_{\alpha=1}^N \boldsymbol{\ell}_\alpha = \sum_{\alpha=1}^N (\mathbf{r}_\alpha \times \mathbf{p}_\alpha)
 $$
 
 Differentiate with respect to time:
 
 $$
-\frac{d\mathbf{L}_{\text{total}}}{dt} = \sum_{i=1}^N (\mathbf{r}_i \times \mathbf{F}_i^{\text{ext}}) + \sum_{i=1}^N \sum_{j \neq i} (\mathbf{r}_i \times \mathbf{F}_{ij})
+\dot{\mathbf{L}} = \sum_{\alpha=1}^N (\mathbf{r}_\alpha \times \dot{\mathbf{p}}_\alpha) = \sum_{\alpha=1}^N (\mathbf{r}_\alpha \times \mathbf{F}_\alpha^{\text{ext}}) + \sum_{\alpha=1}^N \sum_{\beta \neq \alpha} (\mathbf{r}_\alpha \times \mathbf{F}_{\alpha\beta})
 $$
 
 Let us inspect the internal torque sum. Grouping mutual action-reaction pairs:
 
 $$
-\mathbf{r}_i \times \mathbf{F}_{ij} + \mathbf{r}_j \times \mathbf{F}_{ji} = \mathbf{r}_i \times \mathbf{F}_{ij} - \mathbf{r}_j \times \mathbf{F}_{ij} = (\mathbf{r}_i - \mathbf{r}_j) \times \mathbf{F}_{ij}
+\mathbf{r}_\alpha \times \mathbf{F}_{\alpha\beta} + \mathbf{r}_\beta \times \mathbf{F}_{\beta\alpha} = \mathbf{r}_\alpha \times \mathbf{F}_{\alpha\beta} - \mathbf{r}_\beta \times \mathbf{F}_{\alpha\beta} = (\mathbf{r}_\alpha - \mathbf{r}_\beta) \times \mathbf{F}_{\alpha\beta}
 $$
 
-If the internal forces obey the **Strong Form of Newton's Third Law**, $\mathbf{F}_{ij}$ acts along the relative displacement vector $(\mathbf{r}_i - \mathbf{r}_j)$. Therefore:
+If the internal forces obey Newton's Third Law in its strong form (meaning the mutual forces are central and act along the relative displacement vector $\mathbf{r}_\alpha - \mathbf{r}_\beta$):
 
 $$
-(\mathbf{r}_i - \mathbf{r}_j) \times \mathbf{F}_{ij} = \mathbf{0}
+(\mathbf{r}_\alpha - \mathbf{r}_\beta) \times \mathbf{F}_{\alpha\beta} = \mathbf{0}
 $$
 
-All internal torques vanish identically!
+All internal torques cancel pairwise! Defining the net external torque $\boldsymbol{\Gamma}^{\text{ext}} = \sum_\alpha (\mathbf{r}_\alpha \times \mathbf{F}_\alpha^{\text{ext}})$:
 
 $$
-\frac{d\mathbf{L}_{\text{total}}}{dt} = \sum_{i=1}^N (\mathbf{r}_i \times \mathbf{F}_i^{\text{ext}}) = \mathbf{\Gamma}_{\text{net}}^{\text{ext}}
+\dot{\mathbf{L}} = \boldsymbol{\Gamma}^{\text{ext}}
 $$
 
-If the net external torque is zero, the total angular momentum of the system is strictly conserved!
+> **The Multiparticle Angular Momentum Theorem (Taylor, Eq. 3.39)**:  
+> If the net external torque is zero ($\boldsymbol{\Gamma}^{\text{ext}} = \mathbf{0}$), the total angular momentum $\mathbf{L}$ of the system is strictly conserved:
+> 
+> $$
+> \mathbf{L} = \text{constant}
+> $$
 
 ---
 
-## 5. The Orbital vs. Spin Decomposition
+## 5. The CM Decomposition: Motion of CM vs. Motion Relative to CM
 
-Here is one of the most elegant theorems in classical mechanics:  
-Let $\mathbf{R}$ be the Center of Mass position, and let $\mathbf{r}'_i$ be the position of particle $i$ **relative to the Center of Mass**:
-
-$$
-\mathbf{r}_i = \mathbf{R} + \mathbf{r}'_i
-$$
+Here is one of the most elegant theorems in classical mechanics (Taylor, Sec. 3.5, pp. 97–99).  
+Let $\mathbf{R}$ be the Center of Mass position, and let $\mathbf{r}'_\alpha$ be the position of particle $\alpha$ **relative to the Center of Mass**:
 
 $$
-\mathbf{v}_i = \mathbf{V}_{\text{cm}} + \mathbf{v}'_i
+\mathbf{r}_\alpha = \mathbf{R} + \mathbf{r}'_\alpha
+$$
+
+$$
+\dot{\mathbf{r}}_\alpha = \dot{\mathbf{R}} + \dot{\mathbf{r}}'_\alpha
 $$
 
 Substitute this into the total angular momentum formula:
 
 $$
-\mathbf{L} = \sum_{i=1}^N \left[ (\mathbf{R} + \mathbf{r}'_i) \times m_i (\mathbf{V}_{\text{cm}} + \mathbf{v}'_i) \right]
+\mathbf{L} = \sum_{\alpha=1}^N \left[ (\mathbf{R} + \mathbf{r}'_\alpha) \times m_\alpha (\dot{\mathbf{R}} + \dot{\mathbf{r}}'_\alpha) \right]
 $$
 
 Expanding the cross products:
 
 $$
-\mathbf{L} = \left(\mathbf{R} \times M\mathbf{V}_{\text{cm}}\right) + \mathbf{R} \times \sum_{i=1}^N m_i \mathbf{v}'_i + \left(\sum_{i=1}^N m_i \mathbf{r}'_i\right) \times \mathbf{V}_{\text{cm}} + \sum_{i=1}^N (\mathbf{r}'_i \times m_i \mathbf{v}'_i)
+\mathbf{L} = (\mathbf{R} \times M\dot{\mathbf{R}}) + \mathbf{R} \times \left(\sum_{\alpha=1}^N m_\alpha \dot{\mathbf{r}}'_\alpha\right) + \left(\sum_{\alpha=1}^N m_\alpha \mathbf{r}'_\alpha\right) \times \dot{\mathbf{R}} + \sum_{\alpha=1}^N (\mathbf{r}'_\alpha \times m_\alpha \dot{\mathbf{r}}'_\alpha)
 $$
 
-Notice that by definition of Center of Mass, $\sum_i m_i \mathbf{r}'_i = \mathbf{0}$ and $\sum_i m_i \mathbf{v}'_i = \mathbf{0}$. The two cross-terms vanish! We are left with:
+Notice that by definition of the Center of Mass, $\sum_\alpha m_\alpha \mathbf{r}'_\alpha = \mathbf{0}$ and $\sum_\alpha m_\alpha \dot{\mathbf{r}}'_\alpha = \mathbf{0}$. The two cross-terms vanish identically! We are left with:
 
 $$
-\mathbf{L}_{\text{total}} = (\mathbf{R} \times M\mathbf{V}_{\text{cm}}) + \sum_{i=1}^N (\mathbf{r}'_i \times m_i \mathbf{v}'_i)
+\mathbf{L} = (\mathbf{R} \times \mathbf{P}) + \sum_{\alpha=1}^N (\mathbf{r}'_\alpha \times \mathbf{p}'_\alpha)
 $$
 
-> **The Two-Component Angular Momentum Theorem**:
+where $\mathbf{P} = M\dot{\mathbf{R}}$ and $\mathbf{p}'_\alpha = m_\alpha \dot{\mathbf{r}}'_\alpha$.
+
+> **Taylor's Angular Momentum Decomposition Theorem (Eq. 3.42)**:
 > 
 > $$
-> \mathbf{L}_{\text{total}} = \mathbf{L}_{\text{orbital}}(\text{CM}) + \mathbf{L}_{\text{spin}}(\text{about CM})
+> \mathbf{L} = \mathbf{L}(\text{motion of CM}) + \mathbf{L}(\text{motion relative to CM})
 > $$
 > 
-> 1. **Orbital Angular Momentum ($\mathbf{L}_{\text{orbital}} = \mathbf{R} \times \mathbf{P}$)**: The angular momentum of the Center of Mass moving through space around the external origin.
-> 2. **Spin Angular Momentum ($\mathbf{L}_{\text{spin}} = \sum \mathbf{r}'_i \times \mathbf{p}'_i$)**: The intrinsic rotational angular momentum of the system spinning around its own Center of Mass.
+> 1. **$\mathbf{L}(\text{motion of CM}) = \mathbf{R} \times \mathbf{P}$**: The angular momentum of the Center of Mass moving through space about the origin $O$.
+> 2. **$\mathbf{L}(\text{motion relative to CM}) = \sum_\alpha (\mathbf{r}'_\alpha \times \mathbf{p}'_\alpha)$**: The intrinsic angular momentum of the system relative to its Center of Mass.
 
 **Example**: The Earth has:
-* An **orbital angular momentum** revolving around the Sun once per 365 days.
-* A **spin angular momentum** rotating around its polar axis once every 24 hours.
+* An orbital angular momentum $\mathbf{R} \times \mathbf{P}$ revolving around the Sun once per 365 days.
+* An intrinsic angular momentum relative to its CM rotating around its polar axis once every 24 hours.
 
 ---
 
@@ -193,12 +200,12 @@ $$
 
 | Quantity | Formula | Physical Meaning |
 |---|---|---|
-| **Angular Momentum** | $\mathbf{l} = \mathbf{r} \times \mathbf{p}$ | Measure of rotational momentum about origin |
-| **Torque** | $\mathbf{\Gamma} = \mathbf{r} \times \mathbf{F}$ | Moment of force; causes $\mathbf{l}$ to change |
-| **Rotational Law** | $\mathbf{\Gamma}_{\text{net}} = \frac{d\mathbf{l}}{dt}$ | Angular counterpart to $\mathbf{F} = \frac{d\mathbf{p}}{dt}$ |
-| **Central Forces** | $\mathbf{\Gamma} = \mathbf{0} \implies \mathbf{l} = \text{const}$ | Produces planar motion & Kepler's 2nd Law |
-| **Internal Torques** | $\sum (\mathbf{r}_i \times \mathbf{F}_{ij}) = \mathbf{0}$ | Cancel out if forces lie along connecting lines |
-| **Orbital + Spin Split** | $\mathbf{L} = (\mathbf{R} \times \mathbf{P}_{\text{cm}}) + \mathbf{L}_{\text{relative}}$| Total rotation decomposes into orbit + spin |
+| **Angular Momentum** | $\boldsymbol{\ell} = \mathbf{r} \times \mathbf{p}$ | Measure of rotational momentum about origin (Taylor, Eq. 3.21) |
+| **Torque** | $\boldsymbol{\Gamma} = \mathbf{r} \times \mathbf{F}$ | Moment of force; causes $\boldsymbol{\ell}$ to change (Taylor, Eq. 3.23) |
+| **Rotational Law** | $\dot{\boldsymbol{\ell}} = \boldsymbol{\Gamma}$ | Angular counterpart to $\dot{\mathbf{p}} = \mathbf{F}$ (Taylor, Eq. 3.24) |
+| **Central Forces** | $\boldsymbol{\Gamma} = \mathbf{0} \implies \boldsymbol{\ell} = \text{const}$ | Produces planar motion & Kepler's 2nd Law ($\dot{A} = \frac{\ell}{2m}$) |
+| **Internal Torques** | $\sum_{\alpha < \beta} (\mathbf{r}_\alpha - \mathbf{r}_\beta) \times \mathbf{F}_{\alpha\beta} = \mathbf{0}$ | Cancel out if internal forces are central |
+| **CM Decomposition** | $\mathbf{L} = (\mathbf{R} \times \mathbf{P}) + \sum_\alpha (\mathbf{r}'_\alpha \times \mathbf{p}'_\alpha)$ | Motion of CM plus motion relative to CM (Taylor, Eq. 3.42) |
 
 ---
 
@@ -206,8 +213,8 @@ $$
 
 ### Worked Example 10.1: Angular Momentum of a Conical Pendulum
 **Problem**: A bob of mass $m$ hangs from a fixed pivot by a string of length $L$. It moves in a horizontal circle of radius $R = L\sin\alpha$ at constant angular speed $\omega$.  
-(a) Find the angular momentum vector $\mathbf{l}$ of the bob calculated about the **suspension pivot point O**.  
-(b) Compute the torque $\mathbf{\Gamma}$ about point O, and verify that $\frac{d\mathbf{l}}{dt} = \mathbf{\Gamma}$.
+(a) Find the angular momentum vector $\boldsymbol{\ell}$ of the bob calculated about the **suspension pivot point O**.  
+(b) Compute the torque $\boldsymbol{\Gamma}$ about point O, and verify that $\dot{\boldsymbol{\ell}} = \boldsymbol{\Gamma}$.
 
 **Solution**:  
 1. **Coordinates**:  
@@ -221,13 +228,13 @@ $$
    The velocity of the bob is:
 
 $$
-\mathbf{v}(t) = -R\omega\sin(\omega t)\,\hat{\mathbf{x}} + R\omega\cos(\omega t)\,\hat{\mathbf{y}}
+\mathbf{v}(t) = \dot{\mathbf{r}}(t) = -R\omega\sin(\omega t)\,\hat{\mathbf{x}} + R\omega\cos(\omega t)\,\hat{\mathbf{y}}
 $$
 
-2. **Angular Momentum $\mathbf{l} = \mathbf{r} \times (m\mathbf{v})$**:
+2. **Angular Momentum $\boldsymbol{\ell} = \mathbf{r} \times (m\mathbf{v})$**:
 
 $$
-\mathbf{l} = m \begin{vmatrix}
+\boldsymbol{\ell} = m \begin{vmatrix}
 \hat{\mathbf{x}} & \hat{\mathbf{y}} & \hat{\mathbf{z}} \\
 R\cos(\omega t) & R\sin(\omega t) & -h \\
 -R\omega\sin(\omega t) & R\omega\cos(\omega t) & 0
@@ -235,18 +242,18 @@ R\cos(\omega t) & R\sin(\omega t) & -h \\
 $$
 
 $$
-\mathbf{l} = m \left[ h R \omega \cos(\omega t)\,\hat{\mathbf{x}} + h R \omega \sin(\omega t)\,\hat{\mathbf{y}} + R^2 \omega\,\hat{\mathbf{z}} \right]
+\boldsymbol{\ell} = m \left[ h R \omega \cos(\omega t)\,\hat{\mathbf{x}} + h R \omega \sin(\omega t)\,\hat{\mathbf{y}} + R^2 \omega\,\hat{\mathbf{z}} \right]
 $$
 
-   Notice that $\mathbf{l}$ has a **constant vertical component** $l_z = m R^2 \omega$, but its horizontal components rotate continuously in a circle!
+   Notice that $\boldsymbol{\ell}$ has a **constant vertical component** $\ell_z = m R^2 \omega$, but its horizontal components rotate continuously in a circle!
 
-3. **Rate of Change $\frac{d\mathbf{l}}{dt}$**:
+3. **Rate of Change $\dot{\boldsymbol{\ell}}$**:
 
 $$
-\frac{d\mathbf{l}}{dt} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
+\dot{\boldsymbol{\ell}} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
 $$
 
-4. **Torque $\mathbf{\Gamma} = \mathbf{r} \times \mathbf{F}$**:  
+4. **Torque $\boldsymbol{\Gamma} = \mathbf{r} \times \mathbf{F}$**:  
    The net force on the bob is the horizontal centripetal force:
 
 $$
@@ -256,38 +263,38 @@ $$
    Compute torque about pivot $O$:
 
 $$
-\mathbf{\Gamma} = \mathbf{r} \times \mathbf{F} = (-h\,\hat{\mathbf{z}}) \times \mathbf{F} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
+\boldsymbol{\Gamma} = \mathbf{r} \times \mathbf{F} = (-h\,\hat{\mathbf{z}}) \times \mathbf{F} = m h R \omega^2 \left[ -\sin(\omega t)\,\hat{\mathbf{x}} + \cos(\omega t)\,\hat{\mathbf{y}} \right]
 $$
 
-   **$\frac{d\mathbf{l}}{dt} = \mathbf{\Gamma}$ matches perfectly!**  
+   **$\dot{\boldsymbol{\ell}} = \boldsymbol{\Gamma}$ matches perfectly!**  
 **Physical Insight**: The angular momentum vector is tilted relative to the vertical axis and sweeps out a cone in space (precesses) at frequency $\omega$, driven by the torque acting about the pivot point!
 
 ---
 
-### Worked Example 10.2: Orbital and Spin Angular Momentum of a Dumbbell
+### Worked Example 10.2: Angular Momentum Decomposition of a Dumbbell
 **Problem**: Two equal masses $m$ are attached to the ends of a rigid massless rod of length $2b$. The center of the rod moves along the $x$-axis with speed $V$, while the rod spins in the $xy$-plane at constant angular rate $\omega$ about its center.  
 Find the total angular momentum $\mathbf{L}$ about the origin.
 
 **Solution**:  
-Apply the Two-Component Angular Momentum Theorem:
+Apply Taylor's Angular Momentum Decomposition Theorem (Eq. 3.42):
 
 $$
-\mathbf{L}_{\text{total}} = \mathbf{L}_{\text{orbital}}(\text{CM}) + \mathbf{L}_{\text{spin}}(\text{about CM})
+\mathbf{L} = \mathbf{L}(\text{motion of CM}) + \mathbf{L}(\text{motion relative to CM})
 $$
 
-1. **Orbital Component**:  
+1. **Motion of CM**:  
    Total mass: $M = 2m$.  
    Center of Mass position: $\mathbf{R} = (Vt)\,\hat{\mathbf{x}}$.  
-   Center of Mass velocity: $\mathbf{V}_{\text{cm}} = V\,\hat{\mathbf{x}}$.
+   Center of Mass velocity: $\dot{\mathbf{R}} = V\,\hat{\mathbf{x}}$.
 
 $$
-\mathbf{L}_{\text{orbital}} = \mathbf{R} \times (M\mathbf{V}_{\text{cm}}) = (Vt\,\hat{\mathbf{x}}) \times (2mV\,\hat{\mathbf{x}}) = \mathbf{0}
+\mathbf{L}(\text{motion of CM}) = \mathbf{R} \times (M\dot{\mathbf{R}}) = (Vt\,\hat{\mathbf{x}}) \times (2mV\,\hat{\mathbf{x}}) = \mathbf{0}
 $$
 
-   *(Since CM position and velocity are collinear, orbital angular momentum about the origin is zero!)*
+   *(Since CM position and velocity are collinear, the angular momentum of the CM about the origin is zero!)*
 
-2. **Spin Component**:  
-   Relative to the Center of Mass, the two masses are at:
+2. **Motion Relative to CM**:  
+   Relative to the Center of Mass, the two masses ($\alpha = 1, 2$) are at:
 
 $$
 \mathbf{r}'_1 = b\cos(\omega t)\,\hat{\mathbf{x}} + b\sin(\omega t)\,\hat{\mathbf{y}}, \quad \mathbf{r}'_2 = -\mathbf{r}'_1
@@ -296,36 +303,36 @@ $$
    Their relative velocities are:
 
 $$
-\mathbf{v}'_1 = -b\omega\sin(\omega t)\,\hat{\mathbf{x}} + b\omega\cos(\omega t)\,\hat{\mathbf{y}}, \quad \mathbf{v}'_2 = -\mathbf{v}'_1
+\dot{\mathbf{r}}'_1 = -b\omega\sin(\omega t)\,\hat{\mathbf{x}} + b\omega\cos(\omega t)\,\hat{\mathbf{y}}, \quad \dot{\mathbf{r}}'_2 = -\dot{\mathbf{r}}'_1
 $$
 
-   Compute spin angular momentum:
+   Compute angular momentum relative to the CM for each particle:
 
 $$
-\mathbf{l}'_1 = \mathbf{r}'_1 \times (m\mathbf{v}'_1) = m b^2 \omega\,\hat{\mathbf{z}}
+\boldsymbol{\ell}'_1 = \mathbf{r}'_1 \times (m\dot{\mathbf{r}}'_1) = m b^2 \omega\,\hat{\mathbf{z}}
 $$
 
 $$
-\mathbf{l}'_2 = (-\mathbf{r}'_1) \times [m(-\mathbf{v}'_1)] = m b^2 \omega\,\hat{\mathbf{z}}
+\boldsymbol{\ell}'_2 = (-\mathbf{r}'_1) \times [m(-\dot{\mathbf{r}}'_1)] = m b^2 \omega\,\hat{\mathbf{z}}
 $$
 
    Summing over both particles:
 
 $$
-\mathbf{L}_{\text{spin}} = \mathbf{l}'_1 + \mathbf{l}'_2 = 2 m b^2 \omega\,\hat{\mathbf{z}}
+\mathbf{L}(\text{motion relative to CM}) = \boldsymbol{\ell}'_1 + \boldsymbol{\ell}'_2 = 2 m b^2 \omega\,\hat{\mathbf{z}}
 $$
 
-Therefore:
+Therefore, the total angular momentum is:
 
 $$
-\mathbf{L}_{\text{total}} = 2 m b^2 \omega\,\hat{\mathbf{z}}
+\mathbf{L} = 2 m b^2 \omega\,\hat{\mathbf{z}}
 $$
 
 ---
 
 ### Practice Problem 10.1 (To Solve)
 **Statement**: A planet of mass $m$ moves in an elliptical Keplerian orbit around a sun of mass $M$. At perihelion (closest approach), its distance is $r_p$ and its speed is $v_p$. At aphelion (farthest distance), its distance is $r_a$. Find the speed $v_a$ at aphelion in terms of $v_p, r_p, r_a$.
-* **Hint**: At both perihelion and aphelion, velocity is purely perpendicular to the position vector ($\mathbf{r} \perp \mathbf{v}$). Angular momentum is conserved: $m r_p v_p = m r_a v_a$.
+* **Hint**: At both perihelion and aphelion, velocity is purely perpendicular to the position vector ($\mathbf{r} \perp \mathbf{v}$). The angular momentum magnitude $\ell = |\boldsymbol{\ell}|$ is conserved: $m r_p v_p = m r_a v_a$.
 * **Answer**: $v_a = v_p \left(\frac{r_p}{r_a}\right)$.
 
 ---
@@ -334,8 +341,8 @@ $$
 **Statement**: A particle of mass $m$ slides on a frictionless horizontal table attached to a light string passing through a small hole in the center. The particle initially orbits in a circle of radius $r_1$ with speed $v_1$. The string is slowly pulled downward through the hole until the radius decreases to $r_2 = r_1 / 2$.  
 (a) What is the new orbital speed $v_2$?  
 (b) How does the kinetic energy change? What supplied the work?
-* **Hint**: The tension force is purely radial, exerting zero torque about the hole. Hence angular momentum is conserved: $m r_1 v_1 = m r_2 v_2$.
-* **Answer**: (a) $v_2 = v_1 \left(\frac{r_1}{r_2}\right) = 2 v_1$. (b) $T_2 = \frac{1}{2}m v_2^2 = 4 T_1$. The kinetic energy quadrupled; the work was performed by the external tension pulling the string inward against the centrifugal inertia!
+* **Hint**: The tension force is purely radial, exerting zero torque about the hole ($\boldsymbol{\Gamma} = \mathbf{0}$). Hence angular momentum magnitude is conserved: $\ell = m r_1 v_1 = m r_2 v_2$.
+* **Answer**: (a) $v_2 = v_1 \left(\frac{r_1}{r_2}\right) = 2 v_1$. (b) $T_2 = \frac{1}{2}m v_2^2 = 4 T_1$. The kinetic energy quadrupled; the work was performed by the external tension pulling the string inward against centrifugal inertia!
 
 ---
 

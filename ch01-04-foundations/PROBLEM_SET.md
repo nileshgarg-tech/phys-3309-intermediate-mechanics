@@ -32,11 +32,11 @@ Each problem has been chosen to reflect realistic junior-level exam questions at
 ## Problem 1: Polar Kinematics & The Rotating Wire (Chapter 1)
 
 ### Problem Statement
-A small bead of mass $m$ slides frictionlessly along a straight rigid wire rod. The rod is pivoted at the origin and is forced by an external motor to rotate in a horizontal plane with constant angular speed $\omega$ ($\theta(t) = \omega t$).
+A small bead of mass $m$ slides frictionlessly along a straight rigid wire rod. The rod is pivoted at the origin and is forced by an external motor to rotate in a horizontal plane with constant angular speed $\omega$ ($\phi(t) = \omega t$).
 At time $t = 0$, the bead is released from rest relative to the rod at distance $r(0) = r_0$ with $\dot{r}(0) = 0$.
-1. Using 2D plane polar coordinates, write down Newton's Second Law for both the radial ($\hat{\mathbf{r}}$) and azimuthal ($\hat{\boldsymbol{\theta}}$) directions.
+1. Using 2D plane polar coordinates $(r, \phi)$, write down Newton's Second Law for both the radial ($\hat{\mathbf{r}}$) and azimuthal ($\hat{\boldsymbol{\phi}}$) directions.
 2. Solve the radial equation of motion to find the bead's distance from the pivot $r(t)$ for all future time.
-3. Determine the transverse normal constraint force $N(t) = F_\theta(t)$ exerted by the rod on the bead as a function of time.
+3. Determine the transverse normal constraint force $N(t) = F_\phi(t)$ exerted by the rod on the bead as a function of time.
 
 
 [View Step-by-Step Solution & Physical Takeaway →](PROBLEM_SET_SOLUTIONS.md#problem-1-polar-kinematics-the-rotating-wire-chapter-1)
@@ -180,7 +180,7 @@ $$
 $$
 
 1. Find the potential energy function $U(r)$.
-2. Write down the effective potential $U_{\text{eff}}(r)$ for a particle with angular momentum $l$.
+2. Write down the effective potential $U_{\text{eff}}(r)$ for a particle with angular momentum $\ell$.
 3. Find the radius $r_0$ of a circular orbit.
 4. Prove that a stable circular orbit can exist **only if $n < 3$** (Bertrand's Theorem criterion).
 

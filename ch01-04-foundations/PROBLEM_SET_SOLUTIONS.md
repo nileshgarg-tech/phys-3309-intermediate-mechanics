@@ -24,21 +24,21 @@ This document contains complete, rigorous, step-by-step analytical solutions and
 ### Detailed Solution
 
 1. **Equations of Motion**:
-In plane polar coordinates, the acceleration vector is:
+In plane polar coordinates $(r, \phi)$ (Taylor, Sec. 1.7), the acceleration vector is:
 
 $$
-\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\,\hat{\mathbf{r}} + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\,\hat{\boldsymbol{\theta}}
+\mathbf{a} = (\ddot{r} - r\dot{\phi}^2)\,\hat{\mathbf{r}} + (r\ddot{\phi} + 2\dot{r}\dot{\phi})\,\hat{\boldsymbol{\phi}}
 $$
 
-Because the wire rotates at constant angular speed, $\dot{\theta} = \omega = \text{const}$, so $\ddot{\theta} = 0$.
-The rod is frictionless, meaning it cannot exert any force along its length ($F_r = 0$). The only force on the bead is the transverse normal contact force $N$ exerted perpendicular to the wire ($F_\theta = N$):
+Because the wire rotates at constant angular speed, $\dot{\phi} = \omega = \text{const}$, so $\ddot{\phi} = 0$.
+The rod is frictionless, meaning it cannot exert any force along its length ($F_r = 0$). The only force on the bead is the transverse normal contact force $N$ exerted perpendicular to the wire ($F_\phi = N$):
 * Radial equation ($F_r = m a_r$):
 
 $$
 0 = m(\ddot{r} - r\omega^2) \implies \ddot{r} - \omega^2 r = 0
 $$
 
-* Azimuthal equation ($F_\theta = m a_\theta$):
+* Azimuthal equation ($F_\phi = m a_\phi$):
 
 $$
 N = m (2\dot{r}\omega)
@@ -429,11 +429,11 @@ $$
 ### Detailed Solution
 
 1. **Conservation of Angular Momentum**:
-The tension force points radially toward the hole, exerting zero torque: $\mathbf{\Gamma} = \mathbf{0}$.
-Therefore, angular momentum is conserved:
+The tension force points radially toward the hole, exerting zero torque: $\boldsymbol{\Gamma} = \mathbf{0}$.
+Therefore, angular momentum is conserved (Taylor, Eq. 3.24 & Eq. 4.68):
 
 $$
-l = m r_1 v_1 = m r_2 v_2
+\ell = m r_1 v_1 = m r_2 v_2
 $$
 
 $$
@@ -447,19 +447,19 @@ $$
 T(r) = m \frac{v(r)^2}{r}
 $$
 
-Since $v(r) = \frac{l}{mr}$:
+Since $v(r) = \frac{\ell}{mr}$:
 
 $$
-T(r) = m \left( \frac{l^2}{m^2 r^2} \right) \frac{1}{r} = \frac{l^2}{m r^3}
+T(r) = m \left( \frac{\ell^2}{m^2 r^2} \right) \frac{1}{r} = \frac{\ell^2}{m r^3}
 $$
 
 The work done pulling the string inward from $r_1$ to $r_2$ is:
 
 $$
-W = - \int_{r_1}^{r_2} T(r)\,dr = - \int_{r_1}^{r_2} \frac{l^2}{m r^3}\,dr = \frac{l^2}{2m} \left[ \frac{1}{r_2^2} - \frac{1}{r_1^2} \right]
+W = - \int_{r_1}^{r_2} T(r)\,dr = - \int_{r_1}^{r_2} \frac{\ell^2}{m r^3}\,dr = \frac{\ell^2}{2m} \left[ \frac{1}{r_2^2} - \frac{1}{r_1^2} \right]
 $$
 
-Notice that $\frac{1}{2} m v^2 = \frac{l^2}{2mr^2}$! Therefore:
+Notice that $\frac{1}{2} m v^2 = \frac{\ell^2}{2mr^2}$! Therefore:
 
 $$
 W = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2 = \Delta T
@@ -608,28 +608,28 @@ $$
 2. **Effective Potential**:
 
 $$
-U_{\text{eff}}(r) = -\frac{k}{(n-1)r^{n-1}} + \frac{l^2}{2mr^2}
+U_{\text{eff}}(r) = -\frac{k}{(n-1)r^{n-1}} + \frac{\ell^2}{2mr^2}
 $$
 
 3. **Circular Orbit Radius**:
 Set $\frac{dU_{\text{eff}}}{dr} = 0$:
 
 $$
-\frac{dU_{\text{eff}}}{dr} = -\frac{k}{r^n} + \frac{l^2}{mr^3} = 0 \implies \frac{k}{r^n} = \frac{l^2}{mr^3}
+\frac{dU_{\text{eff}}}{dr} = -\frac{k}{r^n} + \frac{\ell^2}{mr^3} = 0 \implies \frac{k}{r^n} = \frac{\ell^2}{mr^3}
 $$
 
 $$
-k r_0^{3-n} = \frac{l^2}{m} \implies r_0 = \left( \frac{l^2}{mk} \right)^{1 / (3 - n)}
+k r_0^{3-n} = \frac{\ell^2}{m} \implies r_0 = \left( \frac{\ell^2}{mk} \right)^{1 / (3 - n)}
 $$
 
 4. **Stability Condition**:
 For stability, the second derivative must be strictly positive at $r = r_0$:
 
 $$
-\frac{d^2U_{\text{eff}}}{dr^2} = \frac{n k}{r^{n+1}} - \frac{3 l^2}{m r^4}
+\frac{d^2U_{\text{eff}}}{dr^2} = \frac{n k}{r^{n+1}} - \frac{3 \ell^2}{m r^4}
 $$
 
-Substitute $\frac{l^2}{m} = k r_0^{3-n}$:
+Substitute $\frac{\ell^2}{m} = k r_0^{3-n}$:
 
 $$
 \left. \frac{d^2U_{\text{eff}}}{dr^2} \right|_{r_0} = \frac{n k}{r_0^{n+1}} - \frac{3 k r_0^{3-n}}{r_0^4} = (n - 3) \frac{k}{r_0^{n+1}}

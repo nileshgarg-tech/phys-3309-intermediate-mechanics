@@ -37,67 +37,67 @@ $$
 ## 2. Central Forces: Kinetic Energy in Polar Coordinates
 
 Now consider a particle of mass $m$ subject to a central force $\mathbf{F} = f(r)\,\hat{\mathbf{r}}$.  
-In Module 03, we derived the velocity in plane polar coordinates:
+In plane polar coordinates $(r, \phi)$ (Taylor, Sec. 1.7 & Sec. 4.7), the velocity vector is:
 
 $$
-\mathbf{v} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\theta}\,\hat{\boldsymbol{\theta}}
+\mathbf{v} = \dot{r}\,\hat{\mathbf{r}} + r\dot{\phi}\,\hat{\boldsymbol{\phi}}
 $$
 
-The kinetic energy is:
+The kinetic energy is (Taylor, Eq. 4.67):
 
 $$
-T = \frac{1}{2} m v^2 = \frac{1}{2} m (\dot{r}^2 + r^2\dot{\theta}^2)
+T = \frac{1}{2} m v^2 = \frac{1}{2} m (\dot{r}^2 + r^2\dot{\phi}^2)
 $$
 
 The potential energy depends only on radial distance $r$: $U = U(r)$.  
-Total energy is:
+Total mechanical energy is:
 
 $$
-E = \frac{1}{2} m \dot{r}^2 + \frac{1}{2} m r^2 \dot{\theta}^2 + U(r)
+E = \frac{1}{2} m \dot{r}^2 + \frac{1}{2} m r^2 \dot{\phi}^2 + U(r)
 $$
 
-At first glance, this equation contains two variables: $r(t)$ and $\theta(t)$.  
+At first glance, this equation contains two variables: $r(t)$ and $\phi(t)$.  
 How do we reduce it to a one-dimensional problem?
 
 ---
 
 ## 3. The Effective Potential $U_{\text{eff}}(r)$
 
-Recall from Module 10 that for any central force, **angular momentum is strictly conserved**:
+Recall from Chapter 3 that for any central force, **angular momentum is strictly conserved** (Taylor, Eq. 4.68):
 
 $$
-l = m r^2 \dot{\theta} = \text{constant} \implies \dot{\theta} = \frac{l}{m r^2}
+\ell = m r^2 \dot{\phi} = \text{constant} \implies \dot{\phi} = \frac{\ell}{m r^2}
 $$
 
-Now, substitute this expression for $\dot{\theta}$ into the kinetic energy:
+Now, substitute this expression for $\dot{\phi}$ into the kinetic energy:
 
 $$
-T_{\text{angular}} = \frac{1}{2} m r^2 \dot{\theta}^2 = \frac{1}{2} m r^2 \left( \frac{l}{m r^2} \right)^2 = \frac{l^2}{2 m r^2}
+T_{\text{angular}} = \frac{1}{2} m r^2 \dot{\phi}^2 = \frac{1}{2} m r^2 \left( \frac{\ell}{m r^2} \right)^2 = \frac{\ell^2}{2 m r^2}
 $$
 
-Substitute this back into the total energy equation:
+Substitute this back into the total energy equation (Taylor, Eq. 4.71):
 
 $$
-E = \frac{1}{2} m \dot{r}^2 + \left[ \frac{l^2}{2 m r^2} + U(r) \right]
+E = \frac{1}{2} m \dot{r}^2 + \left[ \frac{\ell^2}{2 m r^2} + U(r) \right]
 $$
 
 Look at this equation carefully:
 * The first term $\frac{1}{2} m \dot{r}^2$ is the **pure radial kinetic energy**.
 * The bracketed term depends **only on $r$**!
 
-We define the **Effective Potential**:
+Following Taylor (Eq. 4.72), we define the **Effective Potential**:
 
 $$
-U_{\text{eff}}(r) = U(r) + \frac{l^2}{2 m r^2}
+U_{\text{eff}}(r) = U(r) + \frac{\ell^2}{2 m r^2}
 $$
 
-The total energy equation becomes:
+The total energy equation becomes (Taylor, Eq. 4.73):
 
 $$
 E = \frac{1}{2} m \dot{r}^2 + U_{\text{eff}}(r) = \text{constant}
 $$
 
-> **The Central Force Reduction**:  
+> **The Central Force Reduction (Taylor, Sec. 4.7)**:  
 > **A two-dimensional central-force problem is mathematically identical to a one-dimensional particle moving in the effective potential $U_{\text{eff}}(r)$!**
 
 ---
@@ -107,20 +107,20 @@ $$
 The term:
 
 $$
-U_{\text{cf}}(r) = \frac{l^2}{2 m r^2}
+U_{\text{cf}}(r) = \frac{\ell^2}{2 m r^2}
 $$
 
 is called the **Centrifugal Potential**.  
 Taking its negative derivative with respect to $r$:
 
 $$
-F_{\text{cf}} = -\frac{d}{dr} \left( \frac{l^2}{2 m r^2} \right) = +\frac{l^2}{m r^3} = m r \dot{\theta}^2
+F_{\text{cf}} = -\frac{d}{dr} \left( \frac{\ell^2}{2 m r^2} \right) = +\frac{\ell^2}{m r^3} = m r \dot{\phi}^2
 $$
 
-This is the outward centrifugal force!  
+This is the fictitious outward centrifugal force!  
 As $r \to 0$, $U_{\text{cf}} \to +\infty$ scaling as $1/r^2$.
-* For an attractive gravitational potential $U(r) = -\frac{GMm}{r}$, as $r \to 0$, the centrifugal barrier $+l^2/(2mr^2)$ diverges faster than $-1/r$.
-* **The centrifugal barrier prevents any particle with non-zero angular momentum ($l \neq 0$) from crashing into the center of attraction!**
+* For an attractive gravitational potential $U(r) = -\frac{GMm}{r}$, as $r \to 0$, the centrifugal barrier $+\ell^2/(2mr^2)$ diverges faster than $-1/r$.
+* **The centrifugal barrier prevents any particle with non-zero angular momentum ($\ell \neq 0$) from crashing into the center of attraction!**
 
 ---
 
@@ -129,10 +129,10 @@ As $r \to 0$, $U_{\text{cf}} \to +\infty$ scaling as $1/r^2$.
 | Concept | Mathematical Statement | Core Takeaway |
 |---|---|---|
 | **Constraint Work** | $\mathbf{N} \cdot d\mathbf{r} = 0$ | Frictionless track forces do zero work |
-| **Polar Kinetic Energy** | $T = \frac{1}{2}m\dot{r}^2 + \frac{1}{2}mr^2\dot{\theta}^2$ | Split into radial + angular parts |
-| **Angular Momentum** | $\dot{\theta} = \frac{l}{mr^2}$ | Eliminates angular velocity from energy |
-| **Effective Potential** | $U_{\text{eff}}(r) = U(r) + \frac{l^2}{2mr^2}$ | Absorbs angular kinetic energy into potential |
-| **Equivalent 1D Problem**| $E = \frac{1}{2}m\dot{r}^2 + U_{\text{eff}}(r)$ | Radial motion mapped to standard 1D well |
+| **Polar Kinetic Energy** | $T = \frac{1}{2}m\dot{r}^2 + \frac{1}{2}mr^2\dot{\phi}^2$ | Split into radial + angular parts (Taylor, Eq. 4.67) |
+| **Angular Momentum** | $\dot{\phi} = \frac{\ell}{mr^2}$ | Eliminates angular velocity from energy (Taylor, Eq. 4.69) |
+| **Effective Potential** | $U_{\text{eff}}(r) = U(r) + \frac{\ell^2}{2mr^2}$ | Absorbs angular kinetic energy into potential (Taylor, Eq. 4.72) |
+| **Equivalent 1D Problem**| $E = \frac{1}{2}m\dot{r}^2 + U_{\text{eff}}(r)$ | Radial motion mapped to standard 1D well (Taylor, Eq. 4.73) |
 
 ---
 
@@ -187,7 +187,7 @@ $$
 ---
 
 ### Worked Example 14.2: Effective Potential of a Planetary Orbit
-**Problem**: For a planet of mass $m$ orbiting the Sun of mass $M$ with angular momentum $l$:  
+**Problem**: For a planet of mass $m$ orbiting the Sun of mass $M$ with angular momentum $\ell$:  
 The gravitational potential is $U(r) = -\frac{k}{r}$, where $k = G M m$.  
 (a) Write down the effective potential $U_{\text{eff}}(r)$.  
 (b) Find the radius $r_0$ of a circular orbit.  
@@ -197,28 +197,28 @@ The gravitational potential is $U(r) = -\frac{k}{r}$, where $k = G M m$.
 (a) The effective potential is:
 
 $$
-U_{\text{eff}}(r) = -\frac{k}{r} + \frac{l^2}{2 m r^2}
+U_{\text{eff}}(r) = -\frac{k}{r} + \frac{\ell^2}{2 m r^2}
 $$
 
 (b) Circular orbit occurs at the minimum of $U_{\text{eff}}(r)$ where $\frac{dU_{\text{eff}}}{dr} = 0$:
 
 $$
-\frac{dU_{\text{eff}}}{dr} = \frac{k}{r^2} - \frac{l^2}{m r^3} = 0
+\frac{dU_{\text{eff}}}{dr} = \frac{k}{r^2} - \frac{\ell^2}{m r^3} = 0
 $$
 
 Multiply by $r^3$:
 
 $$
-k r_0 - \frac{l^2}{m} = 0 \implies r_0 = \frac{l^2}{m k} = \frac{l^2}{G M m^2}
+k r_0 - \frac{\ell^2}{m} = 0 \implies r_0 = \frac{\ell^2}{m k} = \frac{\ell^2}{G M m^2}
 $$
 
 (c) Check stability via second derivative:
 
 $$
-\frac{d^2U_{\text{eff}}}{dr^2} = -\frac{2k}{r^3} + \frac{3l^2}{m r^4}
+\frac{d^2U_{\text{eff}}}{dr^2} = -\frac{2k}{r^3} + \frac{3\ell^2}{m r^4}
 $$
 
-Evaluate at $r_0 = \frac{l^2}{mk}$ (so $\frac{l^2}{m r_0^4} = \frac{k}{r_0^3}$):
+Evaluate at $r_0 = \frac{\ell^2}{mk}$ (so $\frac{\ell^2}{m r_0^4} = \frac{k}{r_0^3}$):
 
 $$
 \left. \frac{d^2U_{\text{eff}}}{dr^2} \right|_{r_0} = -\frac{2k}{r_0^3} + \frac{3k}{r_0^3} = +\frac{k}{r_0^3} > 0
@@ -236,9 +236,9 @@ Because $\frac{d^2U_{\text{eff}}}{dr^2} > 0$, the circular orbit corresponds to 
 ---
 
 ### Practice Problem 14.2 (To Solve)
-**Statement**: A particle of mass $m$ moves in an attractive central force $\mathbf{F}(r) = -\frac{k}{r^3}\,\hat{\mathbf{r}}$ (inverse-cube force). Show that circular orbits exist only if $l^2 = m k$, and prove that such orbits are neutrally stable or unstable.
-* **Hint**: $U(r) = -\frac{k}{2r^2}$. Effective potential $U_{\text{eff}}(r) = -\frac{k}{2r^2} + \frac{l^2}{2mr^2} = \frac{l^2 - mk}{2mr^2}$.
-* **Answer**: If $l^2 = mk$, then $U_{\text{eff}}(r) = 0$ everywhere (flat line). If nudged, the particle either spirals directly into the origin or flies away to infinity. No bound stable orbits exist in an inverse-cube force!
+**Statement**: A particle of mass $m$ moves in an attractive central force $\mathbf{F}(r) = -\frac{k}{r^3}\,\hat{\mathbf{r}}$ (inverse-cube force). Show that circular orbits exist only if $\ell^2 = m k$, and prove that such orbits are neutrally stable or unstable.
+* **Hint**: $U(r) = -\frac{k}{2r^2}$. Effective potential $U_{\text{eff}}(r) = -\frac{k}{2r^2} + \frac{\ell^2}{2mr^2} = \frac{\ell^2 - mk}{2mr^2}$.
+* **Answer**: If $\ell^2 = mk$, then $U_{\text{eff}}(r) = 0$ everywhere (flat line). If nudged, the particle either spirals directly into the origin or flies away to infinity. No bound stable orbits exist in an inverse-cube force!
 
 ---
 

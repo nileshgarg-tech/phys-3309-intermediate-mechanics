@@ -10,56 +10,80 @@
 
 ## 1. Two Interacting Particles: Relative vs. Center-of-Mass Motion
 
-Consider two isolated particles of masses $m_1$ and $m_2$ interacting via a mutual central potential that depends only on their separation $r = |\mathbf{r}_1 - \mathbf{r}_2|$ (e.g., Earth and Moon, or a diatomic molecule).
+Consider two isolated particles of masses $m_1$ and $m_2$ interacting via a mutual central potential that depends only on their separation $\mathbf{r} = \mathbf{r}_1 - \mathbf{r}_2$ (e.g., Earth and Moon, or a diatomic molecule), so $U = U(\mathbf{r})$.
 
-Their positions can be mapped to:
-1. **Center of Mass (CM)**: $\mathbf{R} = \frac{m_1 \mathbf{r}_1 + m_2 \mathbf{r}_2}{m_1 + m_2}$
+Following Taylor (Sec. 4.9), their positions can be decomposed into:
+1. **Center of Mass (CM)**: $\mathbf{R} = \frac{m_1 \mathbf{r}_1 + m_2 \mathbf{r}_2}{m_1 + m_2} = \frac{m_1 \mathbf{r}_1 + m_2 \mathbf{r}_2}{M}$
 2. **Relative Separation**: $\mathbf{r} = \mathbf{r}_1 - \mathbf{r}_2$
+
+Inverting these gives:
+
+$$
+\mathbf{r}_1 = \mathbf{R} + \frac{m_2}{M}\mathbf{r}, \quad \mathbf{r}_2 = \mathbf{R} - \frac{m_1}{M}\mathbf{r}
+$$
+
+Differentiating with respect to time gives the velocities:
+
+$$
+\dot{\mathbf{r}}_1 = \dot{\mathbf{R}} + \frac{m_2}{M}\dot{\mathbf{r}}, \quad \dot{\mathbf{r}}_2 = \dot{\mathbf{R}} - \frac{m_1}{M}\dot{\mathbf{r}}
+$$
 
 The total kinetic energy is:
 
 $$
-T = \frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2
+T = \frac{1}{2} m_1 \dot{\mathbf{r}}_1^2 + \frac{1}{2} m_2 \dot{\mathbf{r}}_2^2
 $$
 
-Substituting $\mathbf{v}_1 = \mathbf{V}_{\text{cm}} + \frac{m_2}{M}\dot{\mathbf{r}}$ and $\mathbf{v}_2 = \mathbf{V}_{\text{cm}} - \frac{m_1}{M}\dot{\mathbf{r}}$ (where $M = m_1 + m_2$):
+Substituting the velocities, the cross terms cancel identically (Taylor, Eq. 4.87):
 
 $$
-T = \frac{1}{2} M V_{\text{cm}}^2 + \frac{1}{2} \mu \dot{r}^2
+T = \frac{1}{2} M \dot{\mathbf{R}}^2 + \frac{1}{2} \mu \dot{\mathbf{r}}^2
 $$
 
-where $\mu$ is the **Reduced Mass**:
+where $\mu$ is the **Reduced Mass** (Taylor, Eq. 4.88):
 
 $$
 \mu = \frac{m_1 m_2}{m_1 + m_2}
 $$
 
-> **The Kinetic Energy Decoupling**:  
+The total mechanical energy becomes (Taylor, Eq. 4.89):
+
+$$
+E = T + U = \frac{1}{2} M \dot{\mathbf{R}}^2 + \left[ \frac{1}{2} \mu \dot{\mathbf{r}}^2 + U(\mathbf{r}) \right]
+$$
+
+> **The Kinetic Energy Decoupling (Taylor, Eq. 4.87)**:  
 > Total kinetic energy cleanly splits into:
-> 1. Motion of the entire system as a single particle of mass $M$ moving at $\mathbf{V}_{\text{cm}}$.
-> 2. Relative internal motion of a fictitious single particle of reduced mass $\mu$.
+> 1. Motion of the entire system as a single particle of mass $M$ moving with the CM velocity $\dot{\mathbf{R}}$.
+> 2. Relative internal motion of a fictitious single particle of reduced mass $\mu$ moving with relative velocity $\dot{\mathbf{r}}$.
 
 ---
 
 ## 2. Total Potential Energy for $N$ Particles
 
-For an arbitrary system of $N$ particles, forces arise from two origins:
-1. **External potentials**: $U_i^{\text{ext}}(\mathbf{r}_i)$ (e.g., uniform gravity $m_i g z_i$).
-2. **Internal pairwise interactions**: $U_{jk}(|\mathbf{r}_j - \mathbf{r}_k|)$ (e.g., interatomic forces, springs between masses).
+For an arbitrary system of $N$ particles indexed by $\alpha = 1, \dots, N$ (Taylor, Sec. 4.10), forces arise from two origins:
+1. **External potentials**: $U_\alpha^{\text{ext}}(\mathbf{r}_\alpha)$ (e.g., uniform gravity $m_\alpha g z_\alpha$).
+2. **Internal pairwise interactions**: $U_{\alpha\beta}(|\mathbf{r}_\alpha - \mathbf{r}_\beta|)$ (e.g., interatomic forces, springs between masses).
 
-The **Total Potential Energy** is:
+The **Total Potential Energy** is (Taylor, Eq. 4.103):
 
 $$
-U_{\text{total}} = \sum_{i=1}^N U_i^{\text{ext}}(\mathbf{r}_i) + \sum_{j < k} U_{jk}(|\mathbf{r}_j - \mathbf{r}_k|)
+U = U^{\text{ext}} + U^{\text{int}} = \sum_{\alpha=1}^N U_\alpha^{\text{ext}}(\mathbf{r}_\alpha) + \sum_{\alpha < \beta} U_{\alpha\beta}(|\mathbf{r}_\alpha - \mathbf{r}_\beta|)
 $$
 
-*(Notice the summation condition $j < k$: this guarantees each interacting pair is counted exactly once!)*
+*(Notice the summation condition $\alpha < \beta$: this guarantees each interacting pair is counted exactly once!)*
 
 ### The Total Energy Conservation Law
-If all external and internal forces are conservative:
+Following Taylor (Eq. 4.96), total kinetic energy decomposes about the CM:
 
 $$
-E_{\text{total}} = T + U_{\text{total}} = \sum_{i=1}^N \frac{1}{2} m_i v_i^2 + \sum_{i=1}^N U_i^{\text{ext}} + \sum_{j < k} U_{jk} = \text{constant}
+T = \sum_{\alpha=1}^N \frac{1}{2} m_\alpha \dot{\mathbf{r}}_\alpha^2 = \frac{1}{2} M \dot{\mathbf{R}}^2 + \sum_{\alpha=1}^N \frac{1}{2} m_\alpha (\dot{\mathbf{r}}'_\alpha)^2
+$$
+
+If all external and internal forces are conservative, total mechanical energy is conserved (Taylor, Eq. 4.104):
+
+$$
+E = T + U = \text{constant}
 $$
 
 ---
@@ -70,17 +94,17 @@ What happens when we apply this equation to a **rigid body** (such as a spinning
 By definition, in a perfectly rigid body, the distances between all pairs of particles are permanently fixed:
 
 $$
-|\mathbf{r}_j - \mathbf{r}_k| = c_{jk} = \text{constant}
+|\mathbf{r}_\alpha - \mathbf{r}_\beta| = c_{\alpha\beta} = \text{constant}
 $$
 
 Because the relative distances never change:
 
 $$
-\sum_{j < k} U_{jk}(c_{jk}) = \text{constant}
+U^{\text{int}} = \sum_{\alpha < \beta} U_{\alpha\beta}(c_{\alpha\beta}) = \text{constant}
 $$
 
-The internal potential energy is a constant number!  
-Since an additive constant has no effect on dynamics (recall $\mathbf{F} = -\nabla U$), **internal potential energy can be completely ignored for rigid bodies**.
+The internal potential energy is an unchanging constant number!  
+Since an additive constant has no effect on dynamics (recall $\mathbf{F} = -\nabla U$), **internal potential energy can be completely ignored for rigid bodies** (Taylor, Sec. 4.10).
 
 ---
 
@@ -93,7 +117,7 @@ $$
 $$
 
 Does this mean energy is destroyed?  
-**No!** Feynman emphasized that energy conservation is absolute:
+**No!** Feynman and Taylor emphasize that energy conservation is absolute:
 * When a sliding block comes to rest due to friction, its macroscopic kinetic energy does not vanish.
 * The macroscopic work $W_{\text{nc}}$ was transferred into the random microscopic vibrations of the atoms in the block and table.
 * The sum of microscopic kinetic and internal potential energies is called **Internal Thermal Energy** ($E_{\text{thermal}}$).
@@ -110,10 +134,10 @@ This is the First Law of Thermodynamics, born directly from the multiparticle me
 
 | Concept | Mathematical Expression | Physical Takeaway |
 |---|---|---|
-| **Two-Body Kinetic Energy** | $T = \frac{1}{2}M V_{\text{cm}}^2 + \frac{1}{2}\mu v_{\text{rel}}^2$ | Decouples CM translation from internal vibration |
-| **Reduced Mass** | $\mu = \frac{m_1 m_2}{m_1 + m_2}$ | Effective mass for relative orbit |
-| **Multiparticle Potential**| $U = \sum U_{\text{ext}} + \sum_{j<k} U_{jk}$ | Pairwise internal interaction sum |
-| **Rigid Body Limit** | $|\mathbf{r}_j - \mathbf{r}_k| = \text{const} \implies U_{\text{int}} = \text{const}$ | Rigid bodies ignore internal potentials |
+| **Two-Body Kinetic Energy** | $T = \frac{1}{2}M \dot{\mathbf{R}}^2 + \frac{1}{2}\mu \dot{\mathbf{r}}^2$ | Decouples CM translation from internal vibration (Taylor, Eq. 4.87) |
+| **Reduced Mass** | $\mu = \frac{m_1 m_2}{m_1 + m_2}$ | Effective mass for relative motion (Taylor, Eq. 4.88) |
+| **Multiparticle Potential**| $U = \sum_\alpha U_\alpha^{\text{ext}} + \sum_{\alpha < \beta} U_{\alpha\beta}$ | Pairwise internal interaction sum (Taylor, Eq. 4.103) |
+| **Rigid Body Limit** | $|\mathbf{r}_\alpha - \mathbf{r}_\beta| = \text{const} \implies U^{\text{int}} = \text{const}$ | Rigid bodies ignore internal potentials |
 | **First Law of Thermo** | $W_{\text{nc}} = -\Delta E_{\text{thermal}}$ | Dissipation is conversion to microscopic thermal energy |
 
 ---
@@ -201,12 +225,12 @@ The mechanical bulk kinetic energy was transferred into random thermal vibration
 ---
 
 ### Practice Problem 15.1 (To Solve)
-**Statement**: Three equal point stars of mass $m$ are located at the vertices of an equilateral triangle of side length $L$. Find the total gravitational potential energy $U_{\text{total}}$ of the three-star system.
-* **Hint**: Use $U_{\text{total}} = \sum_{j < k} U_{jk} = U_{12} + U_{13} + U_{23}$.
+**Statement**: Three equal point stars of mass $m$ are located at the vertices of an equilateral triangle of side length $L$. Find the total gravitational potential energy $U$ of the three-star system.
+* **Hint**: Use $U = \sum_{\alpha < \beta} U_{\alpha\beta} = U_{12} + U_{13} + U_{23}$.
 * **Answer**: All 3 pairs have separation $L$.
 
 $$
-U_{\text{total}} = -\frac{Gm^2}{L} - \frac{Gm^2}{L} - \frac{Gm^2}{L} = -3 \frac{Gm^2}{L}
+U = -\frac{Gm^2}{L} - \frac{Gm^2}{L} - \frac{Gm^2}{L} = -3 \frac{Gm^2}{L}
 $$
 
 ---

@@ -20,26 +20,26 @@ The answer lies in **internal force cancellation** and the **Center of Mass**.
 
 ## 2. Internal vs. External Forces
 
-Consider an assembly of $N$ particles ($i = 1, 2, \dots, N$), each with mass $m_i$ and position vector $\mathbf{r}_i$.
-The total force acting on particle $i$ consists of two distinct parts:
+Consider an assembly of $N$ particles ($\alpha = 1, 2, \dots, N$), each with mass $m_\alpha$ and position vector $\mathbf{r}_\alpha$.
+The total force acting on particle $\alpha$ consists of two distinct parts:
 
 $$
-\mathbf{F}_i = \mathbf{F}_i^{\text{ext}} + \sum_{j \neq i} \mathbf{F}_{ij}
+\mathbf{F}_\alpha = \mathbf{F}_\alpha^{\text{ext}} + \sum_{\beta \neq \alpha} \mathbf{F}_{\alpha\beta}
 $$
 
-1. **$\mathbf{F}_i^{\text{ext}}$ (External Force)**: Forces exerted by agents outside the system (e.g., Earth's gravity, an external magnetic field).
-2. **$\mathbf{F}_{ij}$ (Internal Force)**: The force exerted on particle $i$ by particle $j$ inside the system.
+1. **$\mathbf{F}_\alpha^{\text{ext}}$ (External Force)**: Forces exerted on particle $\alpha$ by agents outside the system (e.g., Earth's gravity, an external magnetic field).
+2. **$\mathbf{F}_{\alpha\beta}$ (Internal Force)**: The force exerted on particle $\alpha$ by particle $\beta$ inside the system.
 
-Now, write Newton's Second Law for particle $i$:
+Now, write Newton's Second Law for particle $\alpha$:
 
 $$
-\frac{d\mathbf{p}_i}{dt} = \mathbf{F}_i^{\text{ext}} + \sum_{j \neq i} \mathbf{F}_{ij}
+\dot{\mathbf{p}}_\alpha = \mathbf{F}_\alpha^{\text{ext}} + \sum_{\beta \neq \alpha} \mathbf{F}_{\alpha\beta}
 $$
 
 Sum this equation over all $N$ particles in the system:
 
 $$
-\sum_{i=1}^N \frac{d\mathbf{p}_i}{dt} = \sum_{i=1}^N \mathbf{F}_i^{\text{ext}} + \sum_{i=1}^N \sum_{j \neq i} \mathbf{F}_{ij}
+\sum_{\alpha=1}^N \dot{\mathbf{p}}_\alpha = \sum_{\alpha=1}^N \mathbf{F}_\alpha^{\text{ext}} + \sum_{\alpha=1}^N \sum_{\beta \neq \alpha} \mathbf{F}_{\alpha\beta}
 $$
 
 ---
@@ -49,58 +49,58 @@ $$
 Look closely at the double summation of internal forces:
 
 $$
-\sum_{i=1}^N \sum_{j \neq i} \mathbf{F}_{ij}
+\sum_{\alpha=1}^N \sum_{\beta \neq \alpha} \mathbf{F}_{\alpha\beta}
 $$
 
 This sum contains terms like $(\mathbf{F}_{12} + \mathbf{F}_{21}) + (\mathbf{F}_{13} + \mathbf{F}_{31}) + \dots$.
 By Newton's Third Law of Motion:
 
 $$
-\mathbf{F}_{ij} = -\mathbf{F}_{ji} \implies \mathbf{F}_{ij} + \mathbf{F}_{ji} = \mathbf{0}
+\mathbf{F}_{\alpha\beta} = -\mathbf{F}_{\beta\alpha} \implies \mathbf{F}_{\alpha\beta} + \mathbf{F}_{\beta\alpha} = \mathbf{0}
 $$
 
 Every single internal interaction cancels pairwise!
 
 $$
-\sum_{i=1}^N \sum_{j \neq i} \mathbf{F}_{ij} = \mathbf{0}
+\sum_{\alpha=1}^N \sum_{\beta \neq \alpha} \mathbf{F}_{\alpha\beta} = \mathbf{0}
 $$
 
-Therefore, defining the **Total Linear Momentum** $\mathbf{P} = \sum_{i=1}^N \mathbf{p}_i$:
+Therefore, defining the **Total Linear Momentum** $\mathbf{P} = \sum_{\alpha=1}^N \mathbf{p}_\alpha$ and the total external force $\mathbf{F}^{\text{ext}} = \sum_{\alpha=1}^N \mathbf{F}_\alpha^{\text{ext}}$:
 
 $$
-\frac{d\mathbf{P}}{dt} = \sum_{i=1}^N \mathbf{F}_i^{\text{ext}} = \mathbf{F}_{\text{net}}^{\text{ext}}
+\dot{\mathbf{P}} = \mathbf{F}^{\text{ext}}
 $$
 
-> **The System Momentum Conservation Theorem**:  
+> **The System Momentum Conservation Theorem (Taylor, Eq. 3.7)**:  
 > **Internal forces, no matter how violent, complex, or explosive, cannot change the total momentum of a system.**  
-> Only an external force can alter the total momentum. If $\mathbf{F}_{\text{net}}^{\text{ext}} = \mathbf{0}$, then $\mathbf{P} = \text{constant}$.
+> Only an external force can alter the total momentum. If $\mathbf{F}^{\text{ext}} = \mathbf{0}$, then $\mathbf{P} = \text{constant}$.
 
 ---
 
 ## 4. The Center of Mass (CM)
 
-We define the total mass of the system:
+Following Taylor (Sec. 3.3), we define the total mass of the system:
 
 $$
-M = \sum_{i=1}^N m_i
+M = \sum_{\alpha=1}^N m_\alpha
 $$
 
 The **Center of Mass position vector** $\mathbf{R}$ is the mass-weighted average position:
 
 $$
-\mathbf{R} = \frac{1}{M} \sum_{i=1}^N m_i \mathbf{r}_i
+\mathbf{R} = \frac{1}{M} \sum_{\alpha=1}^N m_\alpha \mathbf{r}_\alpha
 $$
 
-Differentiating with respect to time gives the Center of Mass velocity $\mathbf{V} = \dot{\mathbf{R}}$:
+Differentiating with respect to time gives the Center of Mass velocity $\dot{\mathbf{R}}$:
 
 $$
-\mathbf{V} = \frac{1}{M} \sum_{i=1}^N m_i \frac{d\mathbf{r}_i}{dt} = \frac{1}{M} \sum_{i=1}^N \mathbf{p}_i = \frac{\mathbf{P}}{M}
+\dot{\mathbf{R}} = \frac{1}{M} \sum_{\alpha=1}^N m_\alpha \dot{\mathbf{r}}_\alpha = \frac{1}{M} \sum_{\alpha=1}^N \mathbf{p}_\alpha = \frac{\mathbf{P}}{M}
 $$
 
 Rearranging:
 
 $$
-\mathbf{P} = M \mathbf{V}
+\mathbf{P} = M \dot{\mathbf{R}}
 $$
 
 The total momentum of any complex system is simply the total mass multiplied by the velocity of the Center of Mass!
@@ -108,28 +108,28 @@ The total momentum of any complex system is simply the total mass multiplied by 
 Differentiating once more with respect to time:
 
 $$
-M \frac{d^2\mathbf{R}}{dt^2} = \frac{d\mathbf{P}}{dt} = \mathbf{F}_{\text{net}}^{\text{ext}}
+M \ddot{\mathbf{R}} = \dot{\mathbf{P}} = \mathbf{F}^{\text{ext}}
 $$
 
-> **The Center of Mass Theorem**:  
-> **The center of mass of any system of particles moves exactly like a single point particle of mass $M$ acted upon by the net external force.**
+> **The Center of Mass Theorem (Taylor, Eq. 3.12)**:  
+> **The center of mass of any system of particles moves exactly like a single point particle of mass $M$ acted upon by the net external force $\mathbf{F}^{\text{ext}}$.**
 
 ### Physical Example: The Exploding Artillery Shell
 Suppose an artillery shell is fired along a parabolic arc under gravity. Midway through its flight, an internal charge detonates, blowing the shell into hundreds of jagged shrapnel fragments traveling in all directions.
 * The fragments fly chaotically.
-* Yet because the explosion is purely internal ($\mathbf{F}_{\text{internal}}$), **the Center of Mass of all the scattered fragments continues along the exact same original parabolic trajectory as if nothing happened!**
+* Yet because the explosion is purely internal ($\mathbf{F}_{\alpha\beta}$), **the Center of Mass of all the scattered fragments continues along the exact same original parabolic trajectory as if nothing happened!**
 
 ---
 
 ## 5. Continuous Bodies
 
-For a continuous solid body with density $\rho(\mathbf{r})$, the sum becomes a volume integral:
+For a continuous solid body with mass density $\varrho(\mathbf{r})$ (or $\rho(\mathbf{r})$), the sum becomes an integral (Taylor, Eq. 3.14):
 
 $$
-\mathbf{R} = \frac{1}{M} \int \mathbf{r} \, dm = \frac{1}{M} \int \mathbf{r} \, \rho(\mathbf{r}) \, dV
+\mathbf{R} = \frac{1}{M} \int \mathbf{r} \, dm = \frac{1}{M} \int \mathbf{r} \varrho \, dV
 $$
 
-where $M = \int \rho(\mathbf{r}) \, dV$.
+where $M = \int dm = \int \varrho \, dV$.
 
 ---
 
@@ -137,11 +137,11 @@ where $M = \int \rho(\mathbf{r}) \, dV$.
 
 | Concept | Formula | Physical Interpretation |
 |---|---|---|
-| **Center of Mass (Discrete)** | $\mathbf{R} = \frac{1}{M} \sum m_i \mathbf{r}_i$ | Mass-weighted geometric center |
+| **Center of Mass (Discrete)** | $\mathbf{R} = \frac{1}{M} \sum_\alpha m_\alpha \mathbf{r}_\alpha$ | Mass-weighted geometric center |
 | **Center of Mass (Continuous)**| $\mathbf{R} = \frac{1}{M} \int \mathbf{r} \, dm$ | Volume integral over mass distribution |
-| **Total Momentum** | $\mathbf{P} = M \mathbf{V}_{\text{cm}}$ | Equal to whole mass moving at CM velocity |
-| **Internal Cancellation** | $\sum_{i \neq j} \mathbf{F}_{ij} = \mathbf{0}$ | By Newton's 3rd Law, internal forces do not change $\mathbf{P}$ |
-| **Center of Mass Motion** | $M \ddot{\mathbf{R}} = \mathbf{F}_{\text{net}}^{\text{ext}}$ | CM ignores internal interactions entirely |
+| **Total Momentum** | $\mathbf{P} = M \dot{\mathbf{R}}$ | Total mass moving at CM velocity |
+| **Internal Cancellation** | $\sum_{\alpha} \sum_{\beta \neq \alpha} \mathbf{F}_{\alpha\beta} = \mathbf{0}$ | By Newton's 3rd Law, internal forces cannot alter $\mathbf{P}$ |
+| **Center of Mass Motion** | $M \ddot{\mathbf{R}} = \mathbf{F}^{\text{ext}}$ | CM ignores internal interactions entirely |
 
 ---
 

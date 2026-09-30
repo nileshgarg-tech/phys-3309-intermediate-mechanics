@@ -70,27 +70,27 @@ $$
 By Newton's Second Law, $\frac{dP}{dt} = F_{\text{ext}}$:
 
 $$
-m \frac{dv}{dt} + v_{\text{ex}} \frac{dm}{dt} = F_{\text{ext}}
+m \frac{dv}{dt} + v_{\text{ex}} \frac{dm}{dt} = F^{\text{ext}}
 $$
 
-Rearranging into standard form:
+Rearranging into standard form (Taylor, Eq. 3.29):
 
 $$
-m \frac{dv}{dt} = -v_{\text{ex}} \frac{dm}{dt} + F_{\text{ext}}
+m \dot{v} = -\dot{m} v_{\text{ex}} + F^{\text{ext}}
 $$
 
-> **The Equation of Motion for a Rocket**:  
-> The term $-v_{\text{ex}} \frac{dm}{dt}$ is the **Thrust Force** ($F_{\text{thrust}}$).  
-> Since $\frac{dm}{dt} < 0$ (fuel is being expelled), the thrust is positive and accelerates the rocket forward!
+> **The Equation of Motion for a Rocket (Taylor, Eq. 3.29)**:  
+> The term $-\dot{m} v_{\text{ex}}$ is the **Thrust Force** ($F_{\text{thrust}}$).  
+> Since $\dot{m} = \frac{dm}{dt} < 0$ (fuel is being expelled), the thrust is positive and accelerates the rocket forward!
 
 ---
 
-## 3. The Tsiolkovsky Rocket Equation (Deep Space, Zero Gravity)
+## 3. The Rocket Equation in Deep Space (Zero Gravity)
 
-In deep space far from gravitational bodies, $F_{\text{ext}} = 0$:
+In deep space far from gravitational bodies, $F^{\text{ext}} = 0$ (Taylor, Eq. 3.30):
 
 $$
-m \frac{dv}{dt} = -v_{\text{ex}} \frac{dm}{dt}
+m \dot{v} = -\dot{m} v_{\text{ex}} \iff m \frac{dv}{dt} = -v_{\text{ex}} \frac{dm}{dt}
 $$
 
 Multiply by $dt$ and divide by $m$:
@@ -99,20 +99,20 @@ $$
 dv = -v_{\text{ex}} \frac{dm}{m}
 $$
 
-Integrate from initial state $(m_0, v_0)$ to final empty-tank state $(m_{\text{final}}, v_{\text{final}})$:
+Integrate from initial state $(m_0, v_0)$ to final state $(m, v)$ (Taylor, Eq. 3.32):
 
 $$
-\int_{v_0}^{v_{\text{final}}} dv = -v_{\text{ex}} \int_{m_0}^{m_{\text{final}}} \frac{dm}{m}
+\int_{v_0}^{v} dv' = -v_{\text{ex}} \int_{m_0}^{m} \frac{dm'}{m'}
 $$
 
 $$
-v_{\text{final}} - v_0 = -v_{\text{ex}} \ln\left(\frac{m_{\text{final}}}{m_0}\right) = v_{\text{ex}} \ln\left(\frac{m_0}{m_{\text{final}}}\right)
+v - v_0 = -v_{\text{ex}} \ln\left(\frac{m}{m_0}\right) = v_{\text{ex}} \ln\left(\frac{m_0}{m}\right)
 $$
 
-> **The Tsiolkovsky Rocket Equation**:
+> **The Rocket Equation (Taylor, Eq. 3.32)**:
 > 
 > $$
-> \Delta v = v_{\text{ex}} \ln\left(\frac{m_0}{m_{\text{final}}}\right)
+> v - v_0 = v_{\text{ex}} \ln\left(\frac{m_0}{m}\right)
 > $$
 
 ---
@@ -150,19 +150,19 @@ Now $98.2\%$ must be fuel—a structural engineering impossibility for a single 
 
 ## 5. Rocket Climbing in a Uniform Gravitational Field
 
-If the rocket launches vertically against Earth's gravity, $F_{\text{ext}} = -m g$:
+If the rocket launches vertically against Earth's gravity, $F^{\text{ext}} = -m g$ (Taylor, Eq. 3.33):
 
 $$
-m \frac{dv}{dt} = -v_{\text{ex}} \frac{dm}{dt} - m g
+m \dot{v} = -\dot{m} v_{\text{ex}} - m g
 $$
 
-Divide by $m$ and integrate with respect to time:
+Divide by $m$ and integrate with respect to time (Taylor, Eq. 3.34):
 
 $$
 dv = -v_{\text{ex}} \frac{dm}{m} - g\,dt
 $$
 
-Assuming fuel is consumed at a constant rate $k = -\frac{dm}{dt}$, the burn lasts a time $t$:
+Assuming fuel is consumed at a constant rate $k = -\dot{m} = -\frac{dm}{dt}$, the velocity after burning for a time $t$ is:
 
 $$
 v(t) = v_0 + v_{\text{ex}} \ln\left(\frac{m_0}{m(t)}\right) - g t
@@ -176,10 +176,11 @@ The term $-g t$ is **Gravity Drag**: the longer the rocket takes to burn its fue
 
 | Concept | Formula | Key Insight |
 |---|---|---|
-| **Thrust Force** | $F_{\text{thrust}} = -v_{\text{ex}} \frac{dm}{dt}$ | Pushing gas backward pushes rocket forward |
-| **Rocket Equation** | $\Delta v = v_{\text{ex}} \ln\left(\frac{m_0}{m_{\text{final}}}\right)$ | Velocity gain depends logarithmically on mass ratio |
-| **Mass Ratio Trap** | $\frac{m_0}{m_{\text{final}}} = e^{\Delta v / v_{\text{ex}}}$ | Exponential scaling demands multistage designs |
-| **Gravity Drag** | $-g t_{\text{burn}}$ | Fast high-thrust burns minimize gravitational velocity loss |
+| **Rocket EOM** | $m \dot{v} = -\dot{m} v_{\text{ex}} + F^{\text{ext}}$ | Standard rocket equation of motion (Taylor, Eq. 3.29) |
+| **Thrust Force** | $F_{\text{thrust}} = -\dot{m} v_{\text{ex}}$ | Expelling gas at speed $v_{\text{ex}}$ imparts forward thrust |
+| **Rocket Equation (Zero-g)** | $v - v_0 = v_{\text{ex}} \ln(m_0/m)$ | Velocity gain depends logarithmically on mass ratio |
+| **Mass Ratio Scaling** | $m_0 / m = e^{\Delta v / v_{\text{ex}}}$ | Exponential scaling demands multistage designs |
+| **Vertical Ascent with Gravity**| $v(t) = v_0 + v_{\text{ex}} \ln(m_0/m) - gt$ | High thrust minimizes gravity drag $-gt$ |
 
 ---
 
