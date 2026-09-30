@@ -18,9 +18,9 @@ Classical mechanics is the quantitative framework that answers: **If you know wh
 For over two centuries, the answer given by Isaac Newton was an unconditional **yes**. Classical mechanics operates under three foundational idealizations:
 1. **Absolute Euclidean Space**: Space is a flat, three-dimensional, continuous continuum. Distances between points are invariant regardless of who measures them or how fast the observer moves.
 2. **Absolute Universal Time**: Time flows uniformly and identically across the entire cosmos. A second on Earth is identical to a second on the farthest star.
-3. **Point Particles**: Any physical body (an electron, a baseball, or the planet Jupiter) can be idealized as a single mathematical point endowed with a scalar property called **mass** ($m$), provided its internal structure does not affect the external orbital motion.
+3. **Point Particles**: Any physical body (an electron, a baseball, or the planet Jupiter) can be idealized as a single mathematical point endowed with a scalar property called **mass** ($m$), provided its internal degrees of freedom (rotation, vibration, deformation) do not affect its external translational motion as a whole.
 
-*(Note: In Chapter 15, we will see that Einstein shattered the first two postulates with Special Relativity, but at velocities well below the speed of light $v \ll c$, Newtonian space and time are accurate to more than nine decimal places.)*
+*(Note: In Chapter 15, we will see that Einstein revised the first two postulates with Special Relativity. In practice, Newtonian mechanics serves as an excellent approximation for velocities $v < 0.2c$ ($20\%$ the speed of light), where relativistic corrections $\gamma - 1 \approx \frac{1}{2}(v/c)^2$ are under $\approx 2\%$ (and below $0.5\%$ for $v < 0.1c$). Extreme accuracy to nine decimal places ($\sim 10^{-9}$) holds at planetary and terrestrial speeds $v \lesssim 20\text{ km/s}$, where $\frac{1}{2}(v/c)^2 \approx 2.2 \times 10^{-9}$.)*
 
 ---
 
