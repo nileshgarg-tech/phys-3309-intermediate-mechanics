@@ -78,6 +78,11 @@ In these non-inertial frames, objects accelerate spontaneously without any appli
 
 Newton's laws of mechanics apply **only** in inertial reference frames.
 
+> [!TIP]
+> 📊 **Visual Companion & Video Guide**:  
+> For side-by-side diagrams of the coffee cup in an accelerating train, the rotating carousel with Coriolis deflection, and video demonstrations (including the classic 1960 PSSC *Frames of Reference* film and Walter Lewin's MIT demonstrations), see the dedicated guide:  
+> 👉 **[Visual Guide: Inertial Reference Frames & Fictitious Forces](visualizations/01_inertial_frames_visual_guide.md)**
+
 ---
 
 ## 4. The Galilean Transformation & Galilean Relativity

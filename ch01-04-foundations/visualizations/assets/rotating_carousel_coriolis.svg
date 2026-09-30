@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrowRed2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowGreen2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#06b6d4"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="500" rx="16" fill="url(#bgGrad2)"/>
+
+  <!-- Title Banner -->
+  <text x="480" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#f8fafc" text-anchor="middle">
+    THE ROTATING CAROUSEL: CORIOLIS & CENTRIFUGAL DEFLECTION
+  </text>
+  <text x="480" y="66" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">
+    Throwing a ball across a rotating disk viewed from Ground (Inertial) vs Turntable (Non-Inertial)
+  </text>
+
+  <!-- Left: Inertial Observer (Overhead Fixed Ground) -->
+  <g transform="translate(30, 85)">
+    <rect width="435" height="385" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+    
+    <rect x="20" y="16" width="220" height="26" rx="6" fill="#14532d" fill-opacity="0.4"/>
+    <text x="30" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#4ade80">
+      INERTIAL FRAME S (FIXED GROUND)
+    </text>
+
+    <!-- Turntable Circle -->
+    <g transform="translate(217, 180)">
+      <circle cx="0" cy="0" r="110" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+      <!-- Rotation arrow around rim -->
+      <path d="M 80 -75 A 110 110 0 0 1 110 0" fill="none" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrowAmber)"/>
+      <text x="100" y="-85" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#f59e0b">+ω (CCW)</text>
+
+      <!-- Center thrower A -->
+      <circle cx="0" cy="0" r="9" fill="#38bdf8"/>
+      <text x="-15" y="-12" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Thrower (A)</text>
+
+      <!-- Target B at t=0 (intended target) -->
+      <circle cx="0" cy="-110" r="8" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+      <text x="0" y="-122" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Target at t=0</text>
+
+      <!-- Target B at t=t_flight (rotated CCW) -->
+      <circle cx="-78" cy="-78" r="8" fill="#ec4899"/>
+      <text x="-95" y="-90" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ec4899" text-anchor="middle">Target at t_arrival</text>
+
+      <!-- Ball Straight Line Trajectory -->
+      <line x1="0" y1="0" x2="0" y2="-100" stroke="#22c55e" stroke-width="3.5" marker-end="url(#arrowGreen2)"/>
+      <text x="12" y="-50" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#22c55e">Straight Path</text>
+      <text x="12" y="-35" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#4ade80">(F_net = 0 ⇒ v = const)</text>
+    </g>
+
+    <!-- Description Box -->
+    <rect x="20" y="315" width="395" height="55" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="30" y="333" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#cbd5e1">
+      • Ball obeys <tspan fill="#4ade80" font-weight="700">Newton's 1st Law</tspan>: zero horizontal force = straight path.
+    </text>
+    <text x="30" y="352" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#cbd5e1">
+      • Target catcher simply <tspan fill="#ec4899" font-weight="700">rotates out of the way</tspan> during the ball's flight time.
+    </text>
+  </g>
+
+  <!-- Right: Non-Inertial Observer (Riding on Turntable) -->
+  <g transform="translate(495, 85)">
+    <rect width="435" height="385" rx="12" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+    
+    <rect x="20" y="16" width="240" height="26" rx="6" fill="#991b1b" fill-opacity="0.4"/>
+    <text x="30" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#f87171">
+      ROTATING FRAME S' (ON TURNTABLE)
+    </text>
+
+    <!-- Turntable Circle -->
+    <g transform="translate(217, 180)">
+      <circle cx="0" cy="0" r="110" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+
+      <!-- Center thrower A -->
+      <circle cx="0" cy="0" r="9" fill="#38bdf8"/>
+      <text x="-15" y="-12" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Thrower (A)</text>
+
+      <!-- Target B fixed relative to turntable -->
+      <circle cx="0" cy="-110" r="8" fill="#ec4899"/>
+      <text x="0" y="-122" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ec4899" text-anchor="middle">Target (Appears Stationary)</text>
+
+      <!-- Curved Ball Trajectory (deflected clockwise / right) -->
+      <path d="M 0 0 Q 30 -50 78 -78" fill="none" stroke="#ef4444" stroke-width="3.5" stroke-dasharray="1 0" marker-end="url(#arrowRed2)"/>
+      <text x="45" y="-30" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#ef4444">Curved Path</text>
+
+      <!-- Coriolis Force Vector Arrow -->
+      <line x1="35" y1="-50" x2="60" y2="-40" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+      <text x="65" y="-30" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#06b6d4">F_cor</text>
+
+      <!-- Centrifugal Force Vector Arrow -->
+      <line x1="35" y1="-50" x2="48" y2="-72" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+      <text x="54" y="-76" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#f59e0b">F_cf</text>
+    </g>
+
+    <!-- Description Box -->
+    <rect x="20" y="315" width="395" height="55" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="30" y="333" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#cbd5e1">
+      • In frame S', the ball curves wildly rightward with <tspan fill="#ef4444" font-weight="700">no physical force</tspan> acting!
+    </text>
+    <text x="30" y="352" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#cbd5e1">
+      • Requires fictitious <tspan fill="#06b6d4" font-weight="700">Coriolis force</tspan> (-2m ω×v') and <tspan fill="#f59e0b" font-weight="700">Centrifugal force</tspan> to use F=ma.
+    </text>
+  </g>
+</svg>
