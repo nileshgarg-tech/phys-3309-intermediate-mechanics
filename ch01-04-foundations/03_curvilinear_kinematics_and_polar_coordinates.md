@@ -125,18 +125,45 @@ $$
 
 ## 5. Newton's Second Law in Polar Coordinates
 
-Resolving $\mathbf{F} = m\mathbf{a}$ into polar components (Taylor eq. 1.48):
+Resolving $\mathbf{F} = m\mathbf{a}$ into components along $\hat{\mathbf{r}}$ and $\hat{\boldsymbol{\phi}}$, we obtain Newton's second law in polar coordinates (Taylor eq. 1.48):
+
+* **Radial Component**:
+  $$
+  F_r = m\left(\ddot{r} - r\dot{\phi}^2\right)
+  $$
+
+* **Azimuthal Component**:
+  $$
+  F_\phi = m\left(r\ddot{\phi} + 2\dot{r}\dot{\phi}\right)
+  $$
+
+### The Azimuthal Identity and Angular Momentum
+
+Notice the identity connecting the azimuthal acceleration to a total time derivative:
 
 $$
-\begin{cases}
-F_r = m\left(\ddot{r} - r\dot{\phi}^2\right) \\[8pt]
-F_\phi = m\left(r\ddot{\phi} + 2\dot{r}\dot{\phi}\right) = \dfrac{m}{r}\dfrac{d}{dt}\left(r^2\dot{\phi}\right)
-\end{cases}
+r\ddot{\phi} + 2\dot{r}\dot{\phi} = \frac{1}{r}\frac{d}{dt}\left(r^2\dot{\phi}\right)
 $$
 
-Notice the remarkable identity for the azimuthal equation:
-$$\frac{1}{r}\frac{d}{dt}(r^2\dot{\phi}) = \frac{1}{r}(2r\dot{r}\dot{\phi} + r^2\ddot{\phi}) = r\ddot{\phi} + 2\dot{r}\dot{\phi}$$
-This reveals that if there is zero tangential force ($F_\phi = 0$, as in any central force like planetary gravity), the quantity $m r^2 \dot{\phi} = \ell$ (angular momentum) is strictly constant!
+This allows the azimuthal equation of motion to be written compactly as:
+
+$$
+F_\phi = \frac{m}{r}\frac{d}{dt}\left(r^2\dot{\phi}\right)
+$$
+
+Multiplying both sides by $r$:
+
+$$
+r F_\phi = \frac{d}{dt}\left(m r^2\dot{\phi}\right) = \frac{d\ell}{dt}
+$$
+
+**Physical Takeaway**: The quantity $\ell = m r^2\dot{\phi}$ is the particle's **angular momentum** about the origin, and $r F_\phi = \Gamma$ is the applied torque. If the force is purely central (so $F_\phi = 0$), then:
+
+$$
+\frac{d\ell}{dt} = 0 \implies \ell = m r^2\dot{\phi} = \text{constant}
+$$
+
+Angular momentum is strictly conserved whenever the tangential force vanishes!
 
 ---
 

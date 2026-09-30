@@ -83,17 +83,28 @@ A force depends explicitly on $t$ when external driving agents or time-dependent
 
 Because position is a three-dimensional vector $\mathbf{r}(t) = x(t)\hat{\mathbf{x}} + y(t)\hat{\mathbf{y}} + z(t)\hat{\mathbf{z}}$, the single vector equation $m\ddot{\mathbf{r}} = \mathbf{F}(\mathbf{r}, \dot{\mathbf{r}}, t)$ decomposes into **three simultaneous scalar second-order differential equations** (Taylor, Eq. 1.35):
 
+* **$x$-component**:
+  $$
+  m\ddot{x} = F_x(x, y, z, \dot{x}, \dot{y}, \dot{z}, t)
+  $$
+
+* **$y$-component**:
+  $$
+  m\ddot{y} = F_y(x, y, z, \dot{x}, \dot{y}, \dot{z}, t)
+  $$
+
+* **$z$-component**:
+  $$
+  m\ddot{z} = F_z(x, y, z, \dot{x}, \dot{y}, \dot{z}, t)
+  $$
+
+These equations are often **coupled**: for instance, in the magnetic Lorentz force $\mathbf{F} = q(\mathbf{v} \times \mathbf{B})$ with a uniform magnetic field $\mathbf{B} = B\hat{\mathbf{z}}$:
+
 $$
-\begin{cases}
-m\ddot{x} = F_x(x, y, z, \dot{x}, \dot{y}, \dot{z}, t) \\[6pt]
-m\ddot{y} = F_y(x, y, z, \dot{x}, \dot{y}, \dot{z}, t) \\[6pt]
-m\ddot{z} = F_z(x, y, z, \dot{x}, \dot{y}, \dot{z}, t)
-\end{cases}
+m\ddot{x} = q B \dot{y}, \qquad m\ddot{y} = -q B \dot{x}, \qquad m\ddot{z} = 0
 $$
 
-These equations are often **coupled**: for instance, in the magnetic force $\mathbf{F} = q(\mathbf{v} \times \mathbf{B})$ with $\mathbf{B} = B\,\hat{\mathbf{z}}$:
-$$m\ddot{x} = q B \dot{y}, \qquad m\ddot{y} = -q B \dot{x}, \qquad m\ddot{z} = 0$$
-The $x$-acceleration depends on the $y$-velocity, and the $y$-acceleration depends on the $x$-velocity, coupling the dimensions together.
+The $x$-acceleration depends on the $y$-velocity, and the $y$-acceleration depends on the $x$-velocity, coupling the spatial coordinates together.
 
 ---
 
