@@ -9,49 +9,49 @@
 
 ## 1. The Coupling Dilemma in 2D
 
-With quadratic drag $\mathbf{f} = -c|v|\mathbf{v}$:
+With quadratic drag $\mathbf{f} = -c v \mathbf{v}$ (Taylor, Sec. 2.4, pp. 55–60):
 
 $$
-m\frac{dv_x}{dt} = -c\sqrt{v_x^2 + v_y^2}\,v_x
+m\dot{v}_x = -c\sqrt{v_x^2 + v_y^2}\,v_x
 $$
 
 $$
-m\frac{dv_y}{dt} = -mg - c\sqrt{v_x^2 + v_y^2}\,v_y
+m\dot{v}_y = -mg - c\sqrt{v_x^2 + v_y^2}\,v_y
 $$
 
-Because $v_x$ and $v_y$ are nonlinearly coupled through speed $|v|$, **no closed-form analytical solution exists in elementary functions for 2D quadratic drag**. Trajectories must be computed numerically.
+Because $v_x$ and $v_y$ are nonlinearly coupled through speed $v = \sqrt{v_x^2 + v_y^2}$, **no closed-form analytical solution exists in elementary functions for 2D quadratic drag**. Trajectories must be computed numerically.
 However, **pure vertical 1D motion** can be solved analytically!
 
 ---
 
 ## 2. 1D Vertical Drop from Rest
 
-Choosing $y$ downward so gravity is positive:
+Choosing $y$ downward so gravity is positive (Taylor, Eq. 2.44):
 
 $$
-m\frac{dv}{dt} = mg - cv^2
+m\dot{v} = mg - cv^2
 $$
 
-Terminal velocity occurs when acceleration vanishes:
+Terminal velocity occurs when acceleration vanishes ($\dot{v} = 0$, Taylor Eq. 2.45):
 
 $$
 v_{\text{ter}} = \sqrt{\frac{mg}{c}}
 $$
 
-Rewriting the ODE:
+Rewriting the ODE (Taylor, Eq. 2.47):
 
 $$
-\frac{dv}{dt} = g\left[ 1 - \left(\frac{v}{v_{\text{ter}}}\right)^2 \right]
+\dot{v} = g\left[ 1 - \left(\frac{v}{v_{\text{ter}}}\right)^2 \right]
 $$
 
-Integrating using the substitution $\int \frac{du}{1 - u^2} = \text{arctanh}(u)$:
+Integrating using the substitution $\int \frac{du}{1 - u^2} = \text{arctanh}(u)$ (Taylor, Eq. 2.49):
 
 $$
 v(t) = v_{\text{ter}}\tanh\left(\frac{gt}{v_{\text{ter}}}\right) = v_{\text{ter}}\tanh\left(\frac{t}{\tau}\right)
 $$
 
 where $\tau = v_{\text{ter}} / g$.
-Integrating velocity gives position:
+Integrating velocity gives position (Taylor, Eq. 2.51):
 
 $$
 y(t) = \frac{v_{\text{ter}}^2}{g}\ln\left( \cosh\left(\frac{t}{\tau}\right) \right)
@@ -61,10 +61,10 @@ $$
 
 ## 3. Upward Launch with Quadratic Drag
 
-For vertical launch upward with speed $v_0$:
+For vertical launch upward with speed $v_0$ (Taylor, Eq. 2.54):
 
 $$
-m\frac{dv}{dt} = -mg - cv^2 = -g\left[ 1 + \left(\frac{v}{v_{\text{ter}}}\right)^2 \right]
+m\dot{v} = -mg - cv^2 = -m g\left[ 1 + \left(\frac{v}{v_{\text{ter}}}\right)^2 \right]
 $$
 
 Using $\int \frac{du}{1 + u^2} = \arctan(u)$:

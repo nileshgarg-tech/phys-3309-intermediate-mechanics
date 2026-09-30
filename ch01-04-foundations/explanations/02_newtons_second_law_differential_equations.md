@@ -16,17 +16,17 @@ $$
 \mathbf{F} = m\mathbf{a}
 $$
 
-However, because acceleration is the second time derivative of position ($\mathbf{a} = \ddot{\mathbf{r}} = \frac{d^2\mathbf{r}}{dt^2}$), Newton's Second Law in intermediate mechanics is fundamentally a **second-order differential equation for the unknown trajectory $\mathbf{r}(t)$**:
+However, because acceleration is the second time derivative of position ($\mathbf{a} = \ddot{\mathbf{r}}$), Newton's Second Law in intermediate mechanics is fundamentally a **second-order differential equation for the unknown trajectory $\mathbf{r}(t)$** (Taylor, Sec. 1.4 & Sec. 1.6):
 
 $$
-m\frac{d^2\mathbf{r}}{dt^2} = \mathbf{F}\left(\mathbf{r}, \dot{\mathbf{r}}, t\right)
+m\ddot{\mathbf{r}} = \mathbf{F}\left(\mathbf{r}, \dot{\mathbf{r}}, t\right)
 $$
 
 ---
 
 ## 2. What Can Force Physically Depend On? Understanding $\mathbf{F}(\mathbf{r}, \dot{\mathbf{r}}, t)$
 
-Students frequently ask: **"Why is the force written with these three specific arguments: position $\mathbf{r}$, velocity $\dot{\mathbf{r}} = \frac{d\mathbf{r}}{dt}$, and time $t$?"**
+Students frequently ask: **"Why is the force written with these three specific arguments: position $\mathbf{r}$, velocity $\dot{\mathbf{r}}$, and time $t$?"** (Taylor, Footnote 11, p. 23).
 
 In classical mechanics, the net force on a particle at any given instant can depend on three distinct physical inputs:
 
@@ -43,13 +43,13 @@ Most static and potential forces depend purely on where the particle is located 
 * **Conservative Fields**: Any conservative force is the spatial gradient of a scalar potential energy function:
   $$\mathbf{F}(\mathbf{r}) = -\nabla U(\mathbf{r})$$
 
-### 2. Velocity Dependence ($\dot{\mathbf{r}} = \mathbf{v} = \frac{d\mathbf{r}}{dt}$): *"How fast and in what direction is the particle moving?"*
+### 2. Velocity Dependence ($\dot{\mathbf{r}} = \mathbf{v}$): *"How fast and in what direction is the particle moving?"*
 Some forces vanish completely when the particle is stationary, appearing only when there is relative motion:
 * **Fluid and Atmospheric Drag**:
   $$\mathbf{F}_{\text{drag}}(\mathbf{v}) = -b\mathbf{v} \quad (\text{linear Stokes drag}) \quad \text{or} \quad -c v^2 \hat{\mathbf{v}} \quad (\text{quadratic drag})$$
-  A baseball sitting at rest feels zero air resistance. As soon as it is thrown, a retarding force opposes its instantaneous velocity $\mathbf{v}$ (Taylor Ch. 2).
+  A baseball sitting at rest feels zero air resistance. As soon as it is thrown, a retarding force opposes its instantaneous velocity $\mathbf{v} = \dot{\mathbf{r}}$ (Taylor Ch. 2).
 * **Magnetic Lorentz Force**:
-  $$\mathbf{F}_{\text{mag}}(\mathbf{v}) = q(\mathbf{v} \times \mathbf{B})$$
+  $$\mathbf{F}_{\text{mag}}(\mathbf{v}) = q(\mathbf{v} \times \mathbf{B}) = q(\dot{\mathbf{r}} \times \mathbf{B})$$
   A stationary charge inside a magnetic field experiences zero magnetic force; deflection occurs only when the charge moves (Taylor Ch. 2 & Ch. 3).
 * **Viscous Damping**: Damping in shock absorbers and mechanical oscillators:
   $$\mathbf{F}_{\text{damp}} = -\gamma \dot{x}$$
@@ -81,13 +81,13 @@ A force depends explicitly on $t$ when external driving agents or time-dependent
 
 ## 4. Component Form: A System of Three Coupled Second-Order ODEs
 
-Because position is a three-dimensional vector $\mathbf{r}(t) = x(t)\hat{\mathbf{x}} + y(t)\hat{\mathbf{y}} + z(t)\hat{\mathbf{z}}$, the single vector equation $m\ddot{\mathbf{r}} = \mathbf{F}(\mathbf{r}, \dot{\mathbf{r}}, t)$ decomposes into **three simultaneous scalar second-order differential equations**:
+Because position is a three-dimensional vector $\mathbf{r}(t) = x(t)\hat{\mathbf{x}} + y(t)\hat{\mathbf{y}} + z(t)\hat{\mathbf{z}}$, the single vector equation $m\ddot{\mathbf{r}} = \mathbf{F}(\mathbf{r}, \dot{\mathbf{r}}, t)$ decomposes into **three simultaneous scalar second-order differential equations** (Taylor, Eq. 1.35):
 
 $$
 \begin{cases}
-m\dfrac{d^2 x}{dt^2} = F_x(x, y, z, \dot{x}, \dot{y}, \dot{z}, t) \\[10pt]
-m\dfrac{d^2 y}{dt^2} = F_y(x, y, z, \dot{x}, \dot{y}, \dot{z}, t) \\[10pt]
-m\dfrac{d^2 z}{dt^2} = F_z(x, y, z, \dot{x}, \dot{y}, \dot{z}, t)
+m\ddot{x} = F_x(x, y, z, \dot{x}, \dot{y}, \dot{z}, t) \\[6pt]
+m\ddot{y} = F_y(x, y, z, \dot{x}, \dot{y}, \dot{z}, t) \\[6pt]
+m\ddot{z} = F_z(x, y, z, \dot{x}, \dot{y}, \dot{z}, t)
 \end{cases}
 $$
 

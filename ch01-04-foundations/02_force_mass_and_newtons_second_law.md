@@ -39,35 +39,35 @@ $$
 
 ## 2. Momentum and Newton's Second Law
 
-Linear momentum is defined as:
+Linear momentum is defined as (Taylor, Eq. 1.18):
 
 $$
-\mathbf{p} = m\mathbf{v} = m\frac{d\mathbf{r}}{dt}
+\mathbf{p} = m\mathbf{v} = m\dot{\mathbf{r}}
 $$
 
-Newton's Second Law is fundamentally a statement about momentum:
-> **The time rate of change of momentum of a body is proportional to and in the direction of the net external impressed force:**
+Newton's Second Law is fundamentally a statement about momentum (Taylor, Eq. 1.19):
+> **The time rate of change of momentum of a body is equal to the net applied force:**
 
 $$
-\mathbf{F}_{\text{net}} = \frac{d\mathbf{p}}{dt}
+\mathbf{F} = \dot{\mathbf{p}}
 $$
 
-For a body with constant mass $m$:
+For a body with constant mass $m$ (Taylor, Eq. 1.17 & Eq. 1.30):
 
 $$
-\mathbf{F}_{\text{net}} = \frac{d(m\mathbf{v})}{dt} = m\frac{d\mathbf{v}}{dt} = m\frac{d^2\mathbf{r}}{dt^2} = m\mathbf{a}
+\mathbf{F} = \dot{\mathbf{p}} = m\dot{\mathbf{v}} = m\ddot{\mathbf{r}} = m\mathbf{a}
 $$
 
 ### Second-Order Differential Equation
-Because acceleration is the second time derivative of position, Newton's second law is fundamentally a system of second-order differential equations for the particle's trajectory $\mathbf{r}(t)$:
+Because acceleration is the second time derivative of position ($\ddot{\mathbf{r}}$), Newton's second law is fundamentally a system of second-order differential equations for the particle's trajectory $\mathbf{r}(t)$ (Taylor, Sec. 1.4 & Sec. 1.6):
 
 $$
-m\frac{d^2\mathbf{r}}{dt^2} = \mathbf{F}\left(\mathbf{r}, \frac{d\mathbf{r}}{dt}, t\right)
+m\ddot{\mathbf{r}} = \mathbf{F}\left(\mathbf{r}, \dot{\mathbf{r}}, t\right)
 $$
 
 To solve for the trajectory $\mathbf{r}(t)$ uniquely, mathematics requires **two initial boundary conditions**:
 1. Initial position: $\mathbf{r}(0) = \mathbf{r}_0$
-2. Initial velocity: $\mathbf{v}(0) = \mathbf{v}_0$
+2. Initial velocity: $\mathbf{v}(0) = \dot{\mathbf{r}}(0) = \mathbf{v}_0$
 
 > [!TIP]
 > 📖 **Deep-Dive Companion Guide**:  
@@ -78,28 +78,28 @@ To solve for the trajectory $\mathbf{r}(t)$ uniquely, mathematics requires **two
 
 ## 3. Newton's Third Law & Conservation of Momentum
 
-Newton's Third Law states:
+Newton's Third Law states (Taylor, Eq. 1.22):
 
 $$
 \mathbf{F}_{12} = -\mathbf{F}_{21}
 $$
 
-Let us define the **Total Linear Momentum** of a two-particle isolated system:
+Following Taylor (Sec. 1.5), let us define the **Total Linear Momentum** of a two-particle isolated system:
 
 $$
-\mathbf{P}_{\text{total}} = \mathbf{p}_1 + \mathbf{p}_2
+\mathbf{P} = \mathbf{p}_1 + \mathbf{p}_2
 $$
 
-Taking the time derivative:
+Taking the time derivative (Taylor, Eq. 1.25):
 
 $$
-\frac{d\mathbf{P}_{\text{total}}}{dt} = \frac{d\mathbf{p}_1}{dt} + \frac{d\mathbf{p}_2}{dt} = \mathbf{F}_{12} + \mathbf{F}_{21} = \mathbf{0}
+\dot{\mathbf{P}} = \dot{\mathbf{p}}_1 + \dot{\mathbf{p}}_2 = \mathbf{F}_{12} + \mathbf{F}_{21} = \mathbf{0}
 $$
 
 Therefore:
 
 $$
-\mathbf{P}_{\text{total}} = \text{constant}
+\mathbf{P} = \text{constant}
 $$
 
 > **The Principle of Conservation of Linear Momentum**:
@@ -113,10 +113,10 @@ $$
 | Concept | Formula | Core Takeaway |
 |---|---|---|
 | **Operational Mass** | $\frac{m_2}{m_1} = \frac{\vert\mathbf{a}_1\vert}{\vert\mathbf{a}_2\vert}$ | Defined by mutually interacting acceleration ratios |
-| **Linear Momentum** | $\mathbf{p} = m\mathbf{v}$ | Vector quantity of motion |
-| **Newton's 2nd Law** | $\mathbf{F} = \frac{d\mathbf{p}}{dt} = m\ddot{\mathbf{r}}$ | 2nd-order ODE; requires $\mathbf{r}_0$ and $\mathbf{v}_0$ to solve |
-| **Newton's 3rd Law** | $\mathbf{F}_{12} = -\mathbf{F}_{21}$ | Mutual forces are equal and opposite |
-| **Momentum Conservation**| $\frac{d\mathbf{P}}{dt} = \mathbf{F}_{\text{ext}} = \mathbf{0}$ | Direct consequence of the 3rd Law |
+| **Linear Momentum** | $\mathbf{p} = m\mathbf{v} = m\dot{\mathbf{r}}$ | Vector quantity of motion (Taylor, Eq. 1.18) |
+| **Newton's 2nd Law** | $\mathbf{F} = \dot{\mathbf{p}} = m\ddot{\mathbf{r}}$ | 2nd-order ODE; requires $\mathbf{r}_0$ and $\mathbf{v}_0$ to solve (Taylor, Eq. 1.30) |
+| **Newton's 3rd Law** | $\mathbf{F}_{12} = -\mathbf{F}_{21}$ | Mutual forces are equal and opposite (Taylor, Eq. 1.22) |
+| **Momentum Conservation**| $\dot{\mathbf{P}} = \mathbf{F}^{\text{ext}} = \mathbf{0}$ | Direct consequence of the 3rd Law (Taylor, Eq. 1.25) |
 
 ---
 

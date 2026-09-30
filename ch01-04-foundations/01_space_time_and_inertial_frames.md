@@ -20,7 +20,8 @@ For over two centuries, the answer given by Isaac Newton was an unconditional **
 2. **Absolute Universal Time**: Time flows uniformly and identically across the entire cosmos. A second on Earth is identical to a second on the farthest star.
 3. **Point Particles**: Any physical body (an electron, a baseball, or the planet Jupiter) can be idealized as a single mathematical point endowed with a scalar property called **mass** ($m$), provided its internal degrees of freedom (rotation, vibration, deformation) do not affect its external translational motion as a whole.
 
-*(Note: In Chapter 15, we will see that Einstein revised the first two postulates with Special Relativity. In practice, Newtonian mechanics serves as an excellent approximation for velocities $v < 0.2c$ ($20\%$ the speed of light), where relativistic corrections $\gamma - 1 \approx \frac{1}{2}(v/c)^2$ are under $\approx 2\%$ (and below $0.5\%$ for $v < 0.1c$). Extreme accuracy to nine decimal places ($\sim 10^{-9}$) holds at planetary and terrestrial speeds $v \lesssim 20\text{ km/s}$, where $\frac{1}{2}(v/c)^2 \approx 2.2 \times 10^{-9}$.)*
+> [!NOTE]
+> In Chapter 15, we will see that Einstein revised the first two postulates with Special Relativity. In practice, Newtonian mechanics serves as an excellent approximation for velocities $v < 0.2c$ (20% the speed of light), where relativistic corrections $\gamma - 1 \approx \frac{1}{2}(v/c)^2$ are under 2% (and below 0.5% for $v < 0.1c$). Extreme accuracy to nine decimal places ($\sim 10^{-9}$) holds at planetary and terrestrial speeds $v \le 20\text{ km/s}$, where $\frac{1}{2}(v/c)^2 \approx 2.2 \times 10^{-9}$.
 
 ---
 
@@ -39,23 +40,23 @@ $$
 \mathbf{r}(t) = x(t)\,\hat{\mathbf{x}} + y(t)\,\hat{\mathbf{y}} + z(t)\,\hat{\mathbf{z}}
 $$
 
-### Velocity and Acceleration
-As the particle moves along its trajectory curve, its **velocity vector** is the instantaneous rate of change of position:
+### Velocity and Acceleration in Dot Notation
+Following Taylor (Sec. 1.4, p. 13), we adopt the standard notation of dots to denote differentiation with respect to time $t$. The **velocity vector** $\mathbf{v}$ is:
 
 $$
-\mathbf{v}(t) = \frac{d\mathbf{r}}{dt} = \dot{x}\,\hat{\mathbf{x}} + \dot{y}\,\hat{\mathbf{y}} + \dot{z}\,\hat{\mathbf{z}}
+\mathbf{v} = \dot{\mathbf{r}} = \dot{x}\,\hat{\mathbf{x}} + \dot{y}\,\hat{\mathbf{y}} + \dot{z}\,\hat{\mathbf{z}}
 $$
 
-Notice that the unit vectors ($\hat{\mathbf{x}}, \hat{\mathbf{y}}, \hat{\mathbf{z}}$) are fixed in Cartesian coordinates, so their time derivatives are identically zero:
+Notice that the Cartesian unit vectors ($\hat{\mathbf{x}}, \hat{\mathbf{y}}, \hat{\mathbf{z}}$) are fixed in space, so their time derivatives vanish identically:
 
 $$
-\frac{d\hat{\mathbf{x}}}{dt} = \mathbf{0}, \quad \frac{d\hat{\mathbf{y}}}{dt} = \mathbf{0}, \quad \frac{d\hat{\mathbf{z}}}{dt} = \mathbf{0}
+\dot{\hat{\mathbf{x}}} = \mathbf{0}, \quad \dot{\hat{\mathbf{y}}} = \mathbf{0}, \quad \dot{\hat{\mathbf{z}}} = \mathbf{0}
 $$
 
-The **acceleration vector** is the rate of change of velocity:
+The **acceleration vector** $\mathbf{a}$ is the time derivative of velocity, or the second time derivative of position:
 
 $$
-\mathbf{a}(t) = \frac{d\mathbf{v}}{dt} = \frac{d^2\mathbf{r}}{dt^2} = \ddot{x}\,\hat{\mathbf{x}} + \ddot{y}\,\hat{\mathbf{y}} + \ddot{z}\,\hat{\mathbf{z}}
+\mathbf{a} = \dot{\mathbf{v}} = \ddot{\mathbf{r}} = \ddot{x}\,\hat{\mathbf{x}} + \ddot{y}\,\hat{\mathbf{y}} + \ddot{z}\,\hat{\mathbf{z}}
 $$
 
 ---
@@ -106,18 +107,18 @@ $$
 These are the **Galilean Transformations**.
 
 ### Invariance of Acceleration and Force
-Differentiating position with respect to time:
+Differentiating position with respect to time using dot notation:
 
 $$
-\mathbf{v}' = \frac{d\mathbf{r}'}{dt} = \frac{d\mathbf{r}}{dt} - \mathbf{V} = \mathbf{v} - \mathbf{V}
+\mathbf{v}' = \dot{\mathbf{r}}' = \dot{\mathbf{r}} - \mathbf{V} = \mathbf{v} - \mathbf{V}
 $$
 
 Velocities are relative: an observer on the train measures a ball moving at a different velocity than an observer on the ground.
 
-Now differentiate once more with constant relative velocity ($\frac{d\mathbf{V}}{dt} = \mathbf{0}$):
+Now differentiate once more. Since relative frame velocity $\mathbf{V}$ is constant ($\dot{\mathbf{V}} = \mathbf{0}$):
 
 $$
-\mathbf{a}' = \frac{d\mathbf{v}'}{dt} = \frac{d\mathbf{v}}{dt} - \frac{d\mathbf{V}}{dt} = \mathbf{a}
+\mathbf{a}' = \ddot{\mathbf{r}}' = \ddot{\mathbf{r}} - \dot{\mathbf{V}} = \ddot{\mathbf{r}} = \mathbf{a}
 $$
 
 $$

@@ -111,15 +111,15 @@ flowchart TD
 | **$t = t_{\text{flight}}$ (Arrival)** | Ball passes through $B_0$. Target $B$ has rotated away. $\sum \mathbf{F} = \mathbf{0}$ correctly predicted the path. | Ball misses target $B$ wide right. Observer must invoke Coriolis force $\mathbf{F}_{\text{cor}} = -2m(\mathbf{\omega} \times \mathbf{v}')$ to explain the curve. |
 
 ### The Non-Inertial Equation of Motion for Rotating Frames
-In Chapter 9, Taylor derives the exact transformation for a coordinate system rotating at constant $\mathbf{\omega}$:
+In Chapter 9, Taylor derives the exact transformation for a coordinate system rotating at constant angular velocity $\boldsymbol{\omega}$ (or $\boldsymbol{\Omega}$):
 
 $$
 m\mathbf{a}' = \mathbf{F}_{\text{real}} + \underbrace{\mathbf{F}_{\text{cor}}}_{\text{Coriolis}} + \underbrace{\mathbf{F}_{\text{cf}}}_{\text{Centrifugal}}
 $$
 
 Where:
-* **Coriolis Force**: $\mathbf{F}_{\text{cor}} = -2m(\mathbf{\omega} \times \mathbf{v}')$ *(acts perpendicular to the particle's velocity)*
-* **Centrifugal Force**: $\mathbf{F}_{\text{cf}} = -m\mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r}')$ *(acts radially outward from the axis of rotation)*
+* **Coriolis Force**: $\mathbf{F}_{\text{cor}} = -2m(\boldsymbol{\omega} \times \mathbf{v}') = 2m(\mathbf{v}' \times \boldsymbol{\omega})$ *(acts perpendicular to the particle's relative velocity)*
+* **Centrifugal Force**: $\mathbf{F}_{\text{cf}} = -m\boldsymbol{\omega} \times (\boldsymbol{\omega} \times \mathbf{r}')$ *(acts radially outward from the axis of rotation)*
 
 ---
 

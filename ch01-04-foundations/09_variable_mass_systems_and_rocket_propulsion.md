@@ -67,10 +67,10 @@ $$
 dP = m\,dv + v_{\text{ex}}\,dm
 $$
 
-By Newton's Second Law, $\frac{dP}{dt} = F_{\text{ext}}$:
+By Newton's Second Law, $\dot{P} = F^{\text{ext}}$:
 
 $$
-m \frac{dv}{dt} + v_{\text{ex}} \frac{dm}{dt} = F^{\text{ext}}
+m \dot{v} + \dot{m} v_{\text{ex}} = F^{\text{ext}}
 $$
 
 Rearranging into standard form (Taylor, Eq. 3.29):
@@ -291,7 +291,7 @@ $$
 ---
 
 ### Practice Problem 9.2 (To Solve)
-**Statement**: A rocket launches vertically upward from rest in a uniform gravitational field $g$. The burn rate $k = -\frac{dm}{dt}$ is constant, and the exhaust speed is $v_{\text{ex}}$. Find the formula for the height $y(t)$ achieved at engine burnout time $t_b$.
+**Statement**: A rocket launches vertically upward from rest in a uniform gravitational field $g$. The burn rate $k = -\dot{m}$ is constant, and the exhaust speed is $v_{\text{ex}}$. Find the formula for the height $y(t)$ achieved at engine burnout time $t_b$.
 * **Hint**: Integrate velocity $v(t) = -v_{\text{ex}} \ln\left(1 - \frac{kt}{m_0}\right) - gt$ using $\int \ln(u)\,du = u\ln(u) - u$.
 * **Answer**:
 

@@ -10,37 +10,37 @@
 
 ## 1. The Power of the 1D Energy Equation
 
-In one dimension, Newton's Second Law is a second-order ODE:
+In one dimension, Newton's Second Law is a second-order ODE (Taylor, Eq. 4.14):
 
 $$
-m \frac{d^2x}{dt^2} = F(x)
+m \ddot{x} = F(x)
 $$
 
-Because any 1D position-dependent force $F(x)$ is automatically conservative (its curl is trivially zero!), we can always define:
+Because any 1D position-dependent force $F(x)$ is automatically conservative (its curl is trivially zero!), we can always define the potential energy (Taylor, Eq. 4.12):
 
 $$
 U(x) = - \int_{x_0}^x F(x')\,dx' \implies F(x) = -\frac{dU}{dx}
 $$
 
-Conservation of energy gives a first-order differential equation:
+Conservation of energy gives a first-order differential equation (Taylor, Eq. 4.13):
 
 $$
-E = \frac{1}{2} m \left(\frac{dx}{dt}\right)^2 + U(x) = \text{constant}
+E = \frac{1}{2} m \dot{x}^2 + U(x) = \text{constant}
 $$
 
-Solve directly for the velocity $\dot{x} = \frac{dx}{dt}$:
+Solve directly for the velocity $\dot{x}$ (Taylor, Eq. 4.17):
 
 $$
-\frac{dx}{dt} = \pm \sqrt{\frac{2}{m} [E - U(x)]}
+\dot{x} = \pm \sqrt{\frac{2}{m} [E - U(x)]}
 $$
 
-Separate variables:
+Separate variables (Taylor, Eq. 4.19):
 
 $$
 t = \int_{x_0}^x \frac{dx'}{\sqrt{\frac{2}{m} [E - U(x')]}}
 $$
 
-> **Taylor's Principle of 1D Mechanics**:  
+> **Taylor's Principle of 1D Mechanics (Sec. 4.3)**:  
 > **Any 1D conservative problem can be completely solved by a single quadrature (integral)!**
 
 ---
@@ -100,10 +100,10 @@ $$
 F = -\frac{dU}{dx} \approx -k_{\text{eff}} (x - x_0)
 $$
 
-Newton's Second Law becomes:
+Newton's Second Law becomes (Taylor, Eq. 5.3):
 
 $$
-m \frac{d^2u}{dt^2} = -k_{\text{eff}} u \implies \frac{d^2u}{dt^2} + \left(\frac{k_{\text{eff}}}{m}\right) u = 0
+m \ddot{u} = -k_{\text{eff}} u \implies \ddot{u} + \left(\frac{k_{\text{eff}}}{m}\right) u = 0
 $$
 
 > **The Universal Harmonic Approximation**:  

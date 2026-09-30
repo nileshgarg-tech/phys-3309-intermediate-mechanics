@@ -39,59 +39,63 @@ $$
 
 ---
 
-## 3. The Work-Kinetic Energy Theorem (Complete 3D Derivation)
+## 3. The Work-Kinetic Energy Theorem (Taylor's Derivation)
 
-Let us evaluate the line integral using Newton's Second Law: $\mathbf{F} = m \mathbf{a} = m \frac{d\mathbf{v}}{dt}$.
-
-$$
-W(1 \to 2) = \int_1^2 \mathbf{F} \cdot d\mathbf{r} = \int_{t_1}^{t_2} \left( m \frac{d\mathbf{v}}{dt} \right) \cdot \left( \frac{d\mathbf{r}}{dt} \, dt \right) = m \int_{t_1}^{t_2} \frac{d\mathbf{v}}{dt} \cdot \mathbf{v} \, dt
-$$
-
-Now consider the time derivative of the scalar speed squared $v^2 = \mathbf{v} \cdot \mathbf{v}$:
+Following Taylor (Sec. 4.1, pp. 114–115), we define the **Kinetic Energy** $T$ of a particle of mass $m$ and velocity $\mathbf{v}$:
 
 $$
-\frac{d(v^2)}{dt} = \frac{d}{dt}(\mathbf{v} \cdot \mathbf{v}) = \frac{d\mathbf{v}}{dt} \cdot \mathbf{v} + \mathbf{v} \cdot \frac{d\mathbf{v}}{dt} = 2 \left( \frac{d\mathbf{v}}{dt} \cdot \mathbf{v} \right)
+T = \frac{1}{2} m v^2 = \frac{1}{2} m (\mathbf{v} \cdot \mathbf{v})
 $$
 
-Therefore:
+Differentiating $T$ with respect to time $t$ using the product rule:
 
 $$
-\frac{d\mathbf{v}}{dt} \cdot \mathbf{v} = \frac{1}{2} \frac{d(v^2)}{dt}
+\frac{dT}{dt} = \frac{1}{2} m \frac{d}{dt}(\mathbf{v} \cdot \mathbf{v}) = m \mathbf{v} \cdot \dot{\mathbf{v}} = \mathbf{v} \cdot (m \dot{\mathbf{v}})
 $$
 
-Substitute this directly back into our integral:
+By Newton's Second Law, $m\dot{\mathbf{v}} = \mathbf{F}$. Therefore (Taylor, Eq. 4.4):
 
 $$
-W(1 \to 2) = m \int_{t_1}^{t_2} \frac{1}{2} \frac{d(v^2)}{dt} \, dt = \frac{1}{2} m \int_{v_1^2}^{v_2^2} d(v^2) = \frac{1}{2} m v_2^2 - \frac{1}{2} m v_1^2
+\frac{dT}{dt} = \mathbf{v} \cdot \mathbf{F}
 $$
 
-We define the **Kinetic Energy** $T$:
+Multiplying by $dt$, and recognizing that $\mathbf{v}\,dt = \dot{\mathbf{r}}\,dt = d\mathbf{r}$ is the infinitesimal displacement along the path (Taylor, Eq. 4.5):
 
 $$
-T = \frac{1}{2} m v^2 = \frac{p^2}{2m}
+dT = \mathbf{F} \cdot d\mathbf{r}
 $$
 
-> **The Work-Kinetic Energy Theorem**:
+Integrating both sides along the particle's trajectory from state 1 at time $t_1$ to state 2 at time $t_2$:
+
+$$
+\int_1^2 dT = \int_1^2 \mathbf{F} \cdot d\mathbf{r}
+$$
+
+$$
+T_2 - T_1 = W(1 \to 2)
+$$
+
+> **The Work-Kinetic Energy Theorem (Taylor, Eq. 4.6)**:
 > 
 > $$
-> W_{\text{net}}(1 \to 2) = \Delta T = T_2 - T_1
+> W(1 \to 2) = \Delta T = T_2 - T_1
 > $$
 > 
-> The net work done by all forces acting on a particle equals the change in its kinetic energy.
+> The work done by the net force on a particle as it moves from 1 to 2 is equal to the change in the particle's kinetic energy.
 
 ---
 
 ## 4. Power: The Rate of Doing Work
 
-The instantaneous time rate at which work is performed on a particle is called **Power** ($P$):
+The instantaneous rate at which work is performed on a particle is called **Power** ($P$; Taylor, Eq. 4.7):
 
 $$
-P = \frac{dW}{dt} = \frac{\mathbf{F} \cdot d\mathbf{r}}{dt} = \mathbf{F} \cdot \frac{d\mathbf{r}}{dt} = \mathbf{F} \cdot \mathbf{v}
+P = \frac{dW}{dt} = \frac{dT}{dt} = \mathbf{F} \cdot \mathbf{v}
 $$
 
 Notice:
-* If force is perpendicular to velocity ($\mathbf{F} \perp \mathbf{v}$, such as magnetic Lorentz forces $q(\mathbf{v} \times \mathbf{B})$ or normal forces on a frictionless track), then $\mathbf{F} \cdot \mathbf{v} = 0$.
-* **Zero power is delivered, and kinetic energy is strictly constant!**
+* If force is perpendicular to velocity ($\mathbf{F} \perp \mathbf{v}$, such as magnetic Lorentz forces $q(\mathbf{v} \times \mathbf{B})$ or normal constraint forces on a smooth track), then $\mathbf{F} \cdot \mathbf{v} = 0$.
+* **Zero power is delivered, and kinetic energy remains strictly constant!**
 
 ---
 

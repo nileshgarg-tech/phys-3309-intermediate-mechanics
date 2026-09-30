@@ -91,7 +91,7 @@ Show that an ion entering with velocity $\mathbf{v}_0 = \left(\frac{E}{B}\right)
 ## Problem 5: The Tsiolkovsky Rocket with Gravity (Chapter 3)
 
 ### Problem Statement
-A Saturn V rocket of initial launch mass $m_0 = 2.8 \times 10^6\text{ kg}$ burns fuel at a constant rate $k = -\frac{dm}{dt} = 1.4 \times 10^4\text{ kg/s}$ for a total burn time $t_b = 150\text{ s}$. The engine has an effective exhaust speed $v_{\text{ex}} = 2600\text{ m/s}$.
+A Saturn V rocket of initial launch mass $m_0 = 2.8 \times 10^6\text{ kg}$ burns fuel at a constant rate $k = -\dot{m} = 1.4 \times 10^4\text{ kg/s}$ for a total burn time $t_b = 150\text{ s}$. The engine has an effective exhaust speed $v_{\text{ex}} = 2600\text{ m/s}$.
 Assuming vertical flight in uniform gravity $g = 9.8\text{ m/s}^2$:
 1. Find the rocket's velocity $v(t_b)$ at engine burnout.
 2. Find the altitude $y(t_b)$ reached at burnout.

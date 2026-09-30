@@ -9,20 +9,20 @@
 
 ## 1. Decoupled Equations of Motion
 
-With linear drag $\mathbf{f} = -b\mathbf{v}$:
+With linear drag $\mathbf{f} = -b\mathbf{v}$ (Taylor, Eq. 2.5):
 
 $$
-m\frac{d\mathbf{v}}{dt} = m\mathbf{g} - b\mathbf{v}
+m\dot{\mathbf{v}} = m\mathbf{g} - b\mathbf{v}
 $$
 
-In components ($x$ horizontal, $y$ vertical upward):
+In components ($x$ horizontal, $y$ vertical upward; Taylor, Eq. 2.21):
 
 $$
-m\frac{dv_x}{dt} = -b v_x
+m\dot{v}_x = -b v_x
 $$
 
 $$
-m\frac{dv_y}{dt} = -mg - b v_y
+m\dot{v}_y = -mg - b v_y
 $$
 
 The horizontal and vertical motions are completely decoupled!
@@ -31,19 +31,19 @@ The horizontal and vertical motions are completely decoupled!
 
 ## 2. Horizontal Motion & The Characteristic Time
 
-Define the characteristic time $\tau$:
+Following Taylor (Eq. 2.22), define the characteristic time $\tau$:
 
 $$
 \tau = \frac{m}{b}
 $$
 
-The horizontal ODE becomes:
+The horizontal ODE becomes (Taylor, Eq. 2.23):
 
 $$
-\frac{dv_x}{dt} = -\frac{1}{\tau}v_x \implies v_x(t) = v_{x0}e^{-t/\tau}
+\dot{v}_x = -\frac{1}{\tau}v_x \implies v_x(t) = v_{x0}e^{-t/\tau}
 $$
 
-Integrating to find position:
+Integrating to find position (Taylor, Eq. 2.26):
 
 $$
 x(t) = \int_0^t v_x(t')\,dt' = v_{x0}\tau(1 - e^{-t/\tau})
@@ -59,10 +59,10 @@ $$
 
 ## 3. Vertical Motion & Terminal Velocity
 
-For vertical motion:
+For vertical motion (Taylor, Eq. 2.29):
 
 $$
-\frac{dv_y}{dt} = -g - \frac{v_y}{\tau} = -\frac{1}{\tau}(v_y + v_{\text{ter}})
+\dot{v}_y = -g - \frac{v_y}{\tau} = -\frac{1}{\tau}(v_y + v_{\text{ter}})
 $$
 
 where the **terminal speed** is:

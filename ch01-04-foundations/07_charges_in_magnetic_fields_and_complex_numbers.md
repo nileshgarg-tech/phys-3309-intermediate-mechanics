@@ -9,13 +9,13 @@
 
 ## 1. The Lorentz Force in a Uniform B Field
 
-For a charge $q$ moving in a uniform magnetic field $\mathbf{B} = B\hat{\mathbf{z}}$:
+For a charge $q$ moving in a uniform magnetic field $\mathbf{B} = B\hat{\mathbf{z}}$ (Taylor, Eq. 2.65):
 
 $$
-m\frac{d\mathbf{v}}{dt} = q(\mathbf{v} \times \mathbf{B})
+m\dot{\mathbf{v}} = q(\mathbf{v} \times \mathbf{B})
 $$
 
-Component equations:
+Component equations (Taylor, Eq. 2.67):
 
 $$
 m\dot{v}_x = q B v_y
@@ -33,28 +33,28 @@ $$
 
 ## 2. Cyclotron Frequency & The Complex Velocity
 
-Define the **cyclotron frequency**:
+Define the **cyclotron frequency** (Taylor, Eq. 2.68):
 
 $$
 \omega = \frac{qB}{m}
 $$
 
-Define the **complex velocity**:
+Following Taylor (Sec. 2.5), define the **complex velocity**:
 
 $$
 \eta = v_x + i v_y \qquad (i^2 = -1)
 $$
 
-Differentiating $\eta$:
+Differentiating $\eta$ with respect to time:
 
 $$
 \dot{\eta} = \dot{v}_x + i\dot{v}_y = \omega v_y - i\omega v_x = -i\omega(v_x + i v_y) = -i\omega\eta
 $$
 
-The two coupled real equations become a single 1st-order complex ODE:
+The two coupled real equations collapse into a single 1st-order complex ODE (Taylor, Eq. 2.70):
 
 $$
-\frac{d\eta}{dt} = -i\omega\eta
+\dot{\eta} = -i\omega\eta
 $$
 
 General solution:

@@ -27,10 +27,10 @@ $$
 > Therefore, normal forces can be completely ignored when computing mechanical energy conservation:
 > 
 > $$
-> E = \frac{1}{2} m \left(\frac{ds}{dt}\right)^2 + U(s) = \text{constant}
+> E = \frac{1}{2} m \dot{s}^2 + U(s) = \text{constant}
 > $$
 > 
-> Any 1D constrained motion reduces mathematically to the exact same energy equation we analyzed in Module 13!
+> Any 1D constrained motion reduces mathematically to the exact same energy equation we analyzed in Module 13 (Taylor, Eq. 4.60)!
 
 ---
 

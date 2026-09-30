@@ -249,7 +249,7 @@ Using the complex velocity variable from Module 07: $u = (v_x - v_d) + i v_y$.
 The equation of motion is:
 
 $$
-\frac{du}{dt} = -i \omega u \quad \left(\text{where } \omega = \frac{qB}{m}\right)
+\dot{u} = -i \omega u \quad \left(\text{where } \omega = \frac{qB}{m}\right)
 $$
 
 The solution with initial condition $u(0) = \delta v$ is:
