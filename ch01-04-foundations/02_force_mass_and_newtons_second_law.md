@@ -33,7 +33,7 @@ $$
 \frac{m_2}{m_1} = \frac{|\mathbf{a}_1|}{|\mathbf{a}_2|}
 $$
 
-**Mass is an intrinsic, scalar property of matter that quantifies its inertial reluctance to change velocity.**
+**Mass is an intrinsic, scalar property of matter that quantifies its inertial reluctance to a change in velocity.**
 
 ---
 
