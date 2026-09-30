@@ -1,69 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 400" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGradCrit" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0b0f19"/>
       <stop offset="100%" stop-color="#1e1b4b"/>
     </linearGradient>
   </defs>
 
-  <rect width="960" height="380" rx="16" fill="url(#bgGrad3)"/>
+  <!-- Background -->
+  <rect width="980" height="400" rx="16" fill="url(#bgGradCrit)"/>
 
-  <text x="480" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#f8fafc" text-anchor="middle">
+  <!-- Title & Subtitle -->
+  <text x="490" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="0.5">
     OPERATIONAL CRITERION: HOW TO TEST IF A REFERENCE FRAME IS INERTIAL
   </text>
-  <text x="480" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#a5b4fc" text-anchor="middle">
-    Newton's 1st Law is the fundamental experimental diagnostic separating real physics from fictitious kinematics
+  <text x="490" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#a5b4fc" text-anchor="middle">
+    Newton's 1st Law is an empirical diagnostic test separating real dynamical frames from accelerated coordinates
   </text>
 
-  <!-- Step 1 Box -->
-  <g transform="translate(40, 85)">
-    <rect width="260" height="250" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
-    <circle cx="30" cy="30" r="14" fill="#4f46e5"/>
-    <text x="30" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
-    <text x="55" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#818cf8">Isolate the Test Body</text>
+  <!-- Card 1: Step 1 -->
+  <g transform="translate(35, 85)">
+    <rect width="280" height="285" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+    <circle cx="32" cy="32" r="15" fill="#4f46e5"/>
+    <text x="32" y="37" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+    <text x="58" y="37" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#818cf8">Isolate the Test Body</text>
 
-    <text x="20" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">Take an object and eliminate all known physical interactions:</text>
-    <text x="20" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Zero friction (dry-ice puck)</text>
-    <text x="20" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Zero tension / normal push</text>
-    <text x="20" y="138" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Zero electromagnetic fields</text>
+    <!-- Content with clean line wrapping -->
+    <text x="20" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">Take a test body and eliminate</text>
+    <text x="20" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">all physical interactions:</text>
+
+    <text x="20" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Zero friction (air-bearing puck)</text>
+    <text x="20" y="138" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Zero tension / normal push</text>
+    <text x="20" y="158" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Zero gravitational / EM fields</text>
     
-    <rect x="20" y="170" width="220" height="50" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-    <text x="130" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle">F_real,net = 0</text>
+    <!-- Criterion Box -->
+    <rect x="20" y="195" width="240" height="60" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="140" y="222" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Diagnostic Condition:</text>
+    <text x="140" y="242" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#38bdf8" text-anchor="middle">F_real,net = 0</text>
   </g>
 
-  <!-- Step 2 Box -->
+  <!-- Card 2: Step 2 -->
   <g transform="translate(350, 85)">
-    <rect width="260" height="250" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-    <circle cx="30" cy="30" r="14" fill="#059669"/>
-    <text x="30" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
-    <text x="55" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#34d399">Observe Kinematics</text>
+    <rect width="280" height="285" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+    <circle cx="32" cy="32" r="15" fill="#059669"/>
+    <text x="32" y="37" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="58" y="37" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#34d399">Observe Kinematics</text>
 
-    <text x="20" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">Track displacement over time using synchronized clocks:</text>
+    <text x="20" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">Track position over time using</text>
+    <text x="20" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">synchronized frame clocks:</text>
     
-    <rect x="20" y="105" width="220" height="50" rx="6" fill="#064e3b" fill-opacity="0.5" stroke="#059669" stroke-width="1"/>
-    <text x="130" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#6ee7b7" text-anchor="middle">Case A: a = 0 (v = const)</text>
-    <text x="130" y="145" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#a7f3d0" text-anchor="middle">Frame is INERTIAL ✓</text>
+    <!-- Case A Box -->
+    <rect x="18" y="112" width="244" height="65" rx="8" fill="#064e3b" fill-opacity="0.45" stroke="#059669" stroke-width="1"/>
+    <text x="140" y="134" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#6ee7b7" text-anchor="middle">Case A: a = 0 (v = const)</text>
+    <text x="140" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#a7f3d0" text-anchor="middle">Frame is INERTIAL ✓</text>
+    <text x="140" y="167" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#6ee7b7" text-anchor="middle">Newton's 1st Law Verified</text>
 
-    <rect x="20" y="170" width="220" height="50" rx="6" fill="#7f1d1d" fill-opacity="0.5" stroke="#dc2626" stroke-width="1"/>
-    <text x="130" y="193" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#fca5a5" text-anchor="middle">Case B: a ≠ 0 (accelerates)</text>
-    <text x="130" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#fecaca" text-anchor="middle">Frame is NON-INERTIAL ✗</text>
+    <!-- Case B Box -->
+    <rect x="18" y="190" width="244" height="65" rx="8" fill="#7f1d1d" fill-opacity="0.45" stroke="#dc2626" stroke-width="1"/>
+    <text x="140" y="212" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#fca5a5" text-anchor="middle">Case B: a ≠ 0 (accelerates)</text>
+    <text x="140" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#fecaca" text-anchor="middle">Frame is NON-INERTIAL ✗</text>
+    <text x="140" y="245" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" fill="#fca5a5" text-anchor="middle">Spontaneous Acceleration</text>
   </g>
 
-  <!-- Step 3 Box -->
-  <g transform="translate(660, 85)">
-    <rect width="260" height="250" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-    <circle cx="30" cy="30" r="14" fill="#d97706"/>
-    <text x="30" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
-    <text x="55" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#fbbf24">Apply Mechanics</text>
+  <!-- Card 3: Step 3 -->
+  <g transform="translate(665, 85)">
+    <rect width="280" height="285" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="32" cy="32" r="15" fill="#d97706"/>
+    <text x="32" y="37" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+    <text x="58" y="37" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#fbbf24">Apply Mechanics</text>
 
-    <text x="20" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">Equations of motion you are permitted to write:</text>
+    <text x="20" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">Valid equations of motion you</text>
+    <text x="20" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">are permitted to write:</text>
 
-    <rect x="20" y="105" width="220" height="50" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-    <text x="130" y="127" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Inertial Frame Form:</text>
-    <text x="130" y="145" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#4ade80" text-anchor="middle">Σ F_real = m a</text>
+    <!-- Inertial Form Box -->
+    <rect x="18" y="112" width="244" height="65" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="140" y="133" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" fill="#94a3b8" text-anchor="middle">Inertial Form (Real Forces Only):</text>
+    <text x="140" y="156" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#4ade80" text-anchor="middle">Σ F_real = m a</text>
 
-    <rect x="20" y="170" width="220" height="50" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-    <text x="130" y="192" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Non-Inertial Frame Form:</text>
-    <text x="130" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#f87171" text-anchor="middle">Σ F_real + F_fict = m a'</text>
+    <!-- Non-Inertial Form Box -->
+    <rect x="18" y="190" width="244" height="65" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="140" y="211" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" fill="#94a3b8" text-anchor="middle">Non-Inertial (Must Add Fictitious):</text>
+    <text x="140" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#f87171" text-anchor="middle">Σ F_real + F_inertial = m a'</text>
   </g>
 </svg>
