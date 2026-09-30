@@ -332,8 +332,18 @@ $$
 
 ### Practice Problem 10.1 (To Solve)
 **Statement**: A planet of mass $m$ moves in an elliptical Keplerian orbit around a sun of mass $M$. At perihelion (closest approach), its distance is $r_p$ and its speed is $v_p$. At aphelion (farthest distance), its distance is $r_a$. Find the speed $v_a$ at aphelion in terms of $v_p, r_p, r_a$.
-* **Hint**: At both perihelion and aphelion, velocity is purely perpendicular to the position vector ($\mathbf{r} \perp \mathbf{v}$). The angular momentum magnitude $\ell = |\boldsymbol{\ell}|$ is conserved: $m r_p v_p = m r_a v_a$.
-* **Answer**: $v_a = v_p \left(\frac{r_p}{r_a}\right)$.
+
+**Hint**: At both perihelion and aphelion, velocity is purely perpendicular to the position vector ($\mathbf{r} \perp \mathbf{v}$). The angular momentum magnitude $\ell = |\boldsymbol{\ell}|$ is conserved:
+
+$$
+m r_p v_p = m r_a v_a
+$$
+
+**Answer**:
+
+$$
+v_a = v_p \left(\frac{r_p}{r_a}\right)
+$$
 
 ---
 
@@ -341,8 +351,27 @@ $$
 **Statement**: A particle of mass $m$ slides on a frictionless horizontal table attached to a light string passing through a small hole in the center. The particle initially orbits in a circle of radius $r_1$ with speed $v_1$. The string is slowly pulled downward through the hole until the radius decreases to $r_2 = r_1 / 2$.  
 (a) What is the new orbital speed $v_2$?  
 (b) How does the kinetic energy change? What supplied the work?
-* **Hint**: The tension force is purely radial, exerting zero torque about the hole ($\boldsymbol{\Gamma} = \mathbf{0}$). Hence angular momentum magnitude is conserved: $\ell = m r_1 v_1 = m r_2 v_2$.
-* **Answer**: (a) $v_2 = v_1 \left(\frac{r_1}{r_2}\right) = 2 v_1$. (b) $T_2 = \frac{1}{2}m v_2^2 = 4 T_1$. The kinetic energy quadrupled; the work was performed by the external tension pulling the string inward against centrifugal inertia!
+
+**Hint**: The tension force is purely radial, exerting zero torque about the hole ($\boldsymbol{\Gamma} = \mathbf{0}$). Hence angular momentum magnitude is conserved:
+
+$$
+\ell = m r_1 v_1 = m r_2 v_2
+$$
+
+**Answer**:
+(a) New speed:
+
+$$
+v_2 = v_1 \left(\frac{r_1}{r_2}\right) = 2 v_1
+$$
+
+(b) Kinetic energy:
+
+$$
+T_2 = \frac{1}{2}m v_2^2 = 4 T_1
+$$
+
+The kinetic energy quadrupled; the work was performed by the external tension pulling the string inward against centrifugal inertia!
 
 ---
 

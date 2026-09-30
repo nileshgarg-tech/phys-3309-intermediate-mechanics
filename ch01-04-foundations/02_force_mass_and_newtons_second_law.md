@@ -178,8 +178,20 @@ $$
 ### Practice Problem 2.1 (To Solve)
 **Statement**: A block of mass $m$ slides on a flat surface with initial velocity $v_0$ at $t = 0$ against a quadratic retarding force $F = -k v^2$. 
 Find the velocity $v(t)$ as a function of time, and determine if it stops in finite time.
-* **Hint**: Separate variables: $m\frac{dv}{dt} = -kv^2 \implies \int v^{-2} dv = -\frac{k}{m}\int dt$.
-* **Answer**: $v(t) = \frac{v_0}{1 + \frac{kv_0}{m}t}$. As $t \to \infty$, $v(t) \to 0$, but it technically never reaches zero in finite time.
+
+**Hint**: Separate variables:
+
+$$
+m\frac{dv}{dt} = -kv^2 \implies \int v^{-2} dv = -\frac{k}{m}\int dt
+$$
+
+**Answer**:
+
+$$
+v(t) = \frac{v_0}{1 + \frac{kv_0}{m}t}
+$$
+
+As $t \to \infty$, $v(t) \to 0$, but it technically never reaches zero in finite time.
 
 ---
 
@@ -191,11 +203,30 @@ $$
 $$
 
 Prove explicitly that the sum of all internal forces $\sum_\alpha \sum_{\beta \ne \alpha} \mathbf{F}_{\alpha\beta}$ vanishes.
-* **Hint**: Expand the sum for $\alpha, \beta \in \{1, 2, 3\}$ and group the action-reaction pairs:
-  $$
-  (\mathbf{F}_{12} + \mathbf{F}_{21}) + (\mathbf{F}_{13} + \mathbf{F}_{31}) + (\mathbf{F}_{23} + \mathbf{F}_{32})
-  $$
-* **Answer**: Because $(\mathbf{r}_\alpha - \mathbf{r}_\beta) = -(\mathbf{r}_\beta - \mathbf{r}_\alpha)$, Newton's Third Law gives $\mathbf{F}_{\alpha\beta} = -\mathbf{F}_{\beta\alpha}$, so every action-reaction pair cancels to zero identically.
+
+**Hint**: Expand the sum for $\alpha, \beta \in \{1, 2, 3\}$ and group the action-reaction pairs:
+
+$$
+(\mathbf{F}_{12} + \mathbf{F}_{21}) + (\mathbf{F}_{13} + \mathbf{F}_{31}) + (\mathbf{F}_{23} + \mathbf{F}_{32})
+$$
+
+**Answer**: Because the relative displacement vector satisfies:
+
+$$
+\mathbf{r}_\alpha - \mathbf{r}_\beta = -(\mathbf{r}_\beta - \mathbf{r}_\alpha)
+$$
+
+Newton's Third Law gives:
+
+$$
+\mathbf{F}_{\alpha\beta} = -\mathbf{F}_{\beta\alpha}
+$$
+
+Therefore, each pair cancels to zero identically:
+
+$$
+\mathbf{F}_{\alpha\beta} + \mathbf{F}_{\beta\alpha} = \mathbf{0}
+$$
 
 ---
 

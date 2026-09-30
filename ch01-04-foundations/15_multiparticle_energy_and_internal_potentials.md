@@ -226,8 +226,14 @@ The mechanical bulk kinetic energy was transferred into random thermal vibration
 
 ### Practice Problem 15.1 (To Solve)
 **Statement**: Three equal point stars of mass $m$ are located at the vertices of an equilateral triangle of side length $L$. Find the total gravitational potential energy $U$ of the three-star system.
-* **Hint**: Use $U = \sum_{\alpha < \beta} U_{\alpha\beta} = U_{12} + U_{13} + U_{23}$.
-* **Answer**: All 3 pairs have separation $L$.
+
+**Hint**: Sum the pairwise interaction potential over all unique pairs:
+
+$$
+U = \sum_{\alpha < \beta} U_{\alpha\beta} = U_{12} + U_{13} + U_{23}
+$$
+
+**Answer**: All 3 pairs have separation $L$:
 
 $$
 U = -\frac{Gm^2}{L} - \frac{Gm^2}{L} - \frac{Gm^2}{L} = -3 \frac{Gm^2}{L}
@@ -237,8 +243,18 @@ $$
 
 ### Practice Problem 15.2 (To Solve)
 **Statement**: Two carts of masses $m_1$ and $m_2$ are connected by a spring of stiffness $k$ and placed on a frictionless horizontal air track. Cart 1 is given an initial velocity $v_0$ towards cart 2 which is at rest. Find the maximum compression $x_{\text{max}}$ of the spring during the subsequent motion.
-* **Hint**: At maximum compression, both carts move with the same Center of Mass velocity $V_{\text{cm}} = \frac{m_1 v_0}{m_1 + m_2}$. The kinetic energy of relative motion $\frac{1}{2}\mu v_{\text{rel}}^2$ is completely converted into spring potential energy $\frac{1}{2}k x_{\text{max}}^2$.
-* **Answer**: $x_{\text{max}} = v_0 \sqrt{\frac{\mu}{k}} = v_0 \sqrt{\frac{m_1 m_2}{k (m_1 + m_2)}}$.
+
+**Hint**: At maximum compression, both carts move with the same Center of Mass velocity $V_{\text{cm}} = \frac{m_1 v_0}{m_1 + m_2}$. The kinetic energy of relative motion is completely converted into spring potential energy:
+
+$$
+\frac{1}{2}\mu v_{\text{rel}}^2 = \frac{1}{2}k x_{\text{max}}^2
+$$
+
+**Answer**:
+
+$$
+x_{\text{max}} = v_0 \sqrt{\frac{\mu}{k}} = v_0 \sqrt{\frac{m_1 m_2}{k (m_1 + m_2)}}
+$$
 
 ---
 

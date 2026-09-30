@@ -268,8 +268,16 @@ $$
 
 ### Practice Problem 8.1 (To Solve)
 **Statement**: A projectile of mass $M$ is fired with launch speed $v_0$ at an angle $\theta$ above the horizontal. At the very apex of its trajectory, the projectile explodes into two equal fragments of mass $m_1 = m_2 = M / 2$. One fragment falls vertically downward from rest immediately after the explosion. How far from the launch point does the second fragment land?
-* **Hint**: The internal explosion cannot change the motion of the Center of Mass. The CM lands at the standard range $R_{\text{cm}} = \frac{v_0^2 \sin(2\theta)}{g}$. At the moment of landing, fragment 1 is on the ground at $x_1 = R_{\text{cm}} / 2$.
-* **Answer**: $X_{\text{cm}} = \frac{x_1 + x_2}{2} \implies R_{\text{cm}} = \frac{R_{\text{cm}}/2 + x_2}{2} \implies x_2 = \frac{3}{2} R_{\text{cm}}$. The second fragment lands at 1.5 times the normal projectile range!
+
+**Hint**: The internal explosion cannot change the motion of the Center of Mass. The CM lands at the standard range $R_{\text{cm}} = \frac{v_0^2 \sin(2\theta)}{g}$. At the moment of landing, fragment 1 is on the ground at $x_1 = R_{\text{cm}} / 2$.
+
+**Answer**:
+
+$$
+X_{\text{cm}} = \frac{x_1 + x_2}{2} \implies R_{\text{cm}} = \frac{R_{\text{cm}}/2 + x_2}{2} \implies x_2 = \frac{3}{2} R_{\text{cm}}
+$$
+
+The second fragment lands at $1.5$ times the normal projectile range!
 
 ---
 
