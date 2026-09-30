@@ -125,17 +125,14 @@ $$
 
 ## 5. Newton's Second Law in Polar Coordinates
 
-Resolving $\mathbf{F} = m\mathbf{a}$ into components along $\hat{\mathbf{r}}$ and $\hat{\boldsymbol{\phi}}$, we obtain Newton's second law in polar coordinates (Taylor eq. 1.48):
+Resolving $\mathbf{F} = m\mathbf{a}$ into polar components (Taylor eq. 1.48):
 
-* **Radial Component**:
-  $$
-  F_r = m\left(\ddot{r} - r\dot{\phi}^2\right)
-  $$
-
-* **Azimuthal Component**:
-  $$
-  F_\phi = m\left(r\ddot{\phi} + 2\dot{r}\dot{\phi}\right)
-  $$
+$$
+\begin{cases}
+F_r = m\left(\ddot{r} - r\dot{\phi}^2\right) \\
+F_\phi = m\left(r\ddot{\phi} + 2\dot{r}\dot{\phi}\right) = \dfrac{m}{r}\dfrac{d}{dt}\left(r^2\dot{\phi}\right)
+\end{cases}
+$$
 
 ### The Azimuthal Identity and Angular Momentum
 
